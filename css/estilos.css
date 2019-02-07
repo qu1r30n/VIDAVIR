@@ -1,0 +1,46 @@
+
+header
+{
+	background: #2c3e50;
+	color: #CC0000;
+	font-weight: 600;
+}
+
+.main
+{
+	background: #f2f2f2;
+	font-weight: 600;
+}
+.color1
+{
+	background: #FDDE00;
+	font-weight: 600;
+}
+
+a{ 
+	color:#0400FF; 
+	font-weight: 600;
+}
+
+a:hover
+{ 
+	color:#0400FF; 
+	font-weight: 600;
+} 
+
+aside
+{
+	background: #c0392b;
+	font-weight: 600;
+}
+
+footer
+{
+	background: #0000;
+	color: #fff;
+}
+
+table, th, td 
+{
+   border: 2px solid black;
+}

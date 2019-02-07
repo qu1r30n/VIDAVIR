@@ -1,0 +1,84 @@
+<link href="style.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="script.js"></script>
+
+<!-- etiqueta (pre) para contener el código resaltado. -->
+<pre id="layer">&nbsp;</pre>
+
+<!-- etiqueta (textarea) para contener el codigo crudo, para poder examinarlo luego. -->
+<textarea id="highlight" name="highlight">   
+function love.load()
+    
+    shader = love.graphics.newPixelEffect [[
+        extern number time = 0.0;
+        extern number size = 64.0;
+        extern number strength = 1.0;
+        extern vec2 res = vec2(512.0, 512.0);
+        uniform sampler2D tex0;
+        vec4 effect(vec4 color, Image texture, vec2 texture_coords, vec2 pixel_coords)
+        {
+            float tmp = sin(sqrt(pow(texture_coords.x * size - size / 2.0, 2.0) + pow(texture_coords.y * size - size / 2.0, 2.0)) - time * 16.0);
+            vec2 uv         = vec2(
+                texture_coords.x - tmp * strength / 1024.0,
+                texture_coords.y - tmp * strength / 1024.0
+            );
+            vec3 col        = vec3(
+                texture2D(tex0,uv).x,
+                texture2D(tex0,uv).y,
+                texture2D(tex0,uv).z
+            );
+         return vec4(col, 1.0);
+        }
+    ]]
+ 
+    tex = love.graphics.newImage('tex.png');
+    t = 0;
+    size = 64;
+    strength = 1;
+    love.keyboard.setKeyRepeat(0.1, 0.05);
+end
+
+function love.update(dt)
+    t = t + dt;
+    shader:send('time', t);
+end
+
+function love.draw()
+    love.graphics.setPixelEffect(shader);
+    love.graphics.draw(tex, 0, 0);
+    love.graphics.setPixelEffect();
+    love.graphics.setColor(0, 0, 0);
+    love.graphics.rectangle('fill', 0, 0, 96, 32);
+    love.graphics.setColor(255, 255, 255);
+    love.graphics.print('size = ' .. size .. '\nstrength = ' .. strength, 0, 0);
+end
+
+function love.keypressed(key, unicode)
+    if key == 'escape' then
+        love.event.quit();
+    end
+    if key == 'up' then
+        size = size + 8;
+        shader:send('size', size);
+    end
+    if key == 'down' then
+        size = size - 8;
+        shader:send('size', size);
+    end
+    if key == 'left' then
+        strength = strength - 1;
+        shader:send('strength', strength);
+    end
+    if key == 'right' then
+        strength = strength + 1;
+        shader:send('strength', strength);
+    end
+end
+
+--Comentario Simple
+
+--[[Comentario multilinea]]
+
+--[[
+    Comentario multilinea
+]]
+</textarea>

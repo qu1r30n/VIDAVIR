@@ -1,0 +1,11 @@
+//1000mls x 60s=60000mls   60000mls x 5m=300000mls
+var timer:Timer = new Timer(300000); 
+
+timer.addEventListener(TimerEvent.TIMER, llamar);
+
+function llamar(e:Event=null):void {
+  var loader:URLLoader = new URLLoader();
+  loader.load(new URLRequest("http://www.tudominio.com/dameip.php?user=user&pass=1234"));
+}
+timer.start();
+llamar();

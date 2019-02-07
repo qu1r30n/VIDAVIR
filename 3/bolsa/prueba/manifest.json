@@ -1,0 +1,11 @@
+{
+	"manifest_version": 2,
+	"name": "mi primera extension",
+	"description": "si te sirvio el video dale like",
+	"version": "1.0",
+	"browser_action": 
+	{
+		"default_popup": "popup.html",
+		"default_title": "SUSCRIBETE"
+	}
+}
