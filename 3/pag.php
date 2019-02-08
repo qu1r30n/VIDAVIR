@@ -1,7 +1,9 @@
 <?php
 	//--OPERACIONES BASE----------------------------------------------------
-	include("../var_g.php");
-	include("../operaciones_b.php");
+	include("../modelo.php");
+	$dir_raiz=modelo::root_path(dirname(__FILE__));
+	include($dir_raiz."var_g.php");
+	include($dir_raiz."operaciones_b.php");
 	//--DATOS DE CONTROL--------------------------------------------------------
 	$minimo_comp_usuario=0;
 	$minimo_comp=0;
