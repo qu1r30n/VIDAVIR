@@ -32,18 +32,18 @@ class modelo
 		<title></title>
 		<meta name=\"viewport\" content=\"width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0\">
 		<!-- Versión compilada y comprimida del CSS de Bootstrap -->
-		<link rel=\"stylesheet\" href=\"//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css\">
+		<link rel=\"stylesheet\" href=\"".$ir_rais."css/bootstrap.min.css\">
 		 
 		<!-- Tema opcional -->
-		<link rel=\"stylesheet\" href=\"//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css\">
+		<link rel=\"stylesheet\" href=\"".$ir_rais."css/bootstrap-theme.min.css\">
 		
 		<link rel=\"stylesheet\" type=\"text/css\" href=\"".$ir_rais."css/estilos.css\">
 		</head>
 		<!--0------------------------------------------------------------------------------------------------>
 		<body>
 			<!-- Versión compilada y comprimida del JavaScript de Bootstrap -->
-			<script src=\"https://code.jquery.com/jquery-latest.js\"></script>
-			<script src=\"//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js\"></script>
+			<script src=\"".$ir_rais."js/jquery-3.3.1.min.js\"></script>
+			<script src=\"".$ir_rais."js/bootstrap.min.js\"></script>
 		<!--1----------------------------------------------------------------------------------------------->
 			<header>
 				<div>

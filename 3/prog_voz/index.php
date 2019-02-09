@@ -2,6 +2,8 @@
 session_start();
 
 include("../../modelo.php");
+$dir_raiz=modelo::root_path(dirname(__FILE__));
+include($dir_raiz."var_g.php");
 ?>
 <!DOCTYPEhtml>
 <html>

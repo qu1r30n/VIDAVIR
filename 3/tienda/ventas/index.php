@@ -92,7 +92,9 @@ if (isset($_SESSION["ger"])) {
 	</section>
 
 	<!-- Scripts -->
-	<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<?php
+	echo "<script src=\"".$ir_rais."js/jquery-3.3.1.min.js\"></script>";
+	?>
 	<script src="lib/js/invoice.js"></script>
 
 <!------------------------------>
