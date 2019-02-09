@@ -93,7 +93,7 @@ if (isset($_SESSION["ger"])) {
 
 	<!-- Scripts -->
 	<?php
-	echo "<script src=\"".$ir_rais."js/jquery-3.3.1.min.js\"></script>";
+	echo "<script src=\"".$ir_rais."js/jquery-latest.js\"></script>";
 	?>
 	<script src="lib/js/invoice.js"></script>
 

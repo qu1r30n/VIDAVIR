@@ -42,7 +42,7 @@ class modelo
 		<!--0------------------------------------------------------------------------------------------------>
 		<body>
 			<!-- Versión compilada y comprimida del JavaScript de Bootstrap -->
-			<script src=\"".$ir_rais."js/jquery-3.3.1.min.js\"></script>
+			<script src=\"".$ir_rais."js/jquery-latest.js\"></script>
 			<script src=\"".$ir_rais."js/bootstrap.min.js\"></script>
 		<!--1----------------------------------------------------------------------------------------------->
 			<header>
