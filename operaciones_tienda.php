@@ -96,6 +96,7 @@ class operaciones_tienda
 			$arr_col[2]="dia";$arr_tip[2]="int";$arr_cant[2]="2";$arr_aut_inc[2]=0;
 			$arr_col[3]="venta";$arr_tip[3]="DOUBLE";$arr_cant[3]="255,2";$arr_aut_inc[3]=0;
 			op_b::crear_tab($arr_database_VG[1],$concil,$arr_col,$arr_tip,$arr_cant,0,$arr_aut_inc);
+			unset($arr_col,$arr_tip,$arr_cant,$arr_aut_inc);
 
 			$h0colum[0]="id";$h0valores[0]="";
 			$h0colum[1]="mes";$h0valores[1]=$mes;
@@ -151,7 +152,7 @@ class operaciones_tienda
 			if ($din[0]) 
 			{
 				$arr_colum[0]="gastos";//estos son los que editara
-				$arr_valores[0]=$din[0]+$gasto;//estos son los que editara
+				$arr_valores[0]="gastos + ".$gasto;//estos son los que editara
 				$arr_colum2[0]="mes";
 				$arr_compara[0]="=";
 				$arr_valores2[0]=$mes;
@@ -163,7 +164,7 @@ class operaciones_tienda
 				unset($arr_colum,$arr_valores,$arr_colum2,$arr_compara,$arr_valores2,$arr_op_log);
 
 				$arr_colum[0]="dinero";//estos son los que editara
-				$arr_valores[0]=$din2[0]-$acum;//estos son los que editara
+				$arr_valores[0]="dinero - ".$acum;//estos son los que editara
 				$arr_colum2[0]="id";
 				$arr_compara[0]="=";
 				$arr_valores2[0]="1";
@@ -181,7 +182,7 @@ class operaciones_tienda
 				unset($h0colum,$h0valores);
 
 				$arr_colum[0]="dinero";//estos son los que editara
-				$arr_valores[0]=$din2[0]-$acum;//estos son los que editara
+				$arr_valores[0]="dinero - ".$acum;//estos son los que editara
 				$arr_colum2[0]="id";
 				$arr_compara[0]="=";
 				$arr_valores2[0]="1";
@@ -206,7 +207,7 @@ class operaciones_tienda
 			unset($h0colum,$h0valores);
 
 			$arr_colum[0]="dinero";//estos son los que editara
-			$arr_valores[0]=$din2[0]-$acum;//estos son los que editara
+			$arr_valores[0]="dinero-".$acum;//estos son los que editara
 			$arr_colum2[0]="id";
 			$arr_compara[0]="=";
 			$arr_valores2[0]="1";
