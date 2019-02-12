@@ -171,11 +171,11 @@
 			{ 
 				if($i<$cantidad_columnas-1) //las columnas que vas a cambiar
 				{
-					$editar=$editar.$arr_colum[$i]."= '".$arr_valores[$i]."', ";
+					$editar=$editar.$arr_colum[$i]."= ".$arr_valores[$i].", ";
 				}
 				else
 				{
-					$editar=$editar.$arr_colum[$i]."= '".$arr_valores[$i]."' WHERE";
+					$editar=$editar.$arr_colum[$i]."= ".$arr_valores[$i]." WHERE";
 				}
 			}
 
@@ -187,7 +187,7 @@
 				}
 				else
 				{
-					$editar=$editar." ".$arr_colum2[$i]." = '".$arr_valores2[$i]."';";
+					$editar=$editar." ".$arr_colum2[$i]." = ".$arr_valores2[$i].";";
 				}
 			}
 			echo "<br><br><br><br>".$editar."<br><br><br><br>";

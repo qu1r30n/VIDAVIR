@@ -24,21 +24,32 @@ class operaciones_tienda
 			$producto=implode("&", $temp);
 			op_archivos::crea_escribe($direccion_arch,$producto."&".$hora);
 			$acum=$acum+$temp[2];
+
+			//--------------------------------------------------------------------------------------
+			$arr_colum[0]="CANTIDAD";//estos son los que editara
+			$arr_valores[0]="CANTIDAD-1";//estos son los que editara
+			$arr_colum2[0]="CODIGO";
+			$arr_compara[0]="=";
+			$arr_valores2[0]=$arreglo[$i];
+			$arr_op_log[0]="";
+			op_b::editar("inventario",$arr_colum,$arr_valores,$arr_colum2,$arr_compara,$arr_valores2,$arr_op_log);
+			//--------------------------------------------------------------------------------------
 		}
+
+		unset($arr_colum,$arr_valores,$arr_colum2,$arr_compara,$arr_valores2,$arr_op_log);
 
 		$existe=op_b::mysql_table_existe($concil);
 
-		$din2=op_b::seleccionar("dinero ","acum_tot","id=1");
 
 		if ($existe=="true") 
 		{
 			$din=op_b::seleccionar("venta ",$concil,"mes=".$mes." && dia=".$dia);
-			
+
 			if ($din[0]) 
 			{
 
 				$arr_colum[0]="venta";//estos son los que editara
-				$arr_valores[0]=$din[0]+$acum;//estos son los que editara
+				$arr_valores[0]="venta + ".$acum;//estos son los que editara
 				$arr_colum2[0]="mes";
 				$arr_compara[0]="=";
 				$arr_valores2[0]=$mes;
@@ -47,14 +58,16 @@ class operaciones_tienda
 				$arr_compara[1]="=";
 				$arr_valores2[1]=$dia;
 				op_b::editar($concil,$arr_colum,$arr_valores,$arr_colum2,$arr_compara,$arr_valores2,$arr_op_log);
+				unset($arr_colum,$arr_valores,$arr_colum2,$arr_compara,$arr_valores2,$arr_op_log);
 
 				$arr_colum[0]="dinero";//estos son los que editara
-				$arr_valores[0]=$din2[0]+$acum;//estos son los que editara
+				$arr_valores[0]="dinero + ".$acum;//estos son los que editara
 				$arr_colum2[0]="id";
 				$arr_compara[0]="=";
 				$arr_valores2[0]="1";
 				$arr_op_log[0]="";
 				op_b::editar("acum_tot",$arr_colum,$arr_valores,$arr_colum2,$arr_compara,$arr_valores2,$arr_op_log);
+				unset($arr_colum,$arr_valores,$arr_colum2,$arr_compara,$arr_valores2,$arr_op_log);
 			} 
 			else 
 			{
@@ -64,13 +77,16 @@ class operaciones_tienda
 				$h0colum[3]="venta";$h0valores[3]=$acum;
 				op_b::insertar($concil,$h0colum,$h0valores);
 
+				unset($h0colum,$h0valores);
+
 				$arr_colum[0]="dinero";//estos son los que editara
-				$arr_valores[0]=$din2[0]+$acum;//estos son los que editara
+				$arr_valores[0]="dinero + ".$acum;//estos son los que editara
 				$arr_colum2[0]="id";
 				$arr_compara[0]="=";
 				$arr_valores2[0]="1";
 				$arr_op_log[0]="";
 				op_b::editar("acum_tot",$arr_colum,$arr_valores,$arr_colum2,$arr_compara,$arr_valores2,$arr_op_log);
+				unset($arr_colum,$arr_valores,$arr_colum2,$arr_compara,$arr_valores2,$arr_op_log);
 			}
 		} 
 		else 
@@ -79,22 +95,23 @@ class operaciones_tienda
 			$arr_col[1]="mes";$arr_tip[1]="int";$arr_cant[1]="2";$arr_aut_inc[1]=0;
 			$arr_col[2]="dia";$arr_tip[2]="int";$arr_cant[2]="2";$arr_aut_inc[2]=0;
 			$arr_col[3]="venta";$arr_tip[3]="DOUBLE";$arr_cant[3]="255,2";$arr_aut_inc[3]=0;
-			op_b::crear_tab($arr_database_VG[1],"conciliacion_".$año,$arr_col,$arr_tip,$arr_cant,0,$arr_aut_inc);
+			op_b::crear_tab($arr_database_VG[1],$concil,$arr_col,$arr_tip,$arr_cant,0,$arr_aut_inc);
 
 			$h0colum[0]="id";$h0valores[0]="";
 			$h0colum[1]="mes";$h0valores[1]=$mes;
 			$h0colum[2]="dia";$h0valores[2]=$dia;
 			$h0colum[3]="venta";$h0valores[3]=$acum;
-
 			op_b::insertar($concil,$h0colum,$h0valores);
+			unset($h0colum,$h0valores);
 
 			$arr_colum[0]="dinero";//estos son los que editara
-			$arr_valores[0]=$din2[0]+$acum;//estos son los que editara
+			$arr_valores[0]="dinero + ".$acum;//estos son los que editara
 			$arr_colum2[0]="id";
 			$arr_compara[0]="=";
 			$arr_valores2[0]="1";
 			$arr_op_log[0]="";
 			op_b::editar("acum_tot",$arr_colum,$arr_valores,$arr_colum2,$arr_compara,$arr_valores2,$arr_op_log);
+			unset($arr_colum,$arr_valores,$arr_colum2,$arr_compara,$arr_valores2,$arr_op_log);
 		}
 	}
 
@@ -143,6 +160,7 @@ class operaciones_tienda
 				$arr_compara[1]="=";
 				$arr_valores2[1]=$dia;
 				op_b::editar($concil,$arr_colum,$arr_valores,$arr_colum2,$arr_compara,$arr_valores2,$arr_op_log);
+				unset($arr_colum,$arr_valores,$arr_colum2,$arr_compara,$arr_valores2,$arr_op_log);
 
 				$arr_colum[0]="dinero";//estos son los que editara
 				$arr_valores[0]=$din2[0]-$acum;//estos son los que editara
@@ -151,7 +169,7 @@ class operaciones_tienda
 				$arr_valores2[0]="1";
 				$arr_op_log[0]="";
 				op_b::editar("acum_tot",$arr_colum,$arr_valores,$arr_colum2,$arr_compara,$arr_valores2,$arr_op_log);
-
+				unset($arr_colum,$arr_valores,$arr_colum2,$arr_compara,$arr_valores2,$arr_op_log);
 			} 
 			else 
 			{
@@ -159,8 +177,8 @@ class operaciones_tienda
 				$h0colum[1]="mes";$h0valores[1]=$mes;
 				$h0colum[2]="dia";$h0valores[2]=$dia;
 				$h0colum[3]="venta";$h0valores[3]=$gasto*-1;
-
 				op_b::insertar($concil,$h0colum,$h0valores);
+				unset($h0colum,$h0valores);
 
 				$arr_colum[0]="dinero";//estos son los que editara
 				$arr_valores[0]=$din2[0]-$acum;//estos son los que editara
@@ -169,6 +187,7 @@ class operaciones_tienda
 				$arr_valores2[0]="1";
 				$arr_op_log[0]="";
 				op_b::editar("acum_tot",$arr_colum,$arr_valores,$arr_colum2,$arr_compara,$arr_valores2,$arr_op_log);
+				unset($arr_colum,$arr_valores,$arr_colum2,$arr_compara,$arr_valores2,$arr_op_log);
 			}
 		} 
 		else 
@@ -183,8 +202,8 @@ class operaciones_tienda
 			$h0colum[1]="mes";$h0valores[1]=$mes;
 			$h0colum[2]="dia";$h0valores[2]=$dia;
 			$h0colum[3]="venta";$h0valores[3]=$gasto*-1;
-
 			op_b::insertar($concil,$h0colum,$h0valores);
+			unset($h0colum,$h0valores);
 
 			$arr_colum[0]="dinero";//estos son los que editara
 			$arr_valores[0]=$din2[0]-$acum;//estos son los que editara
@@ -193,6 +212,7 @@ class operaciones_tienda
 			$arr_valores2[0]="1";
 			$arr_op_log[0]="";
 			op_b::editar("acum_tot",$arr_colum,$arr_valores,$arr_colum2,$arr_compara,$arr_valores2,$arr_op_log);
+			unset($arr_colum,$arr_valores,$arr_colum2,$arr_compara,$arr_valores2,$arr_op_log);
 		}
 	}
 }	
