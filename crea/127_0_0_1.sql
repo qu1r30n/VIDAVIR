@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-02-2019 a las 18:13:53
+-- Tiempo de generación: 14-02-2019 a las 17:13:05
 -- Versión del servidor: 10.1.37-MariaDB
 -- Versión de PHP: 7.3.1
 
@@ -183,7 +183,7 @@ CREATE TABLE `acum_tot` (
 --
 
 INSERT INTO `acum_tot` (`id`, `servicio`, `dinero`) VALUES
-(1, 'dinero', 0.00),
+(1, 'dinero', 69.00),
 (2, 'qu1r30n', 0.00);
 
 -- --------------------------------------------------------
@@ -204,7 +204,9 @@ CREATE TABLE `conciliacion_2019` (
 --
 
 INSERT INTO `conciliacion_2019` (`id`, `mes`, `dia`, `venta`) VALUES
-(1, 1, 27, 46.00);
+(1, 1, 27, 46.00),
+(2, 2, 12, 161.00),
+(3, 2, 12, 23.00);
 
 -- --------------------------------------------------------
 
@@ -220,15 +222,16 @@ CREATE TABLE `inventario` (
   `CANTIDAD` int(10) NOT NULL,
   `UBICACION` varchar(90) NOT NULL,
   `CADUCIDAD` varchar(15) NOT NULL,
-  `COSTO_COMPRA` float NOT NULL
+  `COSTO_COMPRA` double(255,2) NOT NULL DEFAULT '0.00',
+  `COSTO_COMPRA_RECIENTE` double(255,2) NOT NULL DEFAULT '0.00'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `inventario`
 --
 
-INSERT INTO `inventario` (`ID`, `CODIGO`, `PRODUCTO`, `COSTO_VENTA`, `CANTIDAD`, `UBICACION`, `CADUCIDAD`, `COSTO_COMPRA`) VALUES
-(1, 1, 'producto qu1r30n', 23.00, 10, '1', '9/08/2019', 10);
+INSERT INTO `inventario` (`ID`, `CODIGO`, `PRODUCTO`, `COSTO_VENTA`, `CANTIDAD`, `UBICACION`, `CADUCIDAD`, `COSTO_COMPRA`, `COSTO_COMPRA_RECIENTE`) VALUES
+(1, 1, 'producto qu1r30n', 23.00, 9, '1', '9/08/2019', 10.00, 0.00);
 
 --
 -- Índices para tablas volcadas
@@ -266,7 +269,7 @@ ALTER TABLE `acum_tot`
 -- AUTO_INCREMENT de la tabla `conciliacion_2019`
 --
 ALTER TABLE `conciliacion_2019`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `inventario`
