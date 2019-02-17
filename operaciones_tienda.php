@@ -25,7 +25,7 @@ class operaciones_tienda
 			op_archivos::crea_escribe($direccion_arch,$producto."&".$hora);
 			$acum=$acum+$temp[2];
 
-			//--------------------------------------------------------------------------------------
+			//--decrementa el inventario------------------------------------------------------------------------------------
 			$arr_colum[0]="CANTIDAD";//estos son los que editara
 			$arr_valores[0]="CANTIDAD-1";//estos son los que editara
 			$arr_colum2[0]="CODIGO";
@@ -213,7 +213,7 @@ class operaciones_tienda
 	}
 
 
-	function compras($arr_codigos)
+	function compras($arr_codigos,$arr_precios_actuales)
 	{
 		include("operacion_arch.php");
 		include("operaciones_b_tien.php");
@@ -227,19 +227,25 @@ class operaciones_tienda
 		$dia = date("d");
 		$hora= date("G");
 		$concil="gastos_".$año;
+
 		$arreglo=explode("&",$arr_codigos);
 		$direccion_arch="regis/operaciones/".$año."/".$mes."/".$dia."_compras.txt";
 
 		for ($i=0; $i < count($arreglo) ; $i++) 
 		{
-			$temp=op_b::seleccionar("CODIGO,PRODUCTO,COSTO_VENTA","inventario","codigo=".$arreglo[$i]);
+			$temp=op_b::seleccionar("CODIGO,PRODUCTO,COSTO_COMPRA","inventario","codigo=".$arreglo[$i]);
 			$producto=implode("&", $temp);
+			//falta aqui tiene que comparar el precio  y checar si sube o baja y decidir
+			//si se saltan o se detienen las compras y hacer una lista para ver cual subio o bajo
+			//y comparar que otra te lo da a mejor precio 
+
+
 			op_archivos::crea_escribe($direccion_arch,$producto."&".$hora);
 			$acum=$acum+$temp[2];
 
-			//--------------------------------------------------------------------------------------
+			//--incrementa inventario------------------------------------------------------------------------------------
 			$arr_colum[0]="CANTIDAD";//estos son los que editara
-			$arr_valores[0]="CANTIDAD-1";//estos son los que editara
+			$arr_valores[0]="CANTIDAD+1";//estos son los que editara
 			$arr_colum2[0]="CODIGO";
 			$arr_compara[0]="=";
 			$arr_valores2[0]=$arreglo[$i];
