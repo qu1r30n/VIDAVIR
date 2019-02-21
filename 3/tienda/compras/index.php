@@ -28,10 +28,74 @@ if (isset($_SESSION["ger"])) {
 		modelo::pub(dirname(__FILE__));
 ?>
 <!------------------------------>
+	<section class="main row">
+				
+		<form method="post" action="#">
+										<div>
 
+											</div>
 
-<!---aqui codigo a agregar-->
+											<div >
+												<input type="text" name="descripcion" id="descripcion" value="" placeholder="Descripcion Producto"/>
+												<input type="button" value="Agregar" id="add_row"/>
+											</div>
+										</div>
+										<br>
+										<br>
 
+										<div>
+											<table id="tabla_factura">
+												<thead>
+													<tr>
+														<th>N</th>
+														<th>Codigo</th>
+														<th>Descripción</th>
+														<th>Cantidad</th>
+														<th>Precio</th>
+														<th>Subtotal</th>
+														<th>Impuesto</th>
+														<th>Total</th>
+														<td>Acción</td>
+													</tr>
+												</thead>
+												<tbody id="content_table">
+													<tr>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+													</tr>
+												</tbody>
+												<tfoot>
+													<tr>
+														<td colspan="3"></td>
+														<td id="total_catidad">0.00</td>
+														<td id="total_precio">0.00</td>
+														<td id="total_subtotales">0.00</td>
+														<td id="total_impuesto">0.00</td>
+														<td id="total_total">0.00</td>
+													</tr> 
+												</tfoot>
+											</table>
+										</div>
+		</form>
+		<form id="codi" action="chequeo.php" method="post">
+				<input type="hidden" id="variable" name="arr_codi"><br>
+				<input type="button" onclick="env_cod()" value="enviar">
+		</form>
+								
+	</section>
+
+	<!-- Scripts -->
+	<?php
+	echo "<script src=\"".$ir_rais."js/jquery-latest.js\"></script>";
+	?>
+	<script src="lib/js/invoice.js"></script>
 
 <!------------------------------>
 <?php

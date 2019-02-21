@@ -1,7 +1,7 @@
 <?php  
 class operaciones_tienda
 {
-	function venta($arr_codigos)
+	function venta($text_arr_codigos)
 	{
 		include("operacion_arch.php");
 		include("operaciones_b_tien.php");
@@ -15,7 +15,7 @@ class operaciones_tienda
 		$dia = date("d");
 		$hora= date("G");
 		$concil="conciliacion_".$año;
-		$arreglo=explode("&",$arr_codigos);
+		$arreglo=explode("&",$text_arr_codigos);
 		$direccion_arch="regis/operaciones/".$año."/".$mes."/".$dia.".txt";
 
 		for ($i=0; $i < count($arreglo) ; $i++) 
@@ -117,8 +117,6 @@ class operaciones_tienda
 	}
 
 
-
-
 	function gastos($gasto=0,$declaracion)
 	{
 		include("operacion_arch.php");
@@ -213,7 +211,7 @@ class operaciones_tienda
 	}
 
 
-	function compras($arr_codigos,$arr_precios_actuales)
+	function compras($text_arr_codigos,$arr_precios_actuales)
 	{
 		include("operacion_arch.php");
 		include("operaciones_b_tien.php");
@@ -228,7 +226,7 @@ class operaciones_tienda
 		$hora= date("G");
 		$concil="gastos_".$año;
 
-		$arreglo=explode("&",$arr_codigos);
+		$arreglo=explode("&",$text_arr_codigos);
 		$direccion_arch="regis/operaciones/".$año."/".$mes."/".$dia."_compras.txt";
 
 		for ($i=0; $i < count($arreglo) ; $i++) 
