@@ -47,8 +47,8 @@ if (isset($_SESSION["ger"])) {
 											<table id="tabla_factura">
 												<thead>
 													<tr>
-														<th>N</th>
 														<th>Codigo</th>
+														<th>Producto</th>
 														<th>Descripción</th>
 														<th>Cantidad</th>
 														<th>Precio</th>

@@ -5,10 +5,7 @@
 	include($dir_raiz."operaciones_b_tien.php");
 	include($dir_raiz."var_g.php");
 
-
 	$tabla="inventario";
-
-	include($dir_raiz."operaciones_b_tien.php");
 
 	$codigo=$_POST['CODIGO'];
 	$producto=$_POST['PRODUCTO'];
@@ -43,15 +40,24 @@
 
 			if ($cantidad_prod[0]) 
 			{
-
-				$arr_colum[0]="CANTIDAD";//estos son los que editara
-				$arr_valores[0]="CANTIDAD + ".$cantidad;//estos son los que editara
-				$arr_colum2[0]="CODIGO ";
-				$arr_compara[0]="=";
-				$arr_valores2[0]=$codigo;
-				$arr_op_log[0]="";
-				op_b::editar($tabla,$arr_colum,$arr_valores,$arr_colum2,$arr_compara,$arr_valores2,$arr_op_log);
-				unset($arr_colum,$arr_valores,$arr_colum2,$arr_compara,$arr_valores2,$arr_op_log);
+				?>
+				<script type="text/javascript">
+					if (confirm('este codigo ya esta en la base de datos ¿quieres sumarle la cantidad?')) 
+					{
+						<?php
+						$arr_colum[0]="CANTIDAD";//estos son los que editara
+						$arr_valores[0]="CANTIDAD + ".$cantidad;//estos son los que editara
+						$arr_colum2[0]="CODIGO ";
+						$arr_compara[0]="=";
+						$arr_valores2[0]=$codigo;
+						$arr_op_log[0]="";
+						op_b::editar($tabla,$arr_colum,$arr_valores,$arr_colum2,$arr_compara,$arr_valores2,$arr_op_log);
+						unset($arr_colum,$arr_valores,$arr_colum2,$arr_compara,$arr_valores2,$arr_op_log);
+						?>
+					}
+				</script>
+				
+				<?php
 			} 
 			else 
 			{
