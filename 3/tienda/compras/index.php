@@ -93,9 +93,9 @@ if (isset($_SESSION["ger"])) {
 
 	<!-- Scripts -->
 	<?php
-	echo "<script src=\"".$ir_rais."js/jquery-latest.js\"></script>";
+	echo "<script src=\"".$dir_raiz."js/jquery-latest.js\"></script>";
+	echo "<script src=\"".$dir_raiz."js/invoice.js\"></script>";
 	?>
-	<script src="lib/js/invoice.js"></script>
 
 <!------------------------------>
 <?php
