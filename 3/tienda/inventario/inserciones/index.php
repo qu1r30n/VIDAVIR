@@ -27,6 +27,7 @@ if (isset($_SESSION["ger"])) {
 		modelo::arriba2(dirname(__FILE__),$arr_nom_btn,$arr_pos_grup,$arr_url,$arr_btn_grupo);
 		modelo::pub(dirname(__FILE__));
 ?>
+		
 <!------------------------------>
 		<section class="main row">
 				<article>

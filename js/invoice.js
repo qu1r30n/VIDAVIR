@@ -3,9 +3,33 @@ $(document).on('ready', carga);
 let lines;
 var encontrados;
 
+function raiz()
+ {
+ 	var temp0="";
+ 	var temp1="js/invoice.js";
+ 	var cont=0;
+ 	for (var i = 0; i < 20; i++) 
+ 	{
+ 		var http = new XMLHttpRequest();
+   		http.open('HEAD',temp1+temp0, false);
+   		http.send();
+   		if (http.status!=404) 
+   		{
+   			break;
+   		} 
+   		else 
+   		{
+   			temp0="../"+temp0;
+   		}
+   		
+ 	}
+ 	return temp0;
+}
+
+
 function carga()
 {
-		fetch('6.txt')
+		fetch(raiz()+'6.txt')
   		.then(res => res.text())
   		.then(content => {
     	lines = content.split(/\n/);
