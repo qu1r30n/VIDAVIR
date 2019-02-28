@@ -1,17 +1,69 @@
  $(document).on('ready', funcMain);
-$(document).on('ready', carga);
-let lines;
-var encontrados;
+ $(document).on('ready', loop); // tengo que cargar primero la forma asincrona de checar donde esta el archivo
+ 								//se usa para sacar normalmente dondeesta la raiz de mis archivos
+ 								//pd: fue horrible crear este metodo para que funcionara
+ 								//se usa este metodo por que el metodo sincrono lo van a quitar
+ 								//pero sigue funcionando la funcion es raiz(); 
+
+let arr_lines;// es un arregol se usa en la funcion carga y la funcion buscar se usa para guardar el contenido del txt
+var arr_encontrados;//es un arreglo se usa en la funcion buscar y guarda los elementos encontrados
+
+
+var bandera=0;//se usa para la funcion loop y sirve para que cuando es encontrado ela archivo en la funcion recursiva no siga haciedo otras operaciones
+var cantidad_carp="";//se usa para la funcion loop y sirve para guardar los ../../../ para regresar el numero de carpetas
+var arch = "js/invoice.js";//se usa para la funcion loop y este es el archivo abuscar
+var contador_ciclos=0;//se usa para saber cuantos ciclos recursibos y pararlo  para que no sea infinito
+var devolver="";//se usa para la funcion loop y aqui se guarda los ../../../../ definitivos para llegar a la al archivo que buscamos
+
+function loop() //es una funcion recursiba funcion asincrona de request para sacar el numero
+{
+	// alert("entro funcion loop");      //chequeo si entro a la funcion
+	var request = new XMLHttpRequest();  // crea la variable tipo request
+	var url = cantidad_carp+arch;//guarda cada las variable que ese modificaran en cada ciclo recursivo "ES UNA FUNCION RECURSIBA LA FUNCION LOOP" 
+	var url2= cantidad_carp;//todo esto es por que es un metodo asincrono lo use asi creo que se puede optimisar el codigo pero mellevo algo de tiempo que me canse y lo deje asi
+
+	if (contador_ciclos >= 6) //sirve para que no el ciclo recursivo no sea infinito y se pueda salir
+	{
+		//alert("contador_ciclos: "+contador_ciclos);   //chequeo si paro el ciclado
+		return;
+	}
+	contador_ciclos=contador_ciclos+1;
+
+	request.open("HEAD", url);
+	request.onreadystatechange = function() 
+	{
+		if(request.readyState === XMLHttpRequest.DONE && request.status === 200) 
+		{
+
+			bandera=1;
+			//alert("encontrado:"+url);  //muestra la ruta que de donde se encuentra el archivoencontrado:../../../js/invoice.js
+			//alert("url2: "+url2)		//muestra la cantidad de carpetas  url2: ../../../
+			devolver=url2;
+			//alert("devolver"+devolver);		// muestra lo que guardo devolver que es la variable que se utilisara
+			carga();
+			
+		}
+		else
+		{
+			cantidad_carp="../"+cantidad_carp;
+			loop();
+		}
+	}
+	request.send();
+	return;
+}
+
+
+
 
 function raiz()
- {
+{
  	var temp0="";
- 	var temp1="js/invoice.js";
  	var cont=0;
  	for (var i = 0; i < 20; i++) 
  	{
  		var http = new XMLHttpRequest();
-   		http.open('HEAD',temp1+temp0, false);
+   		http.open('HEAD',arch+temp0, false);
    		http.send();
    		if (http.status!=404) 
    		{
@@ -27,14 +79,21 @@ function raiz()
 }
 
 
+
+
 function carga()
 {
-		fetch(raiz()+'6.txt')
-  		.then(res => res.text())
-  		.then(content => {
-    	lines = content.split(/\n/);
-    	lines.forEach(line => console.log(line));
-  		});	
+	//alert("entro a carga: "+ devolver);  //checa si si tienle contenido la variable devolver   entro a carga: ../../../
+	alert("raiz sincrona aun funge si aparese ../  o mas:  "+raiz()) // este es el metodo sincrono  se puede intercanviar en la linea de abajo con la variable devolver
+								// quedaria asi si lo intercanvias //fetch(raiz() +'6.txt')
+	//fetch(raiz() +'6.txt')//carga la el archivo 6.txt metodo sincrono  // posdata el metodo sincrono en un futuro dejara de servir
+	fetch(devolver +'6.txt')//carga la el archivo 6.txt metodo metodo asincrono
+  	.then(res => res.text())
+  	.then(content => 
+  	{
+    	arr_lines = content.split(/\n/);//splitea el achivo
+    	arr_lines.forEach(arr_lines => console.log(line));//esto solo sirve para visualisarlo en el console lo puedes quitar
+  	});	
 }
 
 function buscar(texto)
@@ -43,13 +102,13 @@ function buscar(texto)
 	var acumulador=["0"];
 	var arreglo;
 	var contador=0;
-	for (var i = 0; i < lines.length; i++) //pasa por todas las lineas
+	for (var i = 0; i < arr_lines.length; i++) //pasa por todas las lineas
 	{
-	arreglo=lines[i].split("&");//splitea la linea con & y la agrega en arreglo temporal para ser comparada
+	arreglo=arr_lines[i].split("&");//splitea la linea con & y la agrega en arreglo temporal para ser comparada
 		if (busqueda[0]==arreglo[0]) //digamos que uno es por codigo y el siguiente else if es por nombre
 		{
 
-			acumulador[contador]=lines[i];//si si lo va agregando en u arreglo
+			acumulador[contador]=arr_lines[i];//si si lo va agregando en u arreglo
 			contador++;//aumenta para la siguiente celda que sea agregada
 		}
 		/* buscar en otra parte del arreglo
@@ -62,7 +121,7 @@ function buscar(texto)
 	}
 	if (contador>0) //si encontro 
 	{
-		encontrados=acumulador;// pasa lo de el arreglo acumulado a encontrados
+		arr_encontrados=acumulador;// pasa lo de el arreglo acumulado a arr_encontrados
 	}
 }
 
@@ -140,14 +199,14 @@ function newRowTable()
 {
 	var descripcion=document.getElementById("descripcion").value;
 	buscar(descripcion);
-    var encontrados_s=encontrados[0].split("&");
+    var arr_encontrados_s=arr_encontrados[0].split("&");
 
-	var numero=(encontrados_s[0]);
-	var codigo=encontrados_s[1];
-	var descripcion=encontrados_s[2];
-	var cantidad=encontrados_s[3];
-	var precio=encontrados_s[4];
-	var subtotal=(encontrados_s[3]*encontrados_s[4]);
+	var numero=(arr_encontrados_s[0]);
+	var codigo=arr_encontrados_s[1];
+	var descripcion=arr_encontrados_s[2];
+	var cantidad=arr_encontrados_s[3];
+	var precio=arr_encontrados_s[4];
+	var subtotal=(arr_encontrados_s[3]*arr_encontrados_s[4]);
 	var impuesto=(subtotal*0);
 	var total_n=(subtotal+impuesto);
 

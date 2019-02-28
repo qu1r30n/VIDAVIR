@@ -246,11 +246,5 @@ class op_archivos
 		$arreglo[1]=$direccion[$can_car+1];
 		return($arreglo);
 	}
-
-
-
-
-
-
 }
 ?>

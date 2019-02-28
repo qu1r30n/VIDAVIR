@@ -25,7 +25,7 @@ class operaciones_tienda
 			op_archivos::crea_escribe($direccion_arch,$producto."&".$hora);
 			$acum=$acum+$temp[2];
 
-			//--decrementa el inventario------------------------------------------------------------------------------------
+			//--decrementa el inventario-----------------------------------------------------------------------
 			$arr_colum[0]="CANTIDAD";//estos son los que editara
 			$arr_valores[0]="CANTIDAD-1";//estos son los que editara
 			$arr_colum2[0]="CODIGO";

@@ -6,6 +6,7 @@
 	include($dir_raiz."var_g.php");
 
 	$tabla="inventario";
+	$archivo=$dir_raiz."6.txt"
 
 	$codigo=$_POST['CODIGO'];
 	$producto=$_POST['PRODUCTO'];
@@ -52,6 +53,8 @@
 						$arr_valores2[0]=$codigo;
 						$arr_op_log[0]="";
 						op_b::editar($tabla,$arr_colum,$arr_valores,$arr_colum2,$arr_compara,$arr_valores2,$arr_op_log);
+						op_archivos::editar($archivo,$codigo,"&",$palabra_editar,$columna = 3)
+
 						unset($arr_colum,$arr_valores,$arr_colum2,$arr_compara,$arr_valores2,$arr_op_log);
 						?>
 					}
