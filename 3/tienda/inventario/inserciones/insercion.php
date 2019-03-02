@@ -6,7 +6,7 @@
 	include($dir_raiz."var_g.php");
 
 	$tabla="inventario";
-	$archivo=$dir_raiz."6.txt"
+	$archivo=$dir_raiz.$arc_VG[0];
 
 	$codigo=$_POST['CODIGO'];
 	$producto=$_POST['PRODUCTO'];
@@ -30,7 +30,7 @@
 	$ivalor[5]=$ubicacion_producto;
 	$icolum[6]="CADUCIDAD";
 	$ivalor[6]=$caducidad;
-	$icolum[7]="COSTO_COMPRA";
+	$icolum[7]="COSTO_COMPRA"$."&".;
 	$ivalor[7]=$costo_comprado;
 
 	$existe=op_b::mysql_table_existe($tabla);	
@@ -53,8 +53,8 @@
 						$arr_valores2[0]=$codigo;
 						$arr_op_log[0]="";
 						op_b::editar($tabla,$arr_colum,$arr_valores,$arr_colum2,$arr_compara,$arr_valores2,$arr_op_log);
-						op_archivos::editar($archivo,$codigo,"&",$palabra_editar,$columna = 3)
-
+						
+						op_archivos::incrementar($archivo,"&","CODIGO",$codigo,$arr_colum[0],$cantidad);
 						unset($arr_colum,$arr_valores,$arr_colum2,$arr_compara,$arr_valores2,$arr_op_log);
 						?>
 					}
@@ -65,6 +65,7 @@
 			else 
 			{
 				op_b::insertar($tabla,$h0colum,$h0valores);
+				op_archivos::crea_escribe($archivo,$codigo."&".$producto."&descripcion falta&".$cantidad."&".$costo);
 			}
 		} 
 		else 
