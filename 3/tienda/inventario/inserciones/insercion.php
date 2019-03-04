@@ -8,30 +8,32 @@
 	$tabla="inventario";
 	$archivo=$dir_raiz.$arc_VG[0];
 
-	$codigo=$_POST['CODIGO'];
-	$producto=$_POST['PRODUCTO'];
-	$costo=$_POST['COSTO_A_VENDER'];
-	$cantidad=$_POST['CANTIDAD'];
-	$ubicacion_producto=$_POST['UBICACION_PRODUCTO'];
-	$caducidad=$_POST['CADUCIDAD'];
-	$costo_comprado=$_POST['COSTO_COMPRADO'];
+	$codigo=$_POST["CODIGO"];
+	$producto=$_POST["PRODUCTO"];
+	$costo=$_POST["COSTO_A_VENDER"];
+	$cantidad=$_POST["CANTIDAD"];
+	$ubicacion_producto=$_POST["UBICACION_PRODUCTO"];
+	$caducidad=$_POST["CADUCIDAD"];
+	$costo_comprado=$_POST["COSTO_COMPRADO"];
 	//ID	CODIGO	PRODUCTO	COSTO_VENTA	CANTIDAD	UBICACION	CADUCIDAD	COSTO_COMPRA
-	$icolum[0]="ID";
-	$ivalor[0]="NULL";
-	$icolum[1]="CODIGO";
-	$ivalor[1]=$codigo;
-	$icolum[2]="PRODUCTO";
-	$ivalor[2]=$producto;
-	$icolum[3]="COSTO_VENTA";
-	$ivalor[3]=$costo;
-	$icolum[4]="CANTIDAD";
-	$ivalor[4]=$cantidad;
-	$icolum[5]="UBICACION";
-	$ivalor[5]=$ubicacion_producto;
-	$icolum[6]="CADUCIDAD";
-	$ivalor[6]=$caducidad;
-	$icolum[7]="COSTO_COMPRA"$."&".;
-	$ivalor[7]=$costo_comprado;
+	$arr_icolum[0]="ID";
+	$arr_ivalor[0]="NULL";
+	$arr_icolum[1]="CODIGO";
+	$arr_ivalor[1]=$codigo;
+	$arr_icolum[2]="PRODUCTO";
+	$arr_ivalor[2]=$producto;
+	$arr_icolum[3]="COSTO_VENTA";
+	$arr_ivalor[3]=$costo;
+	$arr_icolum[4]="CANTIDAD";
+	$arr_ivalor[4]=$cantidad;
+	$arr_icolum[5]="UBICACION";
+	$arr_ivalor[5]=$ubicacion_producto;
+	$arr_icolum[6]="CADUCIDAD";
+	$arr_ivalor[6]=$caducidad;
+	$arr_icolum[7]="COSTO_COMPRA";
+	$arr_ivalor[7]=$costo_comprado;
+	$arr_icolum[8]="COSTO_COMPRA_RECIENTE";
+	$arr_ivalor[8]="0";
 
 	$existe=op_b::mysql_table_existe($tabla);	
 
@@ -43,7 +45,7 @@
 			{
 				?>
 				<script type="text/javascript">
-					if (confirm('este codigo ya esta en la base de datos ¿quieres sumarle la cantidad?')) 
+					if (confirm("este codigo ya esta en la base de datos ¿quieres sumarle la cantidad?")) 
 					{
 						<?php
 						$arr_colum[0]="CANTIDAD";//estos son los que editara
@@ -64,7 +66,7 @@
 			} 
 			else 
 			{
-				op_b::insertar($tabla,$h0colum,$h0valores);
+				op_b::insertar($tabla,$arr_icolum,$arr_ivalor);
 				op_archivos::crea_escribe($archivo,$codigo."&".$producto."&descripcion falta&".$cantidad."&".$costo);
 			}
 		} 
@@ -83,7 +85,7 @@
 
 			unset($arr_col,$arr_tip,$arr_cant,$arr_aut_inc);
 
-			op_b::insertar($tabla,$icolum,$ivalor);
+			op_b::insertar($tabla,$arr_icolum,$arr_ivalor);
 		}
 
 ?>
