@@ -1,0 +1,126 @@
+C:\Users\QU1R30N\Desktop\trab\tienda\tienda\bin\Debug\tienda.exe.config
+C:\Users\QU1R30N\Desktop\trab\tienda\tienda\bin\Debug\tienda.exe
+C:\Users\QU1R30N\Desktop\trab\tienda\tienda\bin\Debug\tienda.pdb
+C:\Users\QU1R30N\Desktop\trab\tienda\tienda\obj\Debug\tienda.csprojResolveAssemblyReference.cache
+C:\Users\QU1R30N\Desktop\trab\tienda\tienda\obj\Debug\tienda.area_principal.resources
+C:\Users\QU1R30N\Desktop\trab\tienda\tienda\obj\Debug\tienda.caja.resources
+C:\Users\QU1R30N\Desktop\trab\tienda\tienda\obj\Debug\tienda.confirmar_venta.resources
+C:\Users\QU1R30N\Desktop\trab\tienda\tienda\obj\Debug\tienda.empleados.resources
+C:\Users\QU1R30N\Desktop\trab\tienda\tienda\obj\Debug\tienda.Form1.resources
+C:\Users\QU1R30N\Desktop\trab\tienda\tienda\obj\Debug\tienda.inventario.resources
+C:\Users\QU1R30N\Desktop\trab\tienda\tienda\obj\Debug\tienda.Properties.Resources.resources
+C:\Users\QU1R30N\Desktop\trab\tienda\tienda\obj\Debug\tienda.ventas.resources
+C:\Users\QU1R30N\Desktop\trab\tienda\tienda\obj\Debug\tienda.csproj.GenerateResource.Cache
+C:\Users\QU1R30N\Desktop\trab\tienda\tienda\obj\Debug\tienda.exe
+C:\Users\QU1R30N\Desktop\trab\tienda\tienda\obj\Debug\tienda.pdb
+C:\Users\QU1R30N\Desktop\trab\2 tienda\tienda\bin\Debug\tienda.exe.config
+C:\Users\QU1R30N\Desktop\trab\2 tienda\tienda\obj\Debug\tienda.exe
+C:\Users\QU1R30N\Desktop\trab\2 tienda\tienda\obj\Debug\tienda.pdb
+C:\Users\QU1R30N\Desktop\trab\2 tienda\tienda\bin\Debug\tienda.exe
+C:\Users\QU1R30N\Desktop\trab\2 tienda\tienda\bin\Debug\tienda.pdb
+C:\Users\QU1R30N\Desktop\trab\2 tienda\tienda\obj\Debug\tienda.csprojResolveAssemblyReference.cache
+C:\Users\QU1R30N\Desktop\trab\2 tienda\tienda\obj\Debug\tienda.area_principal.resources
+C:\Users\QU1R30N\Desktop\trab\2 tienda\tienda\obj\Debug\tienda.caja.resources
+C:\Users\QU1R30N\Desktop\trab\2 tienda\tienda\obj\Debug\tienda.confirmar_venta.resources
+C:\Users\QU1R30N\Desktop\trab\2 tienda\tienda\obj\Debug\tienda.empleados.resources
+C:\Users\QU1R30N\Desktop\trab\2 tienda\tienda\obj\Debug\tienda.Form1.resources
+C:\Users\QU1R30N\Desktop\trab\2 tienda\tienda\obj\Debug\tienda.inventario.resources
+C:\Users\QU1R30N\Desktop\trab\2 tienda\tienda\obj\Debug\tienda.Properties.Resources.resources
+C:\Users\QU1R30N\Desktop\trab\2 tienda\tienda\obj\Debug\tienda.ventas.resources
+C:\Users\QU1R30N\Desktop\trab\2 tienda\tienda\obj\Debug\tienda.csproj.GenerateResource.Cache
+C:\Users\QU1R30N\Downloads\2 tienda\tienda\bin\Debug\tienda.exe.config
+C:\Users\QU1R30N\Downloads\2 tienda\tienda\obj\Debug\tienda.exe
+C:\Users\QU1R30N\Downloads\2 tienda\tienda\obj\Debug\tienda.pdb
+C:\Users\QU1R30N\Downloads\2 tienda\tienda\bin\Debug\tienda.exe
+C:\Users\QU1R30N\Downloads\2 tienda\tienda\bin\Debug\tienda.pdb
+C:\Users\QU1R30N\Downloads\2 tienda\tienda\obj\Debug\tienda.csprojResolveAssemblyReference.cache
+C:\Users\QU1R30N\Downloads\2 tienda\tienda\obj\Debug\tienda.area_principal.resources
+C:\Users\QU1R30N\Downloads\2 tienda\tienda\obj\Debug\tienda.caja.resources
+C:\Users\QU1R30N\Downloads\2 tienda\tienda\obj\Debug\tienda.confirmar_venta.resources
+C:\Users\QU1R30N\Downloads\2 tienda\tienda\obj\Debug\tienda.empleados.resources
+C:\Users\QU1R30N\Downloads\2 tienda\tienda\obj\Debug\tienda.Form1.resources
+C:\Users\QU1R30N\Downloads\2 tienda\tienda\obj\Debug\tienda.inventario.resources
+C:\Users\QU1R30N\Downloads\2 tienda\tienda\obj\Debug\tienda.Properties.Resources.resources
+C:\Users\QU1R30N\Downloads\2 tienda\tienda\obj\Debug\tienda.ventas.resources
+C:\Users\QU1R30N\Downloads\2 tienda\tienda\obj\Debug\tienda.csproj.GenerateResource.Cache
+C:\Users\QU1R30N\Downloads\4 tienda\tienda\bin\Debug\tienda.exe.config
+C:\Users\QU1R30N\Downloads\4 tienda\tienda\obj\Debug\tienda.exe
+C:\Users\QU1R30N\Downloads\4 tienda\tienda\obj\Debug\tienda.pdb
+C:\Users\QU1R30N\Downloads\4 tienda\tienda\bin\Debug\tienda.exe
+C:\Users\QU1R30N\Downloads\4 tienda\tienda\bin\Debug\tienda.pdb
+C:\Users\QU1R30N\Downloads\4 tienda\tienda\obj\Debug\tienda.csprojResolveAssemblyReference.cache
+C:\Users\QU1R30N\Downloads\4 tienda\tienda\obj\Debug\tienda.area_principal.resources
+C:\Users\QU1R30N\Downloads\4 tienda\tienda\obj\Debug\tienda.caja.resources
+C:\Users\QU1R30N\Downloads\4 tienda\tienda\obj\Debug\tienda.confirmar_venta.resources
+C:\Users\QU1R30N\Downloads\4 tienda\tienda\obj\Debug\tienda.empleados.resources
+C:\Users\QU1R30N\Downloads\4 tienda\tienda\obj\Debug\tienda.Form1.resources
+C:\Users\QU1R30N\Downloads\4 tienda\tienda\obj\Debug\tienda.inventario.resources
+C:\Users\QU1R30N\Downloads\4 tienda\tienda\obj\Debug\tienda.Properties.Resources.resources
+C:\Users\QU1R30N\Downloads\4 tienda\tienda\obj\Debug\tienda.ventas.resources
+C:\Users\QU1R30N\Downloads\4 tienda\tienda\obj\Debug\tienda.csproj.GenerateResource.Cache
+C:\Users\QU1R30N\Downloads\3 tienda\5 tienda\tienda\bin\Debug\tienda.exe.config
+C:\Users\QU1R30N\Downloads\3 tienda\5 tienda\tienda\obj\Debug\tienda.pdb
+C:\Users\QU1R30N\Downloads\3 tienda\5 tienda\tienda\bin\Debug\tienda.exe
+C:\Users\QU1R30N\Downloads\3 tienda\5 tienda\tienda\bin\Debug\tienda.pdb
+C:\Users\QU1R30N\Downloads\3 tienda\5 tienda\tienda\obj\Debug\tienda.csprojResolveAssemblyReference.cache
+C:\Users\QU1R30N\Downloads\3 tienda\5 tienda\tienda\obj\Debug\tienda.area_principal.resources
+C:\Users\QU1R30N\Downloads\3 tienda\5 tienda\tienda\obj\Debug\tienda.caja.resources
+C:\Users\QU1R30N\Downloads\3 tienda\5 tienda\tienda\obj\Debug\tienda.confirmar_venta.resources
+C:\Users\QU1R30N\Downloads\3 tienda\5 tienda\tienda\obj\Debug\tienda.empleados.resources
+C:\Users\QU1R30N\Downloads\3 tienda\5 tienda\tienda\obj\Debug\tienda.Form1.resources
+C:\Users\QU1R30N\Downloads\3 tienda\5 tienda\tienda\obj\Debug\tienda.inventario.resources
+C:\Users\QU1R30N\Downloads\3 tienda\5 tienda\tienda\obj\Debug\tienda.Properties.Resources.resources
+C:\Users\QU1R30N\Downloads\3 tienda\5 tienda\tienda\obj\Debug\tienda.ventas.resources
+C:\Users\QU1R30N\Downloads\3 tienda\5 tienda\tienda\obj\Debug\tienda.csproj.GenerateResource.Cache
+C:\Users\QU1R30N\Downloads\3 tienda\5 tienda\tienda\obj\Debug\tienda.exe
+C:\Users\SHARLIN\Downloads\sistemas partes finales\3 tienda\5 tienda\tienda\bin\Debug\tienda.exe.config
+C:\Users\SHARLIN\Downloads\sistemas partes finales\3 tienda\5 tienda\tienda\obj\Debug\tienda.exe
+C:\Users\SHARLIN\Downloads\sistemas partes finales\3 tienda\5 tienda\tienda\obj\Debug\tienda.pdb
+C:\Users\SHARLIN\Downloads\sistemas partes finales\3 tienda\5 tienda\tienda\obj\Debug\tienda.csprojResolveAssemblyReference.cache
+C:\Users\SHARLIN\Downloads\sistemas partes finales\3 tienda\5 tienda\tienda\obj\Debug\tienda.area_principal.resources
+C:\Users\SHARLIN\Downloads\sistemas partes finales\3 tienda\5 tienda\tienda\obj\Debug\tienda.caja.resources
+C:\Users\SHARLIN\Downloads\sistemas partes finales\3 tienda\5 tienda\tienda\obj\Debug\tienda.confirmar_venta.resources
+C:\Users\SHARLIN\Downloads\sistemas partes finales\3 tienda\5 tienda\tienda\obj\Debug\tienda.empleados.resources
+C:\Users\SHARLIN\Downloads\sistemas partes finales\3 tienda\5 tienda\tienda\obj\Debug\tienda.Form1.resources
+C:\Users\SHARLIN\Downloads\sistemas partes finales\3 tienda\5 tienda\tienda\obj\Debug\tienda.inventario.resources
+C:\Users\SHARLIN\Downloads\sistemas partes finales\3 tienda\5 tienda\tienda\obj\Debug\tienda.Properties.Resources.resources
+C:\Users\SHARLIN\Downloads\sistemas partes finales\3 tienda\5 tienda\tienda\obj\Debug\tienda.ventas.resources
+C:\Users\SHARLIN\Downloads\sistemas partes finales\3 tienda\5 tienda\tienda\obj\Debug\tienda.csproj.GenerateResource.Cache
+C:\Users\SHARLIN\Downloads\sistemas partes finales\3 tienda\5 tienda\tienda\bin\Debug\tienda.exe
+C:\Users\SHARLIN\Downloads\sistemas partes finales\3 tienda\5 tienda\tienda\bin\Debug\tienda.pdb
+D:\descargas\sistemas partes finales\3 tienda\5 tienda\tienda\bin\Debug\tienda.exe.config
+D:\descargas\sistemas partes finales\3 tienda\5 tienda\tienda\obj\Debug\tienda.exe
+D:\descargas\sistemas partes finales\3 tienda\5 tienda\tienda\obj\Debug\tienda.pdb
+D:\descargas\sistemas partes finales\3 tienda\5 tienda\tienda\bin\Debug\tienda.exe
+D:\descargas\sistemas partes finales\3 tienda\5 tienda\tienda\bin\Debug\tienda.pdb
+D:\descargas\sistemas partes finales\3 tienda\5 tienda\tienda\obj\Debug\tienda.area_principal.resources
+D:\descargas\sistemas partes finales\3 tienda\5 tienda\tienda\obj\Debug\tienda.confirmar_venta.resources
+D:\descargas\sistemas partes finales\3 tienda\5 tienda\tienda\obj\Debug\tienda.empleados.resources
+D:\descargas\sistemas partes finales\3 tienda\5 tienda\tienda\obj\Debug\tienda.Form1.resources
+D:\descargas\sistemas partes finales\3 tienda\5 tienda\tienda\obj\Debug\tienda.inventario.resources
+D:\descargas\sistemas partes finales\3 tienda\5 tienda\tienda\obj\Debug\tienda.Properties.Resources.resources
+D:\descargas\sistemas partes finales\3 tienda\5 tienda\tienda\obj\Debug\tienda.ventas.resources
+D:\descargas\sistemas partes finales\3 tienda\5 tienda\tienda\obj\Debug\tienda.csproj.GenerateResource.Cache
+D:\descargas\sistemas partes finales\3 tienda\5 tienda\tienda\obj\Debug\tienda.compras.resources
+D:\descargas\sistemas partes finales\3 tienda\5 tienda\tienda\obj\Debug\tienda.csprojResolveAssemblyReference.cache
+D:\descargas\sistemas partes finales\3 tienda\5 tienda\tienda\obj\Debug\tienda.pedidos.resources
+D:\descargas\sistemas partes finales\3 tienda\5 tienda\tienda\obj\Debug\tienda.respaldo.resources
+D:\descargas\sistemas partes finales\3 tienda\5 tienda\tienda\obj\Debug\tienda.comparar.resources
+C:\Users\SHARLIN\Downloads\drive-download-20161124T074550Z\20 tienda\5 tienda\tienda\bin\Debug\tienda.exe.config
+C:\Users\SHARLIN\Downloads\drive-download-20161124T074550Z\20 tienda\5 tienda\tienda\obj\Debug\tienda.exe
+C:\Users\SHARLIN\Downloads\drive-download-20161124T074550Z\20 tienda\5 tienda\tienda\obj\Debug\tienda.pdb
+C:\Users\SHARLIN\Downloads\drive-download-20161124T074550Z\20 tienda\5 tienda\tienda\bin\Debug\tienda.exe
+C:\Users\SHARLIN\Downloads\drive-download-20161124T074550Z\20 tienda\5 tienda\tienda\bin\Debug\tienda.pdb
+C:\Users\SHARLIN\Downloads\drive-download-20161124T074550Z\20 tienda\5 tienda\tienda\obj\Debug\tienda.csprojResolveAssemblyReference.cache
+C:\Users\SHARLIN\Downloads\drive-download-20161124T074550Z\20 tienda\5 tienda\tienda\obj\Debug\tienda.area_principal.resources
+C:\Users\SHARLIN\Downloads\drive-download-20161124T074550Z\20 tienda\5 tienda\tienda\obj\Debug\tienda.comparar.resources
+C:\Users\SHARLIN\Downloads\drive-download-20161124T074550Z\20 tienda\5 tienda\tienda\obj\Debug\tienda.compras.resources
+C:\Users\SHARLIN\Downloads\drive-download-20161124T074550Z\20 tienda\5 tienda\tienda\obj\Debug\tienda.confirmar_venta.resources
+C:\Users\SHARLIN\Downloads\drive-download-20161124T074550Z\20 tienda\5 tienda\tienda\obj\Debug\tienda.empleados.resources
+C:\Users\SHARLIN\Downloads\drive-download-20161124T074550Z\20 tienda\5 tienda\tienda\obj\Debug\tienda.Form1.resources
+C:\Users\SHARLIN\Downloads\drive-download-20161124T074550Z\20 tienda\5 tienda\tienda\obj\Debug\tienda.inventario.resources
+C:\Users\SHARLIN\Downloads\drive-download-20161124T074550Z\20 tienda\5 tienda\tienda\obj\Debug\tienda.pedidos.resources
+C:\Users\SHARLIN\Downloads\drive-download-20161124T074550Z\20 tienda\5 tienda\tienda\obj\Debug\tienda.Properties.Resources.resources
+C:\Users\SHARLIN\Downloads\drive-download-20161124T074550Z\20 tienda\5 tienda\tienda\obj\Debug\tienda.respaldo.resources
+C:\Users\SHARLIN\Downloads\drive-download-20161124T074550Z\20 tienda\5 tienda\tienda\obj\Debug\tienda.ventas.resources
+C:\Users\SHARLIN\Downloads\drive-download-20161124T074550Z\20 tienda\5 tienda\tienda\obj\Debug\tienda.csproj.GenerateResource.Cache

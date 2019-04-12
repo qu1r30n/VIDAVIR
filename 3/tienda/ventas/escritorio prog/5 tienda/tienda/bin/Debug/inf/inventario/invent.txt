@@ -1,0 +1,45 @@
+id,producto,precio,cantidad
+1,h queso,25,80
+2,h piñon,25,80
+3,h nuez,20,80
+4,h chicle,20,80
+5,h pay de limon,20,80
+6,h coco,20,80
+7,h cajeta,20,80
+8,h yogurt,20,80
+9,h pistache,20,80
+10,h fresa,20,80
+11,h napolitano,20,79
+12,h beso de ada,20,80
+13,h vainilla,20,80
+14,h cereza,20,80
+15,h chocolate,20,79
+16,h galleta oreo,20,79
+17,h cafe,20,80
+18,n limon,15,79
+19,n guanabana,15,80
+20,n mango,15,80
+21,p arroz con leche,20,80
+22,p cajeta,20,80
+23,p coco,20,80
+24,p chemis,20,80
+25,p chocolate,20,80
+26,p fresa de leche,20,80
+27,p fresas con crema,20,80
+28,p nuez,20,80
+29,p mamey,20,80
+30,p piñon,20,80
+31,p vainilla,20,80
+32,p pistache,20,80
+33,p pepino de agua,15,80
+34,p fresa de agua,15,80
+35,p grosella de agua,15,80
+36,p guanabana de agua,15,80
+37,p guayaba de agua,15,80
+38,p limon de agua,15,80
+39,p limon con chile de agua,15,80
+40,p mango con chile de agua,15,80
+41,p pepino con chile de agua,15,80
+42,p tamarindo de agua,15,80
+43,p yogurth ,20,80
+44,p mango de agua ,15,80
