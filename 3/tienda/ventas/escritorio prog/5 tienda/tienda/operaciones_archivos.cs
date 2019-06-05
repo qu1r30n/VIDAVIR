@@ -58,8 +58,8 @@ namespace tienda
                     linea = G_palabra.Split(G_parametros);
                     if (decicion==0)
                     {
-                        lista.Add(linea[0] + G_parametros[0] + linea[1]);
-                        total = total + Convert.ToDouble(linea[1]);
+                        lista.Add(linea[0] + G_parametros[0] + linea[2]);
+                        total = total + Convert.ToDouble(linea[2]);
                     }
                     else
                     {

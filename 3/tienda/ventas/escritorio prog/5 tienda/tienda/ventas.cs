@@ -26,12 +26,23 @@ namespace tienda
             {
                 txt_buscar_producto.AutoCompleteCustomSource.Add("" + imprimir[i]);
             }
+
+            string[] imprimir2 = bas.leer("inf\\inventario\\invent.txt", "3|0|2|1", "|");
+
+            for (int i = 1; i < imprimir2.Length; i++)
+            {
+                txt_buscar_producto.AutoCompleteCustomSource.Add("" + imprimir2[i]);
+            }
+
         }
 
         private void btn_agregar_Click(object sender, EventArgs e)
         {
-            lst_ventas.Items.Add(txt_buscar_producto.Text);
-            txt_buscar_producto.Text = "";
+            if (txt_buscar_producto.Text != "")
+            {
+                lst_ventas.Items.Add(txt_buscar_producto.Text);
+                txt_buscar_producto.Text = "";
+            }
         }
 
         private void btn_eliminar_todo_Click(object sender, EventArgs e)
@@ -64,10 +75,13 @@ namespace tienda
 
         private void txt_buscar_producto_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
         {
-            if (e.KeyValue == (char)(Keys.Enter))
+            if (txt_buscar_producto.Text != "")
             {
-                lst_ventas.Items.Add(txt_buscar_producto.Text);
-                txt_buscar_producto.Text = "";
+                if (e.KeyValue == (char)(Keys.Enter))
+                {
+                    lst_ventas.Items.Add(txt_buscar_producto.Text);
+                    txt_buscar_producto.Text = "";
+                }
             }
 
 

@@ -727,6 +727,7 @@ namespace tienda
             }
             try
             {
+                chrt_ventas.Series.Clear();
                 chrt_ventas.Series.Add(nombre_serie);
             }
             catch (Exception){}

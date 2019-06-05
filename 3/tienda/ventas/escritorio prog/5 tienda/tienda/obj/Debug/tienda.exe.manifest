@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="tienda.exe" size="72176">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="tienda.exe" size="72688">
       <assemblyIdentity name="tienda" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>MjOhdaCBFES2CBUVCa3E+4SeSv0iutcS1AbXkOmujRQ=</dsig:DigestValue>
+        <dsig:DigestValue>FwmN/pvrLVhGdgToYGt+Fs01PLPtuej7P1s6GVHO6yg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
