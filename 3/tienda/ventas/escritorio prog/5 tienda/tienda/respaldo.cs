@@ -14,6 +14,7 @@ namespace tienda
     {
         string direccion="";
         bool dec = false;
+        char[] G_parametros = { '|' };
         public respaldo()
         {
             InitializeComponent();
@@ -56,7 +57,7 @@ namespace tienda
                 operaciones_archivos op = new operaciones_archivos();
                 op.eliminar_carpeta(".\\ventas");
                 op.eliminar_carpeta(".\\inf\\inventario");
-                op.respaldos_ventas(direccion, ".", true);
+                op.respaldos_ventas(direccion, ""+ G_parametros[0], true);
                 op.respaldo_inventario(direccion, "inf");
                 lbl_direccion.Text = "oprime boton donde guararlos para buscar donde poner el respaldo";
                 dec = false;

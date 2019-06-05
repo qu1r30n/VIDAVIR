@@ -14,6 +14,7 @@ namespace tienda
     public partial class Form1 : Form
     {
         static public string direccion_programa =Application.ExecutablePath.ToString();
+        char[] G_parametros = { '|' };
         public Form1()
         {
             
@@ -69,7 +70,7 @@ namespace tienda
         {
             tex_base adm = new tex_base();//llamamos a la clase tex_base
             area_principal area = new area_principal();//este es el form area_principal y es al que entrara si pone el usuario y contraseña bien
-            string [] texto = adm.seleccionar("inf\\us\\ad.txt", txt_usuario.Text + "," + txt_pass.Text,null);//guarda el id del usuario pas y datos en texto
+            string [] texto = adm.seleccionar("inf\\us\\ad.txt", txt_usuario.Text + G_parametros[0] +txt_pass.Text,null);//guarda el id del usuario pas y datos en texto
             if (texto.Length !=0)//si la cantidad de celdas es diferente de 0
             {
                 txt_usuario.Text = "";//bora lo que tiene el textbox usuario
@@ -90,7 +91,7 @@ namespace tienda
         {
             tex_base user = new tex_base();//llamamos a la clase tex_base
             ventas vent = new ventas();//este es el form ventas y es al que entrara si pone el usuario y contraseña bien
-            string [] texto = user.seleccionar("inf\\us\\user", txt_usuario.Text + "," + txt_pass.Text,null);
+            string [] texto = user.seleccionar("inf\\us\\user", txt_usuario.Text + G_parametros[0] + txt_pass.Text,null);
             if (texto.Length != 0)//si la cantidad de celdas es diferente de 0
             {
                 txt_usuario.Text = "";//bora lo que tiene el textbox usuario
@@ -110,7 +111,7 @@ namespace tienda
         {
             tex_base invitado = new tex_base();//llamamos a la clase tex_base
             ventas vent = new ventas();//este es el form ventas y es al que entrara si pone el usuario y contraseña bien
-            string[] texto = invitado.seleccionar("inf\\us\\invitado", txt_usuario.Text + "," + txt_pass.Text,null);
+            string[] texto = invitado.seleccionar("inf\\us\\invitado", txt_usuario.Text + G_parametros[0] + txt_pass.Text,null);
             if (texto.Length != 0)//si la cantidad de celdas es diferente de 0
             {
                 txt_usuario.Text = "";//bora lo que tiene el textbox usuario

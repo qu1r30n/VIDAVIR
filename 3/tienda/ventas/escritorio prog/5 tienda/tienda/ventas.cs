@@ -13,14 +13,15 @@ namespace tienda
 {
     public partial class ventas : Form
     {
-        
 
+        char[] G_parametros = { '|' };
         public ventas()
         {
             InitializeComponent();
             tex_base bas = new tex_base();
             bas.crear_archivo_y_directorio("inf\\inventario\\invent.txt", "id,producto,precio");
-            string [] imprimir = bas.leer("inf\\inventario\\invent.txt", "1,0,2", ",");
+            string [] imprimir = bas.leer("inf\\inventario\\invent.txt", "1|0|2|3", "|");
+
             for (int i = 1; i < imprimir.Length; i++)
             {
                 txt_buscar_producto.AutoCompleteCustomSource.Add("" + imprimir[i]);
@@ -98,7 +99,13 @@ namespace tienda
             for (int coll = 0; coll < lst_ventas.Items.Count; coll++)
             {
                 temporal=""+lst_ventas.Items[coll];
-                temporal_s = temporal.Split(',');
+                temporal_s = temporal.Split(G_parametros);
+
+                //-------------------------------------------------------------------------
+                //aqui temporal_s esta espliteado el nombre el codigo y el presio  podrias poner codigo para checar que puedes hacer para 
+                //ordenar la info y saber que se vendio para hacer la compra  
+                //-------------------------------------------------------------------------
+
                 cv.arra_lis.Add(""+temporal_s[0]);
                 cv.ids_productos.Add(""+temporal_s[1]);
                 if (temporal_s[0]!="")

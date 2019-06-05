@@ -13,6 +13,7 @@ namespace tienda
     public partial class area_principal : Form
     {
         string direc_tem="";
+        char[] G_parametros = { '|' };
         public area_principal()
         {
             InitializeComponent();
@@ -411,7 +412,7 @@ namespace tienda
             lst_ventas.Items.Clear();
             if (c_año == "" && c_mes == "" && c_dia == "")
             {
-                grafica_ganancias("ventas\\total_años.txt", "ventas\\g_total_años.txt","total_venta","total_gasto", comparacion);
+                grafica_ganancias("ventas\\total_años.txt", "ventas\\g_total_años.txt", "total_venta", "total_gasto", comparacion);
             }
 
             else if (c_año != "" && c_mes == "" && c_dia == "")
@@ -512,11 +513,11 @@ namespace tienda
 
             for (int i = 0; i < historial.Length - 1; i++)
             {
-                esplitedo = historial[i].Split(',');
+                esplitedo = historial[i].Split(G_parametros);
                 chrt_ventas.Series[0].Points.AddXY(esplitedo[0], esplitedo[1]);
                 if (decicion == 0)
                 {
-                    lst_ventas.Items.Add(esplitedo[0] + "," + esplitedo[1]);
+                    lst_ventas.Items.Add(esplitedo[0] + G_parametros[0] + esplitedo[1]);
                 }
                 else
                 {
@@ -628,11 +629,11 @@ namespace tienda
 
             for (int i = 0; i < historial.Length - 1; i++)
             {
-                esplitedo = historial[i].Split(',');
+                esplitedo = historial[i].Split(G_parametros);
                 chrt_ventas.Series[0].Points.AddXY(esplitedo[0], esplitedo[1]);
                 if (decicion == 0)
                 {
-                    lst_ventas.Items.Add(esplitedo[0] + "," + esplitedo[1]);
+                    lst_ventas.Items.Add(esplitedo[0] + G_parametros[0] + esplitedo[1]);
                 }
                 else
                 {
@@ -746,11 +747,11 @@ namespace tienda
 
             for (int i = 0; i < historial.Length - 1; i++)
             {
-                esplitedo = historial[i].Split(',');
+                esplitedo = historial[i].Split(G_parametros);
                 chrt_ventas.Series[0].Points.AddXY(esplitedo[0], esplitedo[1]);
                 if (decicion == 0)
                 {
-                    lst_ventas.Items.Add(esplitedo[0] + "," + esplitedo[1]);
+                    lst_ventas.Items.Add(esplitedo[0] + G_parametros[0] + esplitedo[1]);
                 }
                 else
                 {

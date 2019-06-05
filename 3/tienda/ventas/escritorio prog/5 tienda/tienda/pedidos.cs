@@ -13,14 +13,14 @@ namespace tienda
 {
     public partial class pedidos : Form
     {
-
+        char[] G_parametros = { '|' };
 
         public pedidos()
         {
             InitializeComponent();
             tex_base bas = new tex_base();
             bas.crear_archivo_y_directorio("inf\\inventario\\invent.txt", "id,producto,precio");
-            string[] imprimir = bas.leer("inf\\inventario\\invent.txt", "1,0", ",");
+            string[] imprimir = bas.leer("inf\\inventario\\invent.txt", "1|0", "|");
             for (int i = 1; i < imprimir.Length; i++)
             {
                 txt_buscar_producto.AutoCompleteCustomSource.Add("" + imprimir[i]);
@@ -30,7 +30,7 @@ namespace tienda
         {
             if ("" != txt_buscar_producto.Text && "" != txt_cantidad.Text)
             {
-                lst_ventas.Items.Add(txt_buscar_producto.Text + "," + txt_cantidad.Text);
+                lst_ventas.Items.Add(txt_buscar_producto.Text + G_parametros[0] + txt_cantidad.Text);
                 txt_buscar_producto.Text = "";
                 txt_cantidad.Text = "";
             }

@@ -13,10 +13,10 @@ namespace tienda
         
         string G_palabra = "", G_entrando = "", G_temp = "";
         
-        char[] G_parametros = { ',', '.' };
+        char[] G_parametros = { '|' };
         string[]  G_linea, G_buscar, G_remplasar;
 
-        public void crear_archivo_y_directorio(string FILE_NAME, string columnas=null,string valor_inicial=null)//FILE_NAME la direccion del archivo    columnas: es para crearlas y se separan la columnas por un ',' valor_inicial: no se utilisa en este programa era para poner un tipo eslogan o un titulo  pero en este programa no lo nesesite
+        public void crear_archivo_y_directorio(string FILE_NAME, string columnas=null,string valor_inicial=null)//FILE_NAME la direccion del archivo    columnas: es para crearlas y se separan la columnas por un '|' valor_inicial: no se utilisa en este programa era para poner un tipo eslogan o un titulo  pero en este programa no lo nesesite
         {
             char[] parametro2 = { '/', '\\' };//estos seran los parametros de separacion de el split
             G_entrando = "";
@@ -98,7 +98,7 @@ namespace tienda
                         {
                             foreach (string item2 in G_linea)//pasa por todas las celdas de linea
                             {
-                                G_palabra = G_palabra + item2 + ","; //y las guarda en un string llamado palabra
+                                G_palabra = G_palabra + item2 + G_parametros[0]; //y las guarda en un string llamado palabra
                             }
                             lista.Add(G_palabra);//lo aggrega en una fila del arraylist lista
                         }
@@ -124,13 +124,13 @@ namespace tienda
 
             else { 
                 ArrayList lista = new ArrayList();
-                G_buscar = buscar0.Split(G_parametros);//esplitea buscar0 y lo guarda en buscar
+                G_buscar = buscar0.Split(G_parametros[0]);//esplitea buscar0 y lo guarda en buscar
                 try
                 {
                     StreamReader sr = new StreamReader(FILE_NAME);//abre el archivo de la ruta puesta
                     while (sr.Peek() >= 0)//verifica si ya termino de leer las lineas del archivo
                     {
-                        G_linea = sr.ReadLine().Split(G_parametros);//lee una linea del archivo y lo esplitea
+                        G_linea = sr.ReadLine().Split(G_parametros[0]);//lee una linea del archivo y lo esplitea
 
                         for (int j = 0; j < G_buscar.Length; j++)//el for de buscar
                         {
@@ -148,7 +148,7 @@ namespace tienda
                         {
                             foreach (string item2 in G_linea)//pasa por todas las celdas de linea
                             {
-                                G_palabra = G_palabra + item2 + ","; //y las guarda en un string llamado palabra
+                                G_palabra = G_palabra + item2 + G_parametros[0]; //y las guarda en un string llamado palabra
                             }
                             lista.Add(G_palabra);//lo aggrega en una fila del arraylist lista
                         }
@@ -238,7 +238,7 @@ namespace tienda
                                               
                                                 if (z < G_linea.Length - 1)
                                                 {
-                                                    G_palabra = G_palabra + G_linea[z] + ",";
+                                                    G_palabra = G_palabra + G_linea[z] + G_parametros[0];
                                                 }
                                                 else
                                                 {
@@ -266,7 +266,7 @@ namespace tienda
                                         {
                                             if (kl < G_linea.Length - 1)
                                             {
-                                                G_palabra = G_palabra + G_linea[kl] + ",";
+                                                G_palabra = G_palabra + G_linea[kl] + G_parametros[0];
                                             }
                                             else
                                             {
@@ -358,7 +358,7 @@ namespace tienda
                     {
                         if (k < resultado.Length - 1)
                         {
-                            agregando = agregando + resultado[k] + ",";
+                            agregando = agregando + resultado[k] + G_parametros[0];
                         }
                         else
                         {
@@ -400,7 +400,7 @@ namespace tienda
                 {
                     if (kok < agreg_spl.Length - 1)
                     {
-                        agregando = agregando + agreg_spl[kok] + ",";
+                        agregando = agregando + agreg_spl[kok] + G_parametros[0];
                     }
                     else
                     {
@@ -515,6 +515,7 @@ namespace tienda
                     }
                 }
             }
+
             else
             {
                 pos_split = pos_string.Split(G_parametros);
@@ -526,7 +527,7 @@ namespace tienda
 
                 for (int i = 0; (G_palabra = sr.ReadLine()) != null; i++)
                 {
-                    string[] spl_linea = G_palabra.Split(',');
+                    string[] spl_linea = G_palabra.Split(G_parametros);
 
                     G_palabra = "";
                     for (int j = 0; j < posiciones.Length; j++)
@@ -576,7 +577,7 @@ namespace tienda
                     {
                         if (z < col_spli.Length - 1) //sele pone coma mientras no sea el ultimo
                         {
-                            result = result + y + ",";
+                            result = result + y + G_parametros[0];
                             decicion = true;
                         }
                         else//si es el ultimo no se le pone coma
@@ -596,7 +597,7 @@ namespace tienda
                         {
                             if (z < col_spli.Length - 1) //sele pone coma mientras no sea el ultimo
                             {
-                                result = result + y + ",";
+                                result = result + y + G_parametros[0];
                                 decicion = true;
                             }
                             else//si es el ultimo no se le pone coma

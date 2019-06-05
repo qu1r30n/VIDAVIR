@@ -14,7 +14,7 @@ namespace tienda
         static public string direccion_programa = System.Windows.Forms.Application.ExecutablePath.ToString();
 
         string G_palabra = "",G_temp = "";
-        char[] G_parametros = { ',' };
+        char[] G_parametros = { '|' };
 
 
         public string[] revicion_total(string FILE_NAME)
@@ -58,7 +58,7 @@ namespace tienda
                     linea = G_palabra.Split(G_parametros);
                     if (decicion==0)
                     {
-                        lista.Add(linea[0] + "," + linea[1]);
+                        lista.Add(linea[0] + G_parametros[0] + linea[1]);
                         total = total + Convert.ToDouble(linea[1]);
                     }
                     else
@@ -67,7 +67,7 @@ namespace tienda
                         {
                             if (i<linea.Length-1)
                             {
-                                union = union + linea[i] + ",";
+                                union = union + linea[i] + G_parametros[0];
                             }
                             else
                             {
@@ -126,7 +126,7 @@ namespace tienda
             char[] parametros2 = { '/', '\\' };
             tex_base bas = new tex_base();
             bool bol=false;
-            string[] G_linea,linea, temp= {"",""};
+            string[] G_linea,linea, temp = { "", "" };
             G_linea = FILE_NAME.Split(parametros2);//esplitea la direccion
             G_temp = G_linea[0];//temp es igual al primer directorio
             bas.crear_archivo_y_directorio(FILE_NAME);
@@ -210,21 +210,21 @@ namespace tienda
                     G_palabra = sr.ReadLine();//leemos linea y lo guardamos en palabra
                     if (G_palabra != null)
                     {
-                        linea = G_palabra.Split(',');
+                        linea = G_palabra.Split(G_parametros);
 
                         if (linea[0] != fecha)
                         {
-                            sw.WriteLine(linea[0] + "," + linea[1] + "," + linea[2] + "," + linea[3]);
+                            sw.WriteLine(linea[0] + G_parametros[0] + linea[1] + G_parametros[0] + linea[2] + G_parametros[0] + linea[3]);
                         }
                         else
                         {
                             if (0 <= precio + Convert.ToDouble(linea[3]))
                             {
-                                sw.WriteLine(fecha + "," + linea[1] + "," + linea[2] + "," + (precio + Convert.ToDouble(linea[3])));
+                                sw.WriteLine(fecha + G_parametros[0] + linea[1] + G_parametros[0] + linea[2] + G_parametros[0] + (precio + Convert.ToDouble(linea[3])));
                             }
                             else
                             {
-                                sw.WriteLine(fecha + "," + linea[1] + "," + linea[2] + "," + linea[3]);
+                                sw.WriteLine(fecha + G_parametros[0] + linea[1] + G_parametros[0] + linea[2] + G_parametros[0] + linea[3]);
                                 System.Windows.Forms.MessageBox.Show("ya se acabo o falta poco para acabarse el producto: " + linea[1]);
                             }
 
@@ -250,7 +250,7 @@ namespace tienda
 
             dat_comp.bandera = false;
             tex_base bas = new tex_base();
-            string[] G_linea, linea,dat_esplit=DATOS.Split(',');
+            string[] G_linea, linea,dat_esplit=DATOS.Split(G_parametros);
             G_linea = FILE_NAME.Split('\\');//esplitea la direccion
             G_temp = G_linea[0];//temp es igual al primer directorio
             bas.crear_archivo_y_directorio(FILE_NAME);
@@ -274,11 +274,11 @@ namespace tienda
                     
                     if (G_palabra != null)
                     {
-                        linea = G_palabra.Split(',');
+                        linea = G_palabra.Split(G_parametros);
 
                         if (linea[1] != dat_esplit[1])
                         {
-                            sw.WriteLine(linea[0] + "," + linea[1] + "," + linea[2]);
+                            sw.WriteLine(linea[0] + G_parametros + linea[1] + G_parametros + linea[2]);
                         }
                         else
                         {
@@ -286,13 +286,13 @@ namespace tienda
                             {
                                 double cant1 = Convert.ToDouble(linea[2]);
                                 double cant2 = Convert.ToDouble(dat_esplit[2]);
-                                sw.WriteLine(linea[0] + "," + linea[1] + "," + (cant1+cant2));
+                                sw.WriteLine(linea[0] + G_parametros[0] + linea[1] + G_parametros[0] + (cant1+cant2));
                                 dat_comp.bandera = true;
                             }
                             else
                             {
-                                sw.WriteLine(linea[0] + "," + linea[1] + "," + linea[2]);
-                                System.Windows.Forms.MessageBox.Show("ya se acabo o falta poco para acabarse el producto: " + linea[0]+","+linea[1]);
+                                sw.WriteLine(linea[0] + G_parametros + linea[1] + G_parametros + linea[2]);
+                                System.Windows.Forms.MessageBox.Show("ya se acabo o falta poco para acabarse el producto: " + linea[0]+ G_parametros[0] + linea[1]);
                             }
 
                         }

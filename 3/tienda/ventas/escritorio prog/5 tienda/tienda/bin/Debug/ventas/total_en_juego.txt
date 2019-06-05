@@ -1,2 +1,0 @@
-dinero_hay: ;154
-dinero_gastado: ;11
