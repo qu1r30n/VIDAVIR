@@ -511,17 +511,18 @@ namespace tienda
                 historial = op.revicion_total_horas(FILE_NAME, 1);
             }
 
+
             for (int i = 0; i < historial.Length - 1; i++)
             {
                 esplitedo = historial[i].Split(G_parametros);
-                chrt_ventas.Series[0].Points.AddXY(esplitedo[0], esplitedo[1]);
+                chrt_ventas.Series[0].Points.AddXY(esplitedo[0], esplitedo[2]);
                 if (decicion == 0)
                 {
-                    lst_ventas.Items.Add(esplitedo[0] + G_parametros[0] + esplitedo[1]);
+                    lst_ventas.Items.Add(esplitedo[0] + G_parametros[0] + esplitedo[2]);
                 }
                 else
                 {
-                    lst_ventas.Items.Add(esplitedo[1] + ": " + esplitedo[2]);
+                    lst_ventas.Items.Add(esplitedo[0] + ": "+ esplitedo[1] + ": " + esplitedo[2]);
                 }
             }
             txt_total.Text = "" + historial[historial.Length - 1];

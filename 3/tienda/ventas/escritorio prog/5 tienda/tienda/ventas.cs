@@ -38,18 +38,50 @@ namespace tienda
 
         private void btn_agregar_Click(object sender, EventArgs e)
         {
+            string temporal = "";
+            string[] temporal_s;
+            double total = 0;
+
             if (txt_buscar_producto.Text != "")
             {
                 lst_ventas.Items.Add(txt_buscar_producto.Text);
                 txt_buscar_producto.Text = "";
+                for (int coll = 0; coll < lst_ventas.Items.Count; coll++)
+                {
+                    temporal = "" + lst_ventas.Items[coll];
+                    temporal_s = temporal.Split(G_parametros);
+
+                    if (temporal_s[0] != "")
+                    {
+                        total = total + Convert.ToDouble(temporal_s[2]);
+                    }
+
+                }
+                lbl_cuenta.Text = "" + total;
             }
         }
 
         private void btn_eliminar_todo_Click(object sender, EventArgs e)
         {
+            string temporal = "";
+            string[] temporal_s;
+            double total = 0;
+
             try
             {
                 lst_ventas.Items.Clear();
+                for (int coll = 0; coll < lst_ventas.Items.Count; coll++)
+                {
+                    temporal = "" + lst_ventas.Items[coll];
+                    temporal_s = temporal.Split(G_parametros);
+
+                    if (temporal_s[0] != "")
+                    {
+                        total = total + Convert.ToDouble(temporal_s[2]);
+                    }
+
+                }
+                lbl_cuenta.Text = "" + total;
             }
             catch (Exception)
             {
@@ -60,9 +92,25 @@ namespace tienda
 
         private void btn_eliminar_seleccionado_Click(object sender, EventArgs e)
         {
+            string temporal = "";
+            string[] temporal_s;
+            double total = 0;
+
             try
             {
                 lst_ventas.Items.RemoveAt(lst_ventas.SelectedIndex);
+                for (int coll = 0; coll < lst_ventas.Items.Count; coll++)
+                {
+                    temporal = "" + lst_ventas.Items[coll];
+                    temporal_s = temporal.Split(G_parametros);
+
+                    if (temporal_s[0] != "")
+                    {
+                        total = total + Convert.ToDouble(temporal_s[2]);
+                    }
+
+                }
+                lbl_cuenta.Text = "" + total;
             }
             catch (Exception)
             {
@@ -75,12 +123,28 @@ namespace tienda
 
         private void txt_buscar_producto_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
         {
+            string temporal = "";
+            string[] temporal_s;
+            double total = 0;
+
             if (txt_buscar_producto.Text != "")
             {
                 if (e.KeyValue == (char)(Keys.Enter))
                 {
                     lst_ventas.Items.Add(txt_buscar_producto.Text);
                     txt_buscar_producto.Text = "";
+                    for (int coll = 0; coll < lst_ventas.Items.Count; coll++)
+                    {
+                        temporal = "" + lst_ventas.Items[coll];
+                        temporal_s = temporal.Split(G_parametros);
+
+                        if (temporal_s[0] != "")
+                        {
+                            total = total + Convert.ToDouble(temporal_s[2]);
+                        }
+
+                    }
+                    lbl_cuenta.Text = "" + total;
                 }
             }
 
@@ -89,9 +153,24 @@ namespace tienda
 
         private void btn_elim_ultimo_Click(object sender, EventArgs e)
         {
+            string temporal = "";
+            string[] temporal_s;
+            double total = 0;
             try
             {
                 lst_ventas.Items.Remove(lst_ventas.Items[lst_ventas.Items.Count - 1]);
+                for (int coll = 0; coll < lst_ventas.Items.Count; coll++)
+                {
+                    temporal = "" + lst_ventas.Items[coll];
+                    temporal_s = temporal.Split(G_parametros);
+
+                    if (temporal_s[0] != "")
+                    {
+                        total = total + Convert.ToDouble(temporal_s[2]);
+                    }
+                    
+                }
+                lbl_cuenta.Text = "" + total;
             }
             catch (Exception)
             {
@@ -114,12 +193,8 @@ namespace tienda
             {
                 temporal=""+lst_ventas.Items[coll];
                 temporal_s = temporal.Split(G_parametros);
-
-                //-------------------------------------------------------------------------
-                //aqui temporal_s esta espliteado el nombre el codigo y el presio  podrias poner codigo para checar que puedes hacer para 
-                //ordenar la info y saber que se vendio para hacer la compra  
-                //-------------------------------------------------------------------------
-
+                
+                
                 cv.arra_lis.Add(""+temporal_s[0]);
                 cv.ids_productos.Add(""+temporal_s[1]);
                 if (temporal_s[0]!="")
@@ -127,7 +202,7 @@ namespace tienda
                     
                     total = total + Convert.ToDouble(temporal_s[2]);
                 }
-                
+
             }
             
             cv.cantidad = total;

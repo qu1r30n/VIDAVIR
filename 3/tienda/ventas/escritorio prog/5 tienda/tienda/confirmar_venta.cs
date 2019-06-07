@@ -15,6 +15,7 @@ namespace tienda
     {
         public ArrayList ids_productos = new ArrayList();
         public ArrayList arra_lis = new ArrayList();
+        public ArrayList info_extra = new ArrayList();
         public double cantidad { get; set; }
         DateTime fecha_hora = DateTime.Now;
         char[] G_parametros = { '|' };
@@ -62,7 +63,7 @@ namespace tienda
             double temp = Convert.ToDouble(txt_dinero.Text);
             if (temp >= cantidad)
             {
-                bas.agregar("ventas\\" + fecha_hora.ToString("yyyy") + "\\" + fecha_hora.ToString("MM") + "\\dias\\" + fecha_hora.ToString("dd-MM-yyyy") + ".txt", fecha_hora.ToString("dd-MM-yyyy HH:mm:ss") + " |" + ids_ya_unidos + " |" + cantidad + " |" + poductos_ya_unidos, null);//muestra total cada horas
+                bas.agregar("ventas\\" + fecha_hora.ToString("yyyy") + "\\" + fecha_hora.ToString("MM") + "\\dias\\" + fecha_hora.ToString("dd-MM-yyyy") + ".txt", fecha_hora.ToString("HH:mm:ss") + " |" + ids_ya_unidos + " |" + cantidad + " |" + poductos_ya_unidos, null);//muestra total cada horas
                 op.actualisar_resumen_venta("ventas\\" + fecha_hora.ToString("yyyy") + "\\" + fecha_hora.ToString("MM") + "\\" + fecha_hora.ToString("MM") + ".txt", fecha_hora.ToString("dd"), cantidad);//muestra total de cada dias
                 op.actualisar_resumen_venta("ventas\\" + fecha_hora.ToString("yyyy") + "\\" + fecha_hora.ToString("yyyy") + ".txt", fecha_hora.ToString("MM"), cantidad);//muestra total de cada mes
                 op.actualisar_resumen_venta("ventas\\total_años.txt", fecha_hora.ToString("yyyy"), cantidad);//muestra total de cada año

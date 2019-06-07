@@ -1,1 +1,2 @@
-dinero_hay: ;67
+dinero_hay: ;459
+dinero_gastado: ;160

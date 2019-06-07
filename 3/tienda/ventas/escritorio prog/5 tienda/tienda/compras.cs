@@ -12,6 +12,9 @@ namespace tienda
 {
     public partial class compras : Form
     {
+        char[] G_parametros = { '|' };
+
+
         public compras()
         {
             InitializeComponent();
@@ -39,12 +42,12 @@ namespace tienda
                 cantidades_en_juego_espliteada = cantidades_en_juego[0].Split(';');
                 dinero_ganado = Convert.ToInt32(cantidades_en_juego_espliteada[1]);
 
-                cantidades_en_juego_espliteada = cantidades_en_juego[1].Split(';');
+                cantidades_en_juego_espliteada = cantidades_en_juego[0].Split(';');
                 dinero_ganado = Convert.ToInt32(cantidades_en_juego_espliteada[1]);
 
                 if (dinero_ganado>=dinero_gastado+cantidad)
                 {
-                    bas.agregar(direccion1, fecha_hora.ToString("dd-MM-yyyy HH:mm:ss") + " ," + cantidad + " ," + poductos_ya_unidos, null);//muestra total cada horas
+                    bas.agregar(direccion1, fecha_hora.ToString("dd-MM-yyyy HH:mm:ss") + G_parametros[0] + poductos_ya_unidos + G_parametros[0] + cantidad, null);//muestra total cada horas
                     op.actualisar_resumen_venta(direccion2, fecha_hora.ToString("dd"), cantidad);//muestra total de cada dias
                     op.actualisar_resumen_venta(direccion3, fecha_hora.ToString("MM"), cantidad);//muestra total de cada mes
                     op.actualisar_resumen_venta(direccion4, fecha_hora.ToString("yyyy"), cantidad);//muestra total de cada año

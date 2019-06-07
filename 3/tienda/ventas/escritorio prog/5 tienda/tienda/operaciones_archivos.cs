@@ -58,7 +58,7 @@ namespace tienda
                     linea = G_palabra.Split(G_parametros);
                     if (decicion==0)
                     {
-                        lista.Add(linea[0] + G_parametros[0] + linea[2]);
+                        lista.Add(linea[0] + G_parametros[0] + G_parametros[0] + linea[2]);
                         total = total + Convert.ToDouble(linea[2]);
                     }
                     else
@@ -76,7 +76,8 @@ namespace tienda
                             
                         }
                         lista.Add(union);
-                        total = total + Convert.ToDouble(linea[1]);
+                        union = "";
+                        total = total + Convert.ToDouble(linea[2]);
                     }
                     
                 }
@@ -183,8 +184,8 @@ namespace tienda
             Thread.Sleep(20);
             File.Move(G_temp, FILE_NAME);//renombramos el archivo temporal por el que tenia el original
         }
-        
-        public void actualisar_inventario(string FILE_NAME, string fecha, double precio)
+
+        public void actualisar_inventario(string FILE_NAME, string id_produc_act, double cantidad_a_act)
         {
             tex_base bas = new tex_base();
             string[] G_linea, linea;
@@ -212,19 +213,19 @@ namespace tienda
                     {
                         linea = G_palabra.Split(G_parametros);
 
-                        if (linea[0] != fecha)
+                        if (linea[0] != id_produc_act)
                         {
-                            sw.WriteLine(linea[0] + G_parametros[0] + linea[1] + G_parametros[0] + linea[2] + G_parametros[0] + linea[3]);
+                            sw.WriteLine(linea[0] + G_parametros[0] + linea[1] + G_parametros[0] + linea[2] + G_parametros[0] + linea[3] + G_parametros[0] + linea[4]);
                         }
                         else
                         {
-                            if (0 <= precio + Convert.ToDouble(linea[3]))
+                            if (0 <= cantidad_a_act + Convert.ToDouble(linea[4]))
                             {
-                                sw.WriteLine(fecha + G_parametros[0] + linea[1] + G_parametros[0] + linea[2] + G_parametros[0] + (precio + Convert.ToDouble(linea[3])));
+                                sw.WriteLine(id_produc_act + G_parametros[0] + linea[1] + G_parametros[0] + linea[2] + G_parametros[0] + linea[3] + G_parametros[0] + (cantidad_a_act + Convert.ToDouble(linea[4])));
                             }
                             else
                             {
-                                sw.WriteLine(fecha + G_parametros[0] + linea[1] + G_parametros[0] + linea[2] + G_parametros[0] + linea[3]);
+                                sw.WriteLine(id_produc_act + G_parametros[0] + linea[1] + G_parametros[0] + linea[2] + G_parametros[0] + linea[3] + G_parametros[0] + (cantidad_a_act + Convert.ToDouble(linea[4])));
                                 System.Windows.Forms.MessageBox.Show("ya se acabo o falta poco para acabarse el producto: " + linea[1]);
                             }
 
@@ -232,11 +233,12 @@ namespace tienda
                     }
                 }
             }
+
             catch (Exception e)
             {
-                
+
             }
-            
+
             sr.Close();
             sw.Close();
             Thread.Sleep(1);
@@ -244,6 +246,7 @@ namespace tienda
             Thread.Sleep(1);
             File.Move(G_temp, FILE_NAME);//renombramos el archivo temporal por el que tenia el original
         }
+
 
         public void actualisar_pedido(string FILE_NAME, string DATOS)
         {
