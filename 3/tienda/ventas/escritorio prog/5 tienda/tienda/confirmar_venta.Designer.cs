@@ -68,6 +68,7 @@
             this.txt_dinero.Name = "txt_dinero";
             this.txt_dinero.Size = new System.Drawing.Size(100, 20);
             this.txt_dinero.TabIndex = 3;
+            this.txt_dinero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_dinero_KeyPress);
             // 
             // btn_pagar
             // 
@@ -100,8 +101,8 @@
 
         private System.Windows.Forms.Label lbl_titulo_total;
         private System.Windows.Forms.Label lbl_dinero;
-        private System.Windows.Forms.TextBox txt_dinero;
         private System.Windows.Forms.Button btn_pagar;
         public System.Windows.Forms.Label lbl_total;
+        public System.Windows.Forms.TextBox txt_dinero;
     }
 }

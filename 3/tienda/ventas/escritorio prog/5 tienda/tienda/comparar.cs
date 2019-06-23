@@ -12,8 +12,12 @@ namespace tienda
 {
     public partial class comparar : Form
     {
+        char[] G_parametros = { '|' };
+
         string direc_tem = "";
+
         public string direccion_grafica { get; set; }
+
         public string palabra_reconocimiento { get; set; }
 
         public static string checkbox_en_uso;
@@ -109,7 +113,7 @@ namespace tienda
             for (int i = 0; i < archivos.Length - 1; i++)
             {
                 temp = archivos[i];
-                espliteado = temp.Split(';');
+                espliteado = temp.Split(G_parametros);
                 cmb_año.Items.Add(espliteado[0]);
             }
         }
@@ -135,7 +139,7 @@ namespace tienda
             for (int i = 0; i < archivos.Length - 1; i++)
             {
                 temp = archivos[i];
-                espliteado = temp.Split(';');
+                espliteado = temp.Split(G_parametros);
                 cmb_mes.Items.Add(espliteado[0]);
             }
 
@@ -152,7 +156,7 @@ namespace tienda
             for (int i = 0; i < archivos.Length - 1; i++)
             {
                 temp = archivos[i];
-                espliteado = temp.Split(';');
+                espliteado = temp.Split(G_parametros);
                 cmb_dia.Items.Add(espliteado[0]);
             }
         }

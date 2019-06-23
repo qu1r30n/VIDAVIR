@@ -26,7 +26,7 @@
     <InstallUrl>http:\\127.0.0.1/actu_tien/</InstallUrl>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationRevision>4</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -78,6 +78,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="agregar_producto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="agregar_producto.Designer.cs">
+      <DependentUpon>agregar_producto.cs</DependentUpon>
+    </Compile>
     <Compile Include="area_principal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,12 +144,21 @@
       <DependentUpon>respaldo.cs</DependentUpon>
     </Compile>
     <Compile Include="tex_base.cs" />
+    <Compile Include="ventana_emergente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ventana_emergente.Designer.cs">
+      <DependentUpon>ventana_emergente.cs</DependentUpon>
+    </Compile>
     <Compile Include="ventas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ventas.Designer.cs">
       <DependentUpon>ventas.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="agregar_producto.resx">
+      <DependentUpon>agregar_producto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="area_principal.resx">
       <DependentUpon>area_principal.cs</DependentUpon>
     </EmbeddedResource>
@@ -179,6 +194,9 @@
     </Compile>
     <EmbeddedResource Include="respaldo.resx">
       <DependentUpon>respaldo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ventana_emergente.resx">
+      <DependentUpon>ventana_emergente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ventas.resx">
       <DependentUpon>ventas.cs</DependentUpon>

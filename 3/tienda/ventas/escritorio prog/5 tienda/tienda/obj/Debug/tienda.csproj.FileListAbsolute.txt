@@ -147,3 +147,5 @@ C:\xampp\htdocs\VIDAVIR\3\tienda\ventas\escritorio prog\5 tienda\tienda\bin\Debu
 C:\xampp\htdocs\VIDAVIR\3\tienda\ventas\escritorio prog\5 tienda\tienda\bin\Debug\tienda.application
 C:\xampp\htdocs\VIDAVIR\3\tienda\ventas\escritorio prog\5 tienda\tienda\obj\Debug\tienda.exe.manifest
 C:\xampp\htdocs\VIDAVIR\3\tienda\ventas\escritorio prog\5 tienda\tienda\obj\Debug\tienda.application
+C:\xampp\htdocs\VIDAVIR\3\tienda\ventas\escritorio prog\5 tienda\tienda\obj\Debug\tienda.agregar_producto.resources
+C:\xampp\htdocs\VIDAVIR\3\tienda\ventas\escritorio prog\5 tienda\tienda\obj\Debug\tienda.ventana_emergente.resources

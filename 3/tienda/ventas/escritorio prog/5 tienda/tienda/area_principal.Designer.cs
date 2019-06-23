@@ -70,7 +70,7 @@
             // 
             // btn_nueva_venta
             // 
-            this.btn_nueva_venta.Location = new System.Drawing.Point(16, 63);
+            this.btn_nueva_venta.Location = new System.Drawing.Point(16, 61);
             this.btn_nueva_venta.Name = "btn_nueva_venta";
             this.btn_nueva_venta.Size = new System.Drawing.Size(75, 37);
             this.btn_nueva_venta.TabIndex = 2;
@@ -281,9 +281,9 @@
             this.lbl_ganancia.AutoSize = true;
             this.lbl_ganancia.Location = new System.Drawing.Point(414, 305);
             this.lbl_ganancia.Name = "lbl_ganancia";
-            this.lbl_ganancia.Size = new System.Drawing.Size(51, 13);
+            this.lbl_ganancia.Size = new System.Drawing.Size(56, 13);
             this.lbl_ganancia.TabIndex = 31;
-            this.lbl_ganancia.Text = "ganancia";
+            this.lbl_ganancia.Text = "dinero hay";
             this.lbl_ganancia.Visible = false;
             // 
             // area_principal

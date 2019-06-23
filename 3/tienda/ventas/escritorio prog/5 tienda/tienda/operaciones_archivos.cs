@@ -21,16 +21,19 @@ namespace tienda
         {
             string[] linea;
             ArrayList lista = new ArrayList();
-            double total = 0;
+            decimal total = 0;
+            decimal total_compra = 0;
             StreamReader sr = new StreamReader(FILE_NAME);
             while (sr.Peek() >= 0)//verificamos si hay mas lineas a leer
             {
                 G_palabra = sr.ReadLine();//leemos linea y lo guardamos en palabra
                 if (G_palabra != null)
                 {
-                    linea = G_palabra.Split(';');
-                    lista.Add(linea[0] + ";" + linea[1]);
-                    total = total + Convert.ToDouble(linea[1]);
+                    linea = G_palabra.Split(G_parametros);
+                    lista.Add(linea[0] + G_parametros[0] + linea[1]);
+                    total = total + Convert.ToDecimal(linea[1]);
+                    total_compra = total_compra + Convert.ToDecimal(linea[2]);
+
                 }
             }
             string[] list_string = new string[lista.Count + 1];
@@ -38,7 +41,7 @@ namespace tienda
             {
                 list_string[op] = "" + (lista[op]);
             }
-            list_string[lista.Count] = "total;" + total;
+            list_string[lista.Count] = "total|" + total+ "  |total_compra|"+total_compra+"  |ganancia_real|"+(total-total_compra);
             sr.Close();
             return list_string;//devuelve la lista para ser usada
         }
@@ -48,7 +51,8 @@ namespace tienda
             string[] linea;
             string union = "";
             ArrayList lista = new ArrayList();
-            double total = 0;
+            decimal total = 0;
+            decimal total_compra = 0;
             StreamReader sr = new StreamReader(FILE_NAME);
             while (sr.Peek() >= 0)//verificamos si hay mas lineas a leer
             {
@@ -59,7 +63,8 @@ namespace tienda
                     if (decicion==0)
                     {
                         lista.Add(linea[0] + G_parametros[0] + G_parametros[0] + linea[2]);
-                        total = total + Convert.ToDouble(linea[2]);
+                        total = total + Convert.ToDecimal(linea[2]);
+                        total_compra = total_compra + Convert.ToDecimal(linea[4]);
                     }
                     else
                     {
@@ -77,7 +82,8 @@ namespace tienda
                         }
                         lista.Add(union);
                         union = "";
-                        total = total + Convert.ToDouble(linea[2]);
+                        total = total + Convert.ToDecimal(linea[2]);
+                        total_compra = total_compra + Convert.ToDecimal(linea[4]);
                     }
                     
                 }
@@ -87,7 +93,7 @@ namespace tienda
             {
                 list_string[op] = "" + (lista[op]);
             }
-            list_string[lista.Count] = "total;" + total;
+            list_string[lista.Count] = "total|" + total + "  |total_compra|" + total_compra + "  |ganancia_real|" + (total - total_compra);
             sr.Close();
             return list_string;//devuelve la lista para ser usada
         }
@@ -122,7 +128,7 @@ namespace tienda
             return list_string;//devuelve la lista para ser usada
         }
 
-        public void actualisar_resumen_venta(string FILE_NAME,string fecha ,double precio)
+        public void actualisar_resumen_venta(string FILE_NAME,string fecha ,decimal precio,decimal costos_de_compra=0)
         {
             char[] parametros2 = { '/', '\\' };
             tex_base bas = new tex_base();
@@ -148,17 +154,18 @@ namespace tienda
                 while (sr.Peek() >= 0)//verificamos si hay mas lineas a leer
                 {
                     G_palabra = sr.ReadLine();//leemos linea y lo guardamos en palabra
+                    //por aqui empesamos para poderlo comparar
                     if (G_palabra != null)
                     {
-                        linea = G_palabra.Split(';');
+                        linea = G_palabra.Split(G_parametros);
 
                         if (linea[0] != fecha)
                         {
-                            sw.WriteLine(linea[0] + ";" + linea[1]);
+                            sw.WriteLine(linea[0] + G_parametros[0] + linea[1] + G_parametros[0] + (costos_de_compra + Convert.ToDecimal(linea[2])));
                         }
                         else
                         {
-                            sw.WriteLine(fecha + ";" + (precio + Convert.ToDouble(linea[1])));
+                            sw.WriteLine(fecha + G_parametros[0] + (precio + Convert.ToDecimal(linea[1])) + G_parametros[0] + (costos_de_compra + Convert.ToDecimal(linea[2])));
                             bol = true;
 
                         }
@@ -166,12 +173,12 @@ namespace tienda
                 }
                 if (bol == false)
                 {
-                    sw.WriteLine(fecha + ";" + precio);
+                    sw.WriteLine(fecha + G_parametros[0] + precio + G_parametros[0] + costos_de_compra);
                 }
             }
             catch (Exception)
             {
-                sw.WriteLine(fecha + ";" + precio);
+                sw.WriteLine(fecha + G_parametros[0] + precio + G_parametros[0] + costos_de_compra);
 
             }
             
@@ -185,7 +192,71 @@ namespace tienda
             File.Move(G_temp, FILE_NAME);//renombramos el archivo temporal por el que tenia el original
         }
 
-        public void actualisar_inventario(string FILE_NAME, string id_produc_act, double cantidad_a_act)
+        public void actualisar_ganancia_real(string FILE_NAME, string fecha, decimal precio,decimal costo_compra)
+        {
+            char[] parametros2 = { '/', '\\' };
+            tex_base bas = new tex_base();
+            bool bol = false;
+            string[] G_linea, linea, temp = { "", "" };
+            G_linea = FILE_NAME.Split(parametros2);//esplitea la direccion
+            G_temp = G_linea[0];//temp es igual al primer directorio
+            bas.crear_archivo_y_directorio(FILE_NAME);
+            for (int i = 1; i < G_linea.Length; i++)//checa si es el ultimo directorio 
+            {
+                if (i == G_linea.Length - 1)//si llego al archivo le va a colocar un temp_ y el nombre del archivo
+                {
+                    G_linea[i] = "temp_" + G_linea[i];
+                }
+                G_temp = G_temp + "\\" + G_linea[i];//le pone la barrita para pasarselo a la funcion de crear achivos
+            }
+            bas.crear_archivo_y_directorio(G_temp);//creamos el archivo temporal
+
+            StreamReader sr = new StreamReader(FILE_NAME);//abrimos el archivo a leer
+            StreamWriter sw = new StreamWriter(G_temp, true);//abrimos el archivo a escribir
+            try
+            {
+                while (sr.Peek() >= 0)//verificamos si hay mas lineas a leer
+                {
+                    G_palabra = sr.ReadLine();//leemos linea y lo guardamos en palabra
+                    //por aqui empesamos para poderlo comparar
+                    if (G_palabra != null)
+                    {
+                        linea = G_palabra.Split(G_parametros);
+
+                        if (linea[0] != fecha)
+                        {
+                            sw.WriteLine(linea[0] + G_parametros[0] + linea[1]);
+                        }
+                        else
+                        {
+                            sw.WriteLine(fecha + G_parametros[0] + ((precio-costo_compra) + Convert.ToDecimal(linea[1])));
+                            bol = true;
+
+                        }
+                    }
+                }
+                if (bol == false)
+                {
+                    sw.WriteLine(fecha + G_parametros[0] + (precio - costo_compra));
+                }
+            }
+            catch (Exception)
+            {
+                sw.WriteLine(fecha + G_parametros[0] + (precio - costo_compra));
+
+            }
+
+            sr.Close();
+            sr.Dispose();
+            sw.Close();
+            sw.Dispose();
+            Thread.Sleep(20);
+            File.Delete(FILE_NAME);//borramos el archivo original
+            Thread.Sleep(20);
+            File.Move(G_temp, FILE_NAME);//renombramos el archivo temporal por el que tenia el original
+        }
+
+        public void actualisar_inventario(string FILE_NAME, string id_produc_act, decimal cantidad_a_act)
         {
             tex_base bas = new tex_base();
             string[] G_linea, linea;
@@ -208,6 +279,7 @@ namespace tienda
             {
                 while (sr.Peek() >= 0)//verificamos si hay mas lineas a leer
                 {
+                    string temp = "";
                     G_palabra = sr.ReadLine();//leemos linea y lo guardamos en palabra
                     if (G_palabra != null)
                     {
@@ -215,17 +287,71 @@ namespace tienda
 
                         if (linea[0] != id_produc_act)
                         {
-                            sw.WriteLine(linea[0] + G_parametros[0] + linea[1] + G_parametros[0] + linea[2] + G_parametros[0] + linea[3] + G_parametros[0] + linea[4]);
+                            temp = "";
+                            for (int i = 0; i < linea.Length; i++)
+                            {
+                                if (i < (linea.Length-1))
+                                {
+                                    temp = temp + linea[i] + G_parametros[0];
+                                }
+                                else
+                                {
+                                    temp = temp + linea[i];
+                                }
+                            }
+                            sw.WriteLine(temp);
                         }
                         else
                         {
-                            if (0 <= cantidad_a_act + Convert.ToDouble(linea[4]))
+                            if (0 <= cantidad_a_act + Convert.ToDecimal(linea[4]))
                             {
-                                sw.WriteLine(id_produc_act + G_parametros[0] + linea[1] + G_parametros[0] + linea[2] + G_parametros[0] + linea[3] + G_parametros[0] + (cantidad_a_act + Convert.ToDouble(linea[4])));
+                                temp = "";
+                                for (int i = 0; i < linea.Length; i++)
+                                {
+                                    if (i < (linea.Length - 1))
+                                    {
+                                        if (i == 4)//la columna de cantidad de producto
+                                        {
+                                            temp = temp + (cantidad_a_act + Convert.ToDecimal(linea[i])) + G_parametros[0];
+                                        }
+                                        else
+                                        {
+                                            temp = temp + linea[i] + G_parametros[0];
+                                        }
+                                    }
+                                    else
+                                    {
+                                        temp = temp + linea[i];
+                                    }
+                                }
+
+                                sw.WriteLine(temp);
                             }
                             else
                             {
-                                sw.WriteLine(id_produc_act + G_parametros[0] + linea[1] + G_parametros[0] + linea[2] + G_parametros[0] + linea[3] + G_parametros[0] + (cantidad_a_act + Convert.ToDouble(linea[4])));
+
+                                temp = "";
+                                for (int i = 0; i < linea.Length; i++)
+                                {
+                                    if (i < (linea.Length - 1))
+                                    {
+                                        if (i == 4)//la columna de cantidad de producto
+                                        {
+                                            temp = temp + (cantidad_a_act + Convert.ToDecimal(linea[i])) + G_parametros[0];
+                                        }
+                                        else
+                                        {
+                                            temp = temp + linea[i] + G_parametros[0];
+                                        }
+                                    }
+                                    else
+                                    {
+                                        temp = temp + linea[i];
+                                    }
+                                }
+
+                                sw.WriteLine(temp);
+
                                 System.Windows.Forms.MessageBox.Show("ya se acabo o falta poco para acabarse el producto: " + linea[1]);
                             }
 
@@ -285,10 +411,10 @@ namespace tienda
                         }
                         else
                         {
-                            if (0 <= Convert.ToDouble(linea[2]))
+                            if (0 <= Convert.ToDecimal(linea[2]))
                             {
-                                double cant1 = Convert.ToDouble(linea[2]);
-                                double cant2 = Convert.ToDouble(dat_esplit[2]);
+                                decimal cant1 = Convert.ToDecimal(linea[2]);
+                                decimal cant2 = Convert.ToDecimal(dat_esplit[2]);
                                 sw.WriteLine(linea[0] + G_parametros[0] + linea[1] + G_parametros[0] + (cant1+cant2));
                                 dat_comp.bandera = true;
                             }
@@ -418,5 +544,85 @@ namespace tienda
                 }
             }
         }
+
+        public void actualisar_resumen_venta_compra(string FILE_NAME, string buscar,string codigo, decimal cantidad)
+        {
+            char[] parametros2 = { '/', '\\' };
+            tex_base bas = new tex_base();
+            bool bol = false;
+            string[] G_linea, linea, temp = { "", "" };
+
+
+            string[] encontrado = bas.seleccionar("inf\\inventario\\invent.txt", buscar,"0");
+            if (encontrado.Length != 0)
+            {
+
+                G_linea = FILE_NAME.Split(parametros2);//esplitea la direccion
+                G_temp = G_linea[0];//temp es igual al primer directorio
+                bas.crear_archivo_y_directorio(FILE_NAME);
+                for (int i = 1; i < G_linea.Length; i++)//checa si es el ultimo directorio 
+                {
+                    if (i == G_linea.Length - 1)//si llego al archivo le va a colocar un temp_ y el nombre del archivo
+                    {
+                        G_linea[i] = "temp_" + G_linea[i];
+                    }
+                    G_temp = G_temp + "\\" + G_linea[i];//le pone la barrita para pasarselo a la funcion de crear achivos
+                }
+                bas.crear_archivo_y_directorio(G_temp);//creamos el archivo temporal
+
+
+                StreamReader sr = new StreamReader(FILE_NAME);//abrimos el archivo a leer
+                StreamWriter sw = new StreamWriter(G_temp, true);//abrimos el archivo a escribir
+                try
+                {
+                    while (sr.Peek() >= 0)//verificamos si hay mas lineas a leer
+                    {
+                        G_palabra = sr.ReadLine();//leemos linea y lo guardamos en palabra
+                                                  //por aqui empesamos para poderlo comparar
+                        if (G_palabra != null)
+                        {
+                            linea = G_palabra.Split(G_parametros);
+
+                            if (linea[0] != buscar)
+                            {
+                                sw.WriteLine(linea[0] + G_parametros[0] + linea[1] + G_parametros[0] + (cantidad + Convert.ToDecimal(linea[2])));
+                            }
+                            else
+                            {
+                                sw.WriteLine(buscar + G_parametros[0] + (cantidad + Convert.ToDecimal(linea[1])) + G_parametros[0] + (cantidad + Convert.ToDecimal(linea[2])));
+                                bol = true;
+
+                            }
+                        }
+                    }
+                    if (bol == false)
+                    {
+                        sw.WriteLine(buscar + G_parametros[0] + cantidad + G_parametros[0] + cantidad);
+                    }
+                }
+                catch (Exception)
+                {
+                    sw.WriteLine(buscar + G_parametros[0] + cantidad + G_parametros[0] + cantidad);
+
+                }
+
+                sr.Close();
+                sr.Dispose();
+                sw.Close();
+                sw.Dispose();
+                Thread.Sleep(20);
+                File.Delete(FILE_NAME);//borramos el archivo original
+                Thread.Sleep(20);
+                File.Move(G_temp, FILE_NAME);//renombramos el archivo temporal por el que tenia el original
+            }
+
+            else
+            {
+                agregar_producto ag_pr = new agregar_producto();
+                ag_pr.lbl_codigo.Text = codigo;
+                ag_pr.Show();
+            }
+        }
+
     }
 }

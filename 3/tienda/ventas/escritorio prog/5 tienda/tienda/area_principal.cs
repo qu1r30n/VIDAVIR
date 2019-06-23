@@ -89,6 +89,7 @@ namespace tienda
 
             respaldo respaldo = new respaldo();
             respaldo.Show();
+            
         }
 
         private void btn_pedidos_Click(object sender, EventArgs e)
@@ -472,9 +473,9 @@ namespace tienda
 
             for (int i = 0; i < historial.Length - 1; i++)
             {
-                esplitedo = historial[i].Split(';');
+                esplitedo = historial[i].Split(G_parametros);
                 chrt_ventas.Series[0].Points.AddXY(esplitedo[0], esplitedo[1]);
-                lst_ventas.Items.Add(esplitedo[0] + ";" + esplitedo[1]);
+                lst_ventas.Items.Add(esplitedo[0] + G_parametros[0] + esplitedo[1]);
             }
             txt_total.Text = "" + historial[historial.Length - 1];
         }
@@ -565,13 +566,13 @@ namespace tienda
             {
                 if (i < historial.Length - 1)
                 {
-                    esplitedo = historial[i].Split(';');
+                    esplitedo = historial[i].Split(G_parametros);
                     chrt_ventas.Series[0].Points.AddXY(esplitedo[0], esplitedo[1]);
                     cual_anotar = cual_anotar + 1;
                 }
                 if (i < historial2.Length - 1)
                 {
-                    esplitedo2 = historial2[i].Split(';');
+                    esplitedo2 = historial2[i].Split(G_parametros);
                     chrt_ventas.Series[1].Points.AddXY(esplitedo2[0], esplitedo2[1]);
                     cual_anotar = cual_anotar + 2;
                 }
@@ -579,13 +580,13 @@ namespace tienda
                 switch (cual_anotar)
                 {
                     case 1:
-                        lst_ventas.Items.Add(esplitedo[0] + ";" + esplitedo[1] + "          ");
+                        lst_ventas.Items.Add(esplitedo[0] + G_parametros[0] + esplitedo[1] + "          ");
                         break;
                     case 2:
-                        lst_ventas.Items.Add("          " + esplitedo2[0] + ";" + esplitedo2[1]);
+                        lst_ventas.Items.Add("          " + esplitedo2[0] + G_parametros[0] + esplitedo2[1]);
                         break;
                     case 3:
-                        lst_ventas.Items.Add(esplitedo[0] + ";" + esplitedo[1] + "          " + esplitedo2[0] + ";" + esplitedo2[1]);
+                        lst_ventas.Items.Add(esplitedo[0] + G_parametros[0] + esplitedo[1] + "          " + esplitedo2[0] + G_parametros[0] + esplitedo2[1]);
                         break;
                     default:
                         MessageBox.Show("error switch");
@@ -682,13 +683,13 @@ namespace tienda
             {
                 if (i < historial.Length)
                 {
-                    esplitedo = historial[i].Split(';');
+                    esplitedo = historial[i].Split(G_parametros);
                     chrt_ventas.Series[0].Points.AddXY(esplitedo[0], esplitedo[1]);
                     cual_anotar = cual_anotar + 1;
                 }
                 if (i < historial2.Length)
                 {
-                    esplitedo2 = historial2[i].Split(';');
+                    esplitedo2 = historial2[i].Split(G_parametros);
                     chrt_ventas.Series[1].Points.AddXY(esplitedo2[0], esplitedo2[1]);
                     cual_anotar = cual_anotar + 2;
                 }
@@ -696,13 +697,13 @@ namespace tienda
                     switch (cual_anotar)
                     {
                         case 1:
-                            lst_ventas.Items.Add(esplitedo[0] + ";" + esplitedo[1] + "          ");
+                            lst_ventas.Items.Add(esplitedo[0] + G_parametros[0] + esplitedo[1] + "          ");
                             break;
                         case 2:
-                            lst_ventas.Items.Add("          " + esplitedo2[0] + ";" + esplitedo2[1]);
+                            lst_ventas.Items.Add("          " + esplitedo2[0] + G_parametros[0] + esplitedo2[1]);
                             break;
                         case 3:
-                            lst_ventas.Items.Add(esplitedo[0] + ";" + esplitedo[1] + "          " + esplitedo2[0] + ";" + esplitedo2[1]);
+                            lst_ventas.Items.Add(esplitedo[0] + G_parametros[0] + esplitedo[1] + "          " + esplitedo2[0] + G_parametros[0] + esplitedo2[1]);
                             break;
                         default:
                             MessageBox.Show("error switch");
@@ -711,8 +712,8 @@ namespace tienda
                 
                 cual_anotar = 0;
             }
-            esplitedo = historial[historial.Length - 1].Split(';');
-            esplitedo2 = historial2[historial2.Length - 1].Split(';');
+            esplitedo = historial[historial.Length - 1].Split(G_parametros);
+            esplitedo2 = historial2[historial2.Length - 1].Split(G_parametros);
 
             txt_total.Text = "ventas: " + esplitedo[1];
             txt_total.Text = txt_total.Text + ";  " + "gastos: " + esplitedo2[1];
@@ -780,7 +781,7 @@ namespace tienda
             for (int i = 0; i < archivos.Length-1; i++)
             {
                 temp = archivos[i];
-                espliteado = temp.Split(';');
+                espliteado = temp.Split(G_parametros);
                 cmb_año.Items.Add(espliteado[0]);
             }
         }
@@ -799,7 +800,7 @@ namespace tienda
             for (int i = 0; i < archivos.Length - 1; i++)
             {
                 temp = archivos[i];
-                espliteado = temp.Split(';');
+                espliteado = temp.Split(G_parametros);
                 cmb_mes.Items.Add(espliteado[0]);
             }
            
@@ -819,7 +820,7 @@ namespace tienda
             for (int i = 0; i < archivos.Length - 1; i++)
             {
                 temp = archivos[i];
-                espliteado = temp.Split(';');
+                espliteado = temp.Split(G_parametros);
                 cmb_dia.Items.Add(espliteado[0]);
             }
         }

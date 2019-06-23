@@ -25,8 +25,8 @@ namespace tienda
             tex_base bas = new tex_base();
             operaciones_archivos op = new operaciones_archivos();
             DateTime fecha_hora = DateTime.Now;
-            double cantidad = Convert.ToDouble(txt_cantidad_gastada.Text);
-            string poductos_ya_unidos = txt_razon.Text + ";" + txt_quien_facturo.Text;
+            Decimal cantidad = Convert.ToDecimal(txt_cantidad_gastada.Text);
+            string poductos_ya_unidos = txt_razon.Text + G_parametros[0] + txt_quien_facturo.Text;
             string direccion1= "ventas\\" + fecha_hora.ToString("yyyy") + "\\" + fecha_hora.ToString("MM") + "\\dias\\g_" + fecha_hora.ToString("dd-MM-yyyy") + ".txt", 
                    direccion2= "ventas\\" + fecha_hora.ToString("yyyy") + "\\" + fecha_hora.ToString("MM") + "\\g_" + fecha_hora.ToString("MM") + ".txt",
                    direccion3= "ventas\\" + fecha_hora.ToString("yyyy") + "\\g_" + fecha_hora.ToString("yyyy") + ".txt",
@@ -37,12 +37,12 @@ namespace tienda
             if (boton == DialogResult.OK)
             {
                 string [] cantidades_en_juego=bas.leer(direccion5),cantidades_en_juego_espliteada;
-                double dinero_ganado=0,dinero_gastado=0;
+                Decimal dinero_ganado=0,dinero_gastado=0;
 
-                cantidades_en_juego_espliteada = cantidades_en_juego[0].Split(';');
+                cantidades_en_juego_espliteada = cantidades_en_juego[0].Split(G_parametros);
                 dinero_ganado = Convert.ToInt32(cantidades_en_juego_espliteada[1]);
 
-                cantidades_en_juego_espliteada = cantidades_en_juego[0].Split(';');
+                cantidades_en_juego_espliteada = cantidades_en_juego[0].Split(G_parametros);
                 dinero_ganado = Convert.ToInt32(cantidades_en_juego_espliteada[1]);
 
                 if (dinero_ganado>=dinero_gastado+cantidad)

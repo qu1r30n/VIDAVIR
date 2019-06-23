@@ -96,6 +96,7 @@ namespace tienda
 
                         if (cantidad == G_buscar.Length)//si cantidad es igual a la cantidad de datos a buscar
                         {
+                            G_palabra = "";
                             foreach (string item2 in G_linea)//pasa por todas las celdas de linea
                             {
                                 G_palabra = G_palabra + item2 + G_parametros[0]; //y las guarda en un string llamado palabra
@@ -108,9 +109,9 @@ namespace tienda
                    
 
                 }
-                catch (Exception )
+                catch (Exception e)
                 {
-
+                    
                 }
                 sr.Close();//cierra stringread
                 string[] list_string = new string[lista.Count];//crea un array tipo string y le crea la cantidad de espacios que tiene lista
@@ -144,6 +145,7 @@ namespace tienda
                                 }
                             }
                         }
+
                         if (cantidad == G_buscar.Length)//si cantidad es igual a la cantidad de datos a buscar
                         {
                             foreach (string item2 in G_linea)//pasa por todas las celdas de linea
@@ -151,6 +153,7 @@ namespace tienda
                                 G_palabra = G_palabra + item2 + G_parametros[0]; //y las guarda en un string llamado palabra
                             }
                             lista.Add(G_palabra);//lo aggrega en una fila del arraylist lista
+                            G_palabra = "";
                         }
                         cantidad = 0;//lo vuelve cero para cuando cambie de linea en el archibo no se convine con los datos anteriores
                     }
@@ -495,7 +498,7 @@ namespace tienda
         }
 
 
-        public string[] leer(string FILE_NAME, string pos_string=null,string separador=null)
+        public string[] leer(string FILE_NAME, string pos_string=null,string separador="|")
         {
             ArrayList linea = new ArrayList();
             ArrayList resultado = new ArrayList();

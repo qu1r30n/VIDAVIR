@@ -19,11 +19,14 @@ namespace tienda
         {
             InitializeComponent();
             tex_base bas = new tex_base();
-            bas.crear_archivo_y_directorio("inf\\inventario\\invent.txt", "id,producto,precio");
-            string[] imprimir = bas.leer("inf\\inventario\\invent.txt", "1|0", "|");
+            bas.crear_archivo_y_directorio("inf\\inventario\\invent.txt", "id|producto|precio|codigo|cantidad|compra|marca|");
+            string[] imprimir = bas.leer("inf\\inventario\\invent.txt", "1|0|3", ""+G_parametros[0]);
+            string[] imprimir2 = bas.leer("inf\\inventario\\invent.txt", "3|0|1", "" + G_parametros[0]);
+
             for (int i = 1; i < imprimir.Length; i++)
             {
                 txt_buscar_producto.AutoCompleteCustomSource.Add("" + imprimir[i]);
+                txt_buscar_producto.AutoCompleteCustomSource.Add("" + imprimir2[i]);
             }
         }
         private void btn_agregar_Click(object sender, EventArgs e)
@@ -94,31 +97,58 @@ namespace tienda
 
         private void btn_procesar_venta_Click(object sender, EventArgs e)
         {
-            FolderBrowserDialog fbd = new FolderBrowserDialog();
-            if (fbd.ShowDialog()==DialogResult.OK)
-            {
-                MessageBox.Show(fbd.SelectedPath);
-            }
-            else
-            {
-                return;
-            }
+            #region codigo para guarar la lista en un archivo
+            /* 
+                ponero en una carpeta la lista de pedido
+             
+                FolderBrowserDialog fbd = new FolderBrowserDialog();
+                if (fbd.ShowDialog()==DialogResult.OK)
+                {
+                    MessageBox.Show(fbd.SelectedPath);
+                }
+                else
+                {
+                    return;
+                }
 
 
-            DateTime fecha_hora = DateTime.Now;
-            operaciones_archivos op = new operaciones_archivos();
-            tex_base bas = new tex_base();
-            string[] lista_pedido = new string[lst_ventas.Items.Count];
-            for (int i = 0; i < lst_ventas.Items.Count; i++)
-            {
-                lista_pedido[i] = "" + lst_ventas.Items[i];
-            }
-            op.pedido(fbd.SelectedPath + "\\ped_" + fecha_hora.ToString("dd-MM-yyyy")+".txt", lista_pedido);
+                DateTime fecha_hora = DateTime.Now;
+                operaciones_archivos op = new operaciones_archivos();
+                tex_base bas = new tex_base();
+                string[] lista_pedido = new string[lst_ventas.Items.Count];
+                for (int i = 0; i < lst_ventas.Items.Count; i++)
+                {
+                    lista_pedido[i] = "" + lst_ventas.Items[i];
+                }
+                op.pedido(fbd.SelectedPath + "\\ped_" + fecha_hora.ToString("dd-MM-yyyy")+".txt", lista_pedido);
 
           
-            lst_ventas.Items.Clear();
+                lst_ventas.Items.Clear();
+                }
+            */
+            #endregion
+
+            string temporal = "";
+            string[] temporal_s;
+            decimal total = 0;
+
+            DateTime fecha_hora = DateTime.Now;
+            operaciones_archivos op = new operaciones_archivos(); 
+
+            for (int coll = 0; coll < lst_ventas.Items.Count; coll++)
+            {
+                temporal = "" + lst_ventas.Items[coll];
+                temporal_s = temporal.Split(G_parametros);
+
+                if (temporal_s[0] != "")
+                {
+
+                    total = total + Convert.ToDecimal(temporal_s[3]);
+
+                }
+                op.actualisar_resumen_venta_compra("ventas\\total_en_juego.txt", temporal_s[1], temporal_s[2], Convert.ToDecimal(temporal_s[3]));
+                op.actualisar_inventario("inf\\inventario\\invent.txt", "" + temporal_s[1], Convert.ToDecimal(temporal_s[3]));                
+            }
         }
     }
 }
-
-
