@@ -206,9 +206,9 @@ namespace tienda
 
         private void btn_procesar_venta_Click(object sender, EventArgs e)
         {
-            
 
-            
+
+
             #region codigo para guarar la lista en un archivo
             /* 
                 ponero en una carpeta la lista de pedido
@@ -243,9 +243,10 @@ namespace tienda
             string temporal = "";
             string[] temporal_s;
             decimal total = 0;
-
+            int bandera = 0;
+            string productos_ya_unidos = "", ids_ya_unidos = "";
             DateTime fecha_hora = DateTime.Now;
-            operaciones_archivos op = new operaciones_archivos(); 
+            operaciones_archivos op = new operaciones_archivos();
 
             for (int coll = 0; coll < lst_ventas.Items.Count; coll++)
             {
@@ -257,17 +258,33 @@ namespace tienda
                     total = total + (Convert.ToDecimal(temporal_s[5]) * Convert.ToDecimal(temporal_s[8]));
 
                 }
-                if (Convert.ToDecimal(temporal_s[5])< Convert.ToDecimal(temporal_s[7]))
+                if (Convert.ToDecimal(temporal_s[5]) < Convert.ToDecimal(temporal_s[7]))
                 {
-                    DialogResult result = MessageBox.Show("precio anterior: "+temporal_s[5]+"  precio actual"+ temporal_s[7], "Hi", MessageBoxButtons.OKCancel);
-                    if (result== DialogResult.OK)
+                    DialogResult result = MessageBox.Show("producto: " + temporal_s[0] + "precio anterior: " + temporal_s[5] + "  precio actual: " + temporal_s[7], "Hi", MessageBoxButtons.OKCancel);
+                    if (result == DialogResult.OK)
                     {
-                        op.actualisar_resumen_venta_compra("ventas\\total_en_juego.txt", temporal_s[1], temporal_s[2], Convert.ToDecimal(temporal_s[3]));
-                        op.actualisar_inventario("inf\\inventario\\invent.txt", "" + temporal_s[1], Convert.ToDecimal(temporal_s[3]));
+                        ids_ya_unidos = ids_ya_unidos + temporal_s[1];
+                        productos_ya_unidos = productos_ya_unidos + temporal_s[0];
+                        op.actualisar_costo_compra("inf\\inventario\\invent.txt", "" + temporal_s[1], Convert.ToDecimal(temporal_s[7]));
+                        op.actualisar_inventario("inf\\inventario\\invent.txt", "" + temporal_s[1], Convert.ToDecimal(temporal_s[8]));
                     }
-
+                }
+                else
+                {
+                    ids_ya_unidos = ids_ya_unidos + temporal_s[1];
+                    productos_ya_unidos = productos_ya_unidos + temporal_s[0];
+                    op.actualisar_costo_compra("inf\\inventario\\invent.txt", "" + temporal_s[1], Convert.ToDecimal(temporal_s[7]));
+                    op.actualisar_inventario("inf\\inventario\\invent.txt", "" + temporal_s[1], Convert.ToDecimal(temporal_s[8]));
                 }
             }
+
+            modelo_actualisacion_de_compras(fecha_hora.ToString("yyyy"), fecha_hora.ToString("MM"), fecha_hora.ToString("dd"), fecha_hora.ToString("dd-MM-yyyy"), fecha_hora.ToString("HH:mm:ss"), ids_ya_unidos, total, productos_ya_unidos);
+        
+
+            
+
+
+            lst_ventas.Items.Clear();
             txt_buscar_producto.Focus();
         }
 
@@ -277,6 +294,28 @@ namespace tienda
             {
                 e.Handled = true;
                 SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void modelo_actualisacion_de_compras(string año, string mes, string dia, string dia_mes_año, string hora, string ids_ya_unidos="", decimal cantidad=1, string poductos_ya_unidos="", decimal cost_comp=1)
+        {
+            tex_base bas = new tex_base();
+            operaciones_archivos op = new operaciones_archivos();
+            string[] cantidades_en_juego = bas.leer("ventas\\total_en_juego.txt"), cantidades_en_juego_espliteada;
+            Decimal dinero_ganado = 0, dinero_gastado = 0;
+
+            cantidades_en_juego_espliteada = cantidades_en_juego[0].Split(G_parametros);
+            dinero_ganado = Convert.ToInt32(cantidades_en_juego_espliteada[1]);
+
+            if (dinero_ganado >= dinero_gastado)
+            {
+
+                bas.agregar("ventas\\" + año + "\\" + mes + "\\dias\\g_" + dia_mes_año + ".txt", hora + " |" + ids_ya_unidos + " |" + cantidad + " |" + poductos_ya_unidos, null);//muestra total cada horas
+                op.actualisar_resumen_compras("ventas\\" + año + "\\" + mes + "\\g_" + mes + ".txt", dia, cantidad);//muestra total de cada dias
+                op.actualisar_resumen_compras("ventas\\" + año + "\\g_" + año + ".txt", mes, cantidad);//muestra total de cada mes
+                op.actualisar_resumen_compras("ventas\\g_total_años.txt", año, cantidad);//muestra total de cada año
+                op.actualisar_resumen_compras("ventas\\total_en_juego.txt", "dinero_hay: ", -1 * cantidad);//muestra total de cada año
+                op.actualisar_ganancia_real("ventas\\ganancia_real.txt", "dinero_hay: ", -1 * cantidad);//muestra ganancia real
             }
         }
     }

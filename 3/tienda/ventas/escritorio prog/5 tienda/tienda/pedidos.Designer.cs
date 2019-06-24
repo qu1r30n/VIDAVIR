@@ -48,7 +48,7 @@
             this.btn_elim_ultimo.Location = new System.Drawing.Point(904, 158);
             this.btn_elim_ultimo.Name = "btn_elim_ultimo";
             this.btn_elim_ultimo.Size = new System.Drawing.Size(75, 40);
-            this.btn_elim_ultimo.TabIndex = 4;
+            this.btn_elim_ultimo.TabIndex = 6;
             this.btn_elim_ultimo.Text = "eliminar ultimo";
             this.btn_elim_ultimo.UseVisualStyleBackColor = true;
             this.btn_elim_ultimo.Click += new System.EventHandler(this.btn_elim_ultimo_Click);
@@ -58,7 +58,7 @@
             this.btn_agregar.Location = new System.Drawing.Point(12, 317);
             this.btn_agregar.Name = "btn_agregar";
             this.btn_agregar.Size = new System.Drawing.Size(189, 23);
-            this.btn_agregar.TabIndex = 3;
+            this.btn_agregar.TabIndex = 4;
             this.btn_agregar.Text = "agregar";
             this.btn_agregar.UseVisualStyleBackColor = true;
             this.btn_agregar.Click += new System.EventHandler(this.btn_agregar_Click);
@@ -78,7 +78,7 @@
             this.btn_eliminar_todo.Location = new System.Drawing.Point(904, 125);
             this.btn_eliminar_todo.Name = "btn_eliminar_todo";
             this.btn_eliminar_todo.Size = new System.Drawing.Size(75, 23);
-            this.btn_eliminar_todo.TabIndex = 6;
+            this.btn_eliminar_todo.TabIndex = 7;
             this.btn_eliminar_todo.Text = "eliminar todo";
             this.btn_eliminar_todo.UseVisualStyleBackColor = true;
             this.btn_eliminar_todo.Click += new System.EventHandler(this.btn_eliminar_todo_Click);
@@ -88,7 +88,7 @@
             this.btn_eliminar_seleccionado.Location = new System.Drawing.Point(904, 77);
             this.btn_eliminar_seleccionado.Name = "btn_eliminar_seleccionado";
             this.btn_eliminar_seleccionado.Size = new System.Drawing.Size(86, 42);
-            this.btn_eliminar_seleccionado.TabIndex = 7;
+            this.btn_eliminar_seleccionado.TabIndex = 8;
             this.btn_eliminar_seleccionado.Text = "eliminar seleccionado";
             this.btn_eliminar_seleccionado.UseVisualStyleBackColor = true;
             this.btn_eliminar_seleccionado.Click += new System.EventHandler(this.btn_eliminar_seleccionado_Click);
@@ -99,7 +99,7 @@
             this.lst_ventas.Location = new System.Drawing.Point(12, 12);
             this.lst_ventas.Name = "lst_ventas";
             this.lst_ventas.Size = new System.Drawing.Size(886, 251);
-            this.lst_ventas.TabIndex = 8;
+            this.lst_ventas.TabIndex = 9;
             // 
             // txt_buscar_producto
             // 
@@ -144,7 +144,7 @@
             this.lbl_cuenta.Location = new System.Drawing.Point(207, 312);
             this.lbl_cuenta.Name = "lbl_cuenta";
             this.lbl_cuenta.Size = new System.Drawing.Size(30, 31);
-            this.lbl_cuenta.TabIndex = 16;
+            this.lbl_cuenta.TabIndex = 10;
             this.lbl_cuenta.Text = "$";
             // 
             // txt_costo_unitario
@@ -152,7 +152,7 @@
             this.txt_costo_unitario.Location = new System.Drawing.Point(207, 288);
             this.txt_costo_unitario.Name = "txt_costo_unitario";
             this.txt_costo_unitario.Size = new System.Drawing.Size(79, 20);
-            this.txt_costo_unitario.TabIndex = 17;
+            this.txt_costo_unitario.TabIndex = 3;
             // 
             // lbl_costo_unitario
             // 

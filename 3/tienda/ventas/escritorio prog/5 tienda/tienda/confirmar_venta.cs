@@ -82,6 +82,8 @@ namespace tienda
                  
         }
 
+
+        
         private void modelo_actualisacion_de_ventas(string año, string mes,string dia, string dia_mes_año, string hora, string ids_ya_unidos, decimal cantidad, string poductos_ya_unidos, decimal cost_comp)
         {
             tex_base bas = new tex_base();
