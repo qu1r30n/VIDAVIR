@@ -56,14 +56,14 @@
             this.lst_ventas.Location = new System.Drawing.Point(0, 0);
             this.lst_ventas.Name = "lst_ventas";
             this.lst_ventas.Size = new System.Drawing.Size(239, 251);
-            this.lst_ventas.TabIndex = 1;
+            this.lst_ventas.TabIndex = 7;
             // 
             // btn_eliminar_seleccionado
             // 
             this.btn_eliminar_seleccionado.Location = new System.Drawing.Point(245, 104);
             this.btn_eliminar_seleccionado.Name = "btn_eliminar_seleccionado";
             this.btn_eliminar_seleccionado.Size = new System.Drawing.Size(86, 42);
-            this.btn_eliminar_seleccionado.TabIndex = 2;
+            this.btn_eliminar_seleccionado.TabIndex = 6;
             this.btn_eliminar_seleccionado.Text = "eliminar seleccionado";
             this.btn_eliminar_seleccionado.UseVisualStyleBackColor = true;
             this.btn_eliminar_seleccionado.Click += new System.EventHandler(this.btn_eliminar_seleccionado_Click);
@@ -73,7 +73,7 @@
             this.btn_eliminar_todo.Location = new System.Drawing.Point(245, 152);
             this.btn_eliminar_todo.Name = "btn_eliminar_todo";
             this.btn_eliminar_todo.Size = new System.Drawing.Size(75, 23);
-            this.btn_eliminar_todo.TabIndex = 3;
+            this.btn_eliminar_todo.TabIndex = 5;
             this.btn_eliminar_todo.Text = "eliminar todo";
             this.btn_eliminar_todo.UseVisualStyleBackColor = true;
             this.btn_eliminar_todo.Click += new System.EventHandler(this.btn_eliminar_todo_Click);
@@ -83,7 +83,7 @@
             this.btn_procesar_venta.Location = new System.Drawing.Point(245, 231);
             this.btn_procesar_venta.Name = "btn_procesar_venta";
             this.btn_procesar_venta.Size = new System.Drawing.Size(75, 23);
-            this.btn_procesar_venta.TabIndex = 4;
+            this.btn_procesar_venta.TabIndex = 1;
             this.btn_procesar_venta.Text = "procesar venta";
             this.btn_procesar_venta.UseVisualStyleBackColor = true;
             this.btn_procesar_venta.Click += new System.EventHandler(this.btn_procesar_venta_Click);
@@ -93,7 +93,7 @@
             this.btn_agregar.Location = new System.Drawing.Point(156, 272);
             this.btn_agregar.Name = "btn_agregar";
             this.btn_agregar.Size = new System.Drawing.Size(75, 23);
-            this.btn_agregar.TabIndex = 5;
+            this.btn_agregar.TabIndex = 2;
             this.btn_agregar.Text = "agregar";
             this.btn_agregar.UseVisualStyleBackColor = true;
             this.btn_agregar.Click += new System.EventHandler(this.btn_agregar_Click);
@@ -103,7 +103,7 @@
             this.btn_elim_ultimo.Location = new System.Drawing.Point(245, 185);
             this.btn_elim_ultimo.Name = "btn_elim_ultimo";
             this.btn_elim_ultimo.Size = new System.Drawing.Size(75, 40);
-            this.btn_elim_ultimo.TabIndex = 6;
+            this.btn_elim_ultimo.TabIndex = 4;
             this.btn_elim_ultimo.Text = "eliminar ultimo";
             this.btn_elim_ultimo.UseVisualStyleBackColor = true;
             this.btn_elim_ultimo.Click += new System.EventHandler(this.btn_elim_ultimo_Click);
@@ -124,7 +124,7 @@
             this.lbl_cuenta.Name = "lbl_cuenta";
             this.lbl_cuenta.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lbl_cuenta.Size = new System.Drawing.Size(24, 25);
-            this.lbl_cuenta.TabIndex = 8;
+            this.lbl_cuenta.TabIndex = 3;
             this.lbl_cuenta.Text = "$";
             // 
             // ventas

@@ -373,6 +373,125 @@ namespace tienda
             File.Move(G_temp, FILE_NAME);//renombramos el archivo temporal por el que tenia el original
         }
 
+        public void actualisar_costo_compra(string FILE_NAME, string id_produc_act, decimal cantidad_a_act)
+        {
+            int columna_modificar = 5;
+            tex_base bas = new tex_base();
+            string[] G_linea, linea;
+            G_linea = FILE_NAME.Split('\\');//esplitea la direccion
+            G_temp = G_linea[0];//temp es igual al primer directorio
+            bas.crear_archivo_y_directorio(FILE_NAME);
+            for (int i = 1; i < G_linea.Length; i++)//checa si es el ultimo directorio 
+            {
+                if (i == G_linea.Length - 1)//si llego al archivo le va a colocar un temp_ y el nombre del archivo
+                {
+                    G_linea[i] = "temp_" + G_linea[i];
+                }
+                G_temp = G_temp + "\\" + G_linea[i];//le pone la barrita para pasarselo a la funcion de crear achivos
+            }
+            bas.crear_archivo_y_directorio(G_temp);//creamos el archivo temporal
+
+            StreamReader sr = new StreamReader(FILE_NAME);//abrimos el archivo a leer
+            StreamWriter sw = new StreamWriter(G_temp, true);//abrimos el archivo a escribir
+            try
+            {
+                while (sr.Peek() >= 0)//verificamos si hay mas lineas a leer
+                {
+                   
+                    string temp = "";
+                    G_palabra = sr.ReadLine();//leemos linea y lo guardamos en palabra
+                    if (G_palabra != null)
+                    {
+                        linea = G_palabra.Split(G_parametros);
+
+                        if (linea[0] != id_produc_act)
+                        {
+                            temp = "";
+                            for (int i = 0; i < linea.Length; i++)
+                            {
+                                if (i < (linea.Length - 1))
+                                {
+                                    temp = temp + linea[i] + G_parametros[0];
+                                }
+                                else
+                                {
+                                    temp = temp + linea[i];
+                                }
+                            }
+                            sw.WriteLine(temp);
+                        }
+                   
+
+                        else
+                        {
+                            if (0 <= Convert.ToDecimal(linea[5])) //si la suma de la cantidad que se puso y la cantidad que avia es mayor igual a 0
+                            {
+                                temp = "";
+                                for (int i = 0; i < linea.Length; i++)
+                                {
+                                    if (i < (linea.Length - 1))
+                                    {
+                                        if (i == columna_modificar)//la columna de cantidad de producto
+                                        {
+                                            temp = temp + (cantidad_a_act + Convert.ToDecimal(linea[i])) + G_parametros[0];//se le suma la cantidad
+                                        }
+                                        else
+                                        {
+                                            temp = temp + linea[i] + G_parametros[0];
+                                        }
+                                    }
+                                    else
+                                    {
+                                        temp = temp + linea[i];
+                                    }
+                                }
+
+                                sw.WriteLine(temp);
+                            }
+                            else
+                            {
+
+                                temp = "";
+                                for (int i = 0; i < linea.Length; i++)
+                                {
+                                    if (i < (linea.Length - 1))
+                                    {
+                                        if (i == columna_modificar)//la columna de cantidad de producto
+                                        {
+                                            temp = temp + cantidad_a_act + G_parametros[0];
+                                        }
+                                        else
+                                        {
+                                            temp = temp + linea[i] + G_parametros[0];
+                                        }
+                                    }
+                                    else
+                                    {
+                                        temp = temp + linea[i];
+                                    }
+                                }
+
+                                sw.WriteLine(temp);
+                            }
+
+
+                        }
+                    }
+                }
+            }
+
+            catch (Exception e)
+            {
+
+            }
+
+            sr.Close();
+            sw.Close();
+            Thread.Sleep(1);
+            File.Delete(FILE_NAME);//borramos el archivo original
+            Thread.Sleep(1);
+            File.Move(G_temp, FILE_NAME);//renombramos el archivo temporal por el que tenia el original
+        }
 
         public void actualisar_pedido(string FILE_NAME, string DATOS)
         {

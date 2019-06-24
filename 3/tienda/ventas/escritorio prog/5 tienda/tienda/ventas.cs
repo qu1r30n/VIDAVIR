@@ -68,8 +68,9 @@ namespace tienda
 
                     //-------------------------------------------------------------
                     string[] enviar = { "id°" + (cantidad_produc.Length), "producto", "precio", "codigo°" + espliteado[0], "cantidad", "compra", "marca" };
-                    vent_emergent.proceso_ventana_emergente(enviar, 1);//el uno significa que modificara el inventario
-                    vent_emergent.Show();
+                    string mensage=vent_emergent.proceso_ventana_emergente(enviar, 1);//el uno significa que modificara el inventario
+                    MessageBox.Show(mensage);
+                    recargar_texbox();
                 }
 
                 for (int coll = 0; coll < lst_ventas.Items.Count; coll++)
@@ -188,9 +189,11 @@ namespace tienda
 
                         //-------------------------------------------------------------
                         string[] enviar = { "id°" + (cantidad_produc.Length), "producto", "precio", "codigo°" + espliteado[0],  "cantidad", "compra", "marca" };
-                        vent_emergent.proceso_ventana_emergente(enviar,1);//el uno significa que modificara el inventario
-                        vent_emergent.Show();
-                    }
+                        string mensage = vent_emergent.proceso_ventana_emergente(enviar, 1);//el uno significa que modificara el inventario
+                        MessageBox.Show("ya se agrego el producto: "+mensage);
+                        txt_buscar_producto.Text = "";
+                        recargar_texbox();
+                        }
                     
                     for (int coll = 0; coll < lst_ventas.Items.Count; coll++)
                     {
@@ -276,6 +279,23 @@ namespace tienda
             lst_ventas.Items.Clear();
             txt_buscar_producto.Focus();
             cv.Show();   
+        }
+
+        private void recargar_texbox()
+        {
+            tex_base bas = new tex_base();
+            string[] imprimir = bas.leer("inf\\inventario\\invent.txt", "1|0|2|3|4|5|6|7", "" + G_parametros[0]);
+            for (int k = 1; k < imprimir.Length; k++)
+            {
+                txt_buscar_producto.AutoCompleteCustomSource.Add("" + imprimir[k]);
+            }
+
+            string[] imprimir2 = bas.leer("inf\\inventario\\invent.txt", "3|0|2|1|4|5|6|7", "" + G_parametros[0]);
+
+            for (int k = 1; k < imprimir2.Length; k++)
+            {
+                txt_buscar_producto.AutoCompleteCustomSource.Add("" + imprimir2[k]);
+            }
         }
     }
 }

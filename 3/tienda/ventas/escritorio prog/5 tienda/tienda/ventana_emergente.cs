@@ -12,21 +12,21 @@ namespace tienda
 {
     public partial class ventana_emergente : Form
     {
-        public string[] arraytextbox;
-        int origen = 0;
+        
         char[] G_parametros = { '|' };
 
 
         public  ventana_emergente()
         {
             InitializeComponent();
-            arraytextbox = new string[1];
+            
             
         }
 
-        public void proceso_ventana_emergente(string[] nom_datos_recolectados,int modificara,char caracter_spliteo='°')
+        public string proceso_ventana_emergente(string[] nom_datos_recolectados, int modificara=0, string[] infoextra = null, char caracter_spliteo = '°')
         {
-            origen = modificara;
+            string[] arraytextbox;
+            arraytextbox = new string[1];
             int x = 120;
             int y = 0;
             int ancho = 100;
@@ -100,58 +100,122 @@ namespace tienda
                 btn_cancelar.Text = "cancelar";
                 this.Controls.Add(btn_aceptar);//le agrega un indice al control para luego utilisarlo por su indise en  la funcion devolver string
                 //this.Controls.Add(btn_cancelar);
+                btn_aceptar.DialogResult = DialogResult.OK;
+                this.ShowDialog();
 
-                btn_aceptar.Click += new EventHandler(devolver_string);
+
+
+                //----------------------------------------------------------------------------------------------------------------------------
+                if (btn_aceptar.DialogResult ==DialogResult)
+                {
+                    int K = 0;
+                    tex_base bas = new tex_base();
+                    operaciones_archivos op = new operaciones_archivos();
+                    string temp2 = "";
+
+                    foreach (var obj in this.Controls)//checa cuantos objeto del tipo textbox  y pone el arreglo global conforme a la cantidad de textbox
+                    {
+                        if (obj is TextBox)
+                        {
+                            arraytextbox = new string[K + 1];
+                            K++;
+                        }
+                    }
+
+                    K = 0;
+                    foreach (var obj in this.Controls) //aqui agrega añ arreglo global "arraytextbox" la informacion
+                    {
+
+                        if (obj is TextBox)
+                        {
+
+                            TextBox temp = (TextBox)obj;
+                            arraytextbox[K] = temp.Text;
+                            temp2 = temp2 + temp.Text + G_parametros[0];
+                            K++;
+                        }
+                    }
+
+                    bas.crear_archivo_y_directorio("inf\\inventario\\cosas_no_estaban.txt");
+                    switch (modificara)
+                    {
+                        case 0:
+                            bas.agregar("inf\\inventario\\cosas_no_estaban.txt", "movimiento origen: " + modificara + G_parametros[0] + temp2);
+                            break;
+                        case 1:
+                            bas.agregar("inf\\inventario\\cosas_no_estaban.txt", "movimiento origen: " + modificara + G_parametros[0] + temp2);
+                            bas.agregar("inf\\inventario\\invent.txt", temp2);
+                            break;
+                        case 2:
+                            bas.agregar("inf\\inventario\\cosas_no_estaban.txt", "movimiento origen: " + modificara + G_parametros[0] + temp2);
+                            op.actualisar_costo_compra("inf\\inventario\\invent.txt",infoextra[0],Convert.ToDecimal(arraytextbox[0]));
+                            break;
+                        default:
+                            bas.agregar("inf\\inventario\\cosas_no_estaban.txt", "movimiento origen: " + modificara + G_parametros[0] + temp2);
+                            break;
+                    }
+
+                    this.Close();
+                }
+                //------------------------------------------------------------------------------------------------------------------
+
             }
             else { MessageBox.Show("no has puesto ningun dato"); }
-        }
 
-
-        private void devolver_string(object sender, EventArgs e)
-        {
-            int i = 0;
-            tex_base bas = new tex_base();
-            string temp2 = "";
-
-            foreach (var obj in this.Controls)//checa cuantos objeto del tipo textbox  y pone el arreglo global conforme a la cantidad de textbox
+            string union = "";
+            if (arraytextbox[0]!=null)
             {
-                if (obj is TextBox)
+                for (int i = 0; i < arraytextbox.Length; i++)
                 {
-                    arraytextbox = new string[i + 1];
-                    i++;
+                    union = union + arraytextbox[i] + G_parametros[0];
                 }
             }
-
-            i = 0;
-            foreach (var obj in this.Controls) //aqui agrega añ arreglo global "arraytextbox" la informacion
-            {
-                
-                if (obj is TextBox)
-                {
-                    
-                    TextBox temp = (TextBox)obj;
-                    arraytextbox[i] = temp.Text;
-                    temp2 = temp2 + temp.Text+G_parametros[0];
-                    i++;
-                }    
-            }
-
-            bas.crear_archivo_y_directorio("inf\\inventario\\cosas_no_estaban.txt");
-            switch (origen)
-            {
-                case 0:
-                    bas.agregar("inf\\inventario\\cosas_no_estaban.txt", "movimiento origen: " +origen+ G_parametros[0] + temp2);
-                    break;
-                case 1:
-                    bas.agregar("inf\\inventario\\cosas_no_estaban.txt", "movimiento origen: " + origen + G_parametros[0] + temp2);
-                    bas.agregar("inf\\inventario\\invent.txt", temp2);
-                    break;
-                default:
-                    bas.agregar("inf\\inventario\\cosas_no_estaban.txt", "movimiento origen: " + origen + G_parametros[0] + temp2);
-                    break;
-            }
-
-            this.Close();
+            return union;
         }
+
+
+
+        public static string InputBox(string title="aqui tu titulo", string promptText="aqui la pregunta", string value="aqui el valor")
+        {
+            Form form = new Form();
+            Label label = new Label();
+            TextBox textBox = new TextBox();
+            Button buttonOk = new Button();
+            Button buttonCancel = new Button();
+
+            form.Text = title;
+            label.Text = promptText;
+            textBox.Text = value;
+
+            buttonOk.Text = "OK";
+            buttonCancel.Text = "Cancel";
+            buttonOk.DialogResult = DialogResult.OK;
+            buttonCancel.DialogResult = DialogResult.Cancel;
+
+            label.SetBounds(9, 20, 372, 13);
+            textBox.SetBounds(12, 36, 372, 20);
+            buttonOk.SetBounds(228, 72, 75, 23);
+            buttonCancel.SetBounds(309, 72, 75, 23);
+
+            label.AutoSize = true;
+            textBox.Anchor = textBox.Anchor | AnchorStyles.Right;
+            buttonOk.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            buttonCancel.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+
+            form.ClientSize = new Size(396, 107);
+            form.Controls.AddRange(new Control[] { label, textBox, buttonOk, buttonCancel });
+            form.ClientSize = new Size(Math.Max(300, label.Right + 10), form.ClientSize.Height);
+            form.FormBorderStyle = FormBorderStyle.FixedDialog;
+            form.StartPosition = FormStartPosition.CenterScreen;
+            form.MinimizeBox = false;
+            form.MaximizeBox = false;
+            form.AcceptButton = buttonOk;
+            form.CancelButton = buttonCancel;
+
+            DialogResult dialogResult = form.ShowDialog();
+            value = textBox.Text;
+            return value;
+        }
+
     }
 }

@@ -1,6 +1,16 @@
 id|producto|precio|codigo|cantidad|compra|marca|
-1|leche nesquik chocolate 240ml|8.5|75000011|1364|1||
-2|jugo boing mango chico 250ml|6|75001759|0|1||
-3|jugo boing fresa chico 250ml|6|75001766|0|1||
-4|jugo boing guayaba chico 250ml|6|75001773|0|1||
-5|gerber pera 113gr|11|75001834|99|1||
+1|leche nesquik chocolate 240ml|9|75000011|75001011|5||
+2|jugo boing mango chico 250ml|1|75001759|0|0||
+3|jugo boing fresa chico 250ml|6|75001766|0|39||
+4|jugo boing guayaba chico 250ml|6|75001773|0|3||
+5|gerber pera 113gr|11|75001834|99|30||
+6|prueba|9|leche nesquik chocolate 240ml|9|9|9|
+7|9|9|asdf|9|9|9|
+8|9|9|lnk|9|9|9|
+9|9|9|jafo|9|9|9|
+10|0|0|afd|0|0|0|
+11|8|8|gjao|8|8|8|
+12|9|9|lfad|9|9|9|
+13|9|9|lfadf|9|9|9|
+14|9|9|lfd|9|9|9|
+15|9|9|fashi|9|9|9|

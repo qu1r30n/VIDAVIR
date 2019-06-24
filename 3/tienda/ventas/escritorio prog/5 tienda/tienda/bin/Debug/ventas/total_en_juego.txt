@@ -1,3 +1,3 @@
-dinero_hay: |79.0|75
-1|66|71
-dinero_gastado: |72|5
+dinero_hay: |96.0|225000110
+1|225000099|225000106
+dinero_gastado: |72|225000040
