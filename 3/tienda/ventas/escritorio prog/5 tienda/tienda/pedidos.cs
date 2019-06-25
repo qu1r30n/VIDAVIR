@@ -35,9 +35,7 @@ namespace tienda
             }
         }
         private void btn_agregar_Click(object sender, EventArgs e)
-        {
-            
-            
+        {            
             bool bandera = false;
 
             if ("" != txt_buscar_producto.Text && "" != txt_cantidad.Text)
@@ -49,7 +47,7 @@ namespace tienda
                     {
                         string[] espliteado = txt_buscar_producto.Text.Split(G_parametros[0]);
 
-                        if (Convert.ToInt32(espliteado[5]) > 0)
+                        if (Convert.ToDecimal(espliteado[5]) > 0)
                         {
                             txt_buscar_producto.Text = txt_buscar_producto.Text + txt_costo_unitario.Text+ G_parametros[0]+txt_cantidad.Text;
                             lst_ventas.Items.Add(txt_buscar_producto.Text);
@@ -137,6 +135,7 @@ namespace tienda
         {
             tex_base bas = new tex_base();
             string[] imprimir = bas.leer("inf\\inventario\\invent.txt", "1|0|2|3|4|5|6|7", "" + G_parametros[0]);
+            txt_buscar_producto.AutoCompleteCustomSource.Clear();
             for (int k = 1; k < imprimir.Length; k++)
             {
                 txt_buscar_producto.AutoCompleteCustomSource.Add("" + imprimir[k]);

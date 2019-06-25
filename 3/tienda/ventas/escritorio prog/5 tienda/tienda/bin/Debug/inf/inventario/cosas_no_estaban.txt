@@ -38,3 +38,7 @@ movimiento origen: 1|15|9|9|fashi|9|9|9|
 movimiento origen: 2|30|
 movimiento origen: 2|39|
 movimiento origen: 2|3|
+movimiento origen: 1|651|gatorade naranja 350ml|10|036731103512|5|0|gatorade|
+movimiento origen: 1|651|gatorade|10|036731103536|10|0|gatorade|
+movimiento origen: 1|652|9|9|hoaids|9|9|9|
+movimiento origen: 2|9|

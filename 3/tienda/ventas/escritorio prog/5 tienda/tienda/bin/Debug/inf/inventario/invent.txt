@@ -1,11 +1,11 @@
 id|producto|costo|codigo de barras|catidad|costo de compra|marca|
-1|bubulubu  35g|9|7432354|0|0||
+1|bubulubu  35g|9|7432354|0|9||
 2|leche nesquik chocolate 240ml|8|75000011|0|0|nesquik|
 3|jugo boing mango chico 250ml|6|75001759|0|0|del valle|
 4|jugo boing fresa chico 250ml|6|75001766|0|0|del valle|
 5|jugo boing guayaba chico 250ml|6|75001773|0|0|del valle|
 6|gerber pera 113gr|11|75001834|0|0|nestle|
-7|chocorroles piña 100g|15|75002275|0|11,25|marinela|
+7|chocorroles piï¿½a 100g|15|75002275|0|11,25|marinela|
 8|gerber durazno 113gr|11|75003371|0|0|nestle|
 9|sabritas adobadas 45g|12|75003388|0|0||
 10|gerber manzana 113g|11|75003401|0|0||
@@ -19,11 +19,11 @@ id|producto|costo|codigo de barras|catidad|costo de compra|marca|
 18|catsup del monte 320gr|13|75053901|0|0|del monte|
 19|kinder maxi 21g|8|80050094|0|0||
 20|kinder 12,5g|4|80050315|0|0||
-21|huevo kinder niña(o) 20g|20|80051121|0|0||
+21|huevo kinder niï¿½a(o) 20g|20|80051121|0|0||
 22|huevo kinder animalitos 20g|20|80051831|0|0||
 23|kinder bueno 43g|20|80052760|0|0||
 24|huevo kinder dora 20g|20|80892816|0|0||
-25|chicharron saldaña|8|3805565154|0|0||
+25|chicharron saldaï¿½a|8|3805565154|0|0||
 26|clamato 473ml|18|14800515329|0|0||
 27|sal la fina 1kg|12|34587030013|0|0|la fina|
 28|gatorade naranja  350ml|10|36731103512|0|0||
@@ -39,16 +39,16 @@ id|producto|costo|codigo de barras|catidad|costo de compra|marca|
 38|gatorade fresandia 1lt|26|36731328007|0|0|gatorade|
 39|agua skarch 1l|6|40232838699|0|0|skarch|
 40|titan mandarina 3lts|25|40232886652|0|0|titan|
-41|titan piña 3 lts|25|40232886669|0|0|titan|
+41|titan piï¿½a 3 lts|25|40232886669|0|0|titan|
 42|titan manzana 3lts |25|40232886676|0|0|titan|
 43|titan tuti-fruti 2lt|20|40232886690|0|0|titan|
 44|titan limon 2lt|20|40232886713|0|0|titan|
 45|titan mandarina 2lt|20|40232886720|0|0|titan|
-46|titan piña 2lt|20|40232886737|0|0|titan|
+46|titan piï¿½a 2lt|20|40232886737|0|0|titan|
 47|titan tamarindo 600ml|10|40232886751|0|0|titan|
 48|titan tuti-fruti 600ml|10|40232886768|0|0|titan|
 49|titan limon 600ml|10|40232886782|0|0|titan|
-50|titan piña 600ml|10|40232886805|0|0|titan|
+50|titan piï¿½a 600ml|10|40232886805|0|0|titan|
 51|titan manzana 600ml|10|40232886812|0|0|titan|
 52|maruchan cama/limonyhaba|10|41789001864|0|0|maruchan|
 53|maruchan res |10|41789001925|0|0|maruchan|
@@ -67,11 +67,11 @@ id|producto|costo|codigo de barras|catidad|costo de compra|marca|
 66|arizona sandia 680ml|13|613008738846|0|0|arizona|
 67|arizona ponche de frutas 680ml|13|613008738860|0|0|arizona|
 68|arizona te verde 680ml|13|613008738884|0|0||
-69|totis palitos chile y limòn 25g|6|643795549271|0|0|de la costeña|
+69|totis palitos chile y limï¿½n 25g|6|643795549271|0|0|de la costeï¿½a|
 70|sky arandano|20|721059712750|0|0|sky|
 71|skyblue granada|20|721059722759|0|0|sky|
 72|gelatina dgari cereza 120gr|8|735257002445|0|0|dgari|
-73|gelatina dgari piña 120gr|8|735257002469|0|0|dgari|
+73|gelatina dgari piï¿½a 120gr|8|735257002469|0|0|dgari|
 74|gelatina dgari naranja 120gr|8|735257002476|0|0|dgari|
 75|gelatina dgari jerez 120gr|8|735257002506|0|0|dgari|
 76|gelatina dgari frambuesa 120gr|8|735257002520|0|0|dgari|
@@ -92,7 +92,7 @@ id|producto|costo|codigo de barras|catidad|costo de compra|marca|
 91|zubba 600ml|9|744886225231|0|0|zubba|
 92|zubba 2lts |19|744886522057|0|0|zubba|
 93|charroncitos charras|12|756702134108|0|0||
-94|chips queso jalapeño 60g|9|756702134344|0|0|barcel|
+94|chips queso jalapeï¿½o 60g|9|756702134344|0|0|barcel|
 95|hot nuts fuego|10|757528001742|0|0||
 96|chips fuego 170g|35|757528001889|0|0|barcel|
 97|golden nuts pepitas 28g|11|757528020897|0|0||
@@ -102,7 +102,7 @@ id|producto|costo|codigo de barras|catidad|costo de compra|marca|
 101|gomilocas dulcigomas|10|757528029593|0|0|ricolino|
 102|gomilocas dientes|10|757528029609|0|0|ricolino|
 103|gomilocas hamburguesas|10|757528029616|0|0|ricolino|
-104|gomilocas pingûinos|10|757528029623|0|0|ricolino|
+104|gomilocas pingï¿½inos|10|757528029623|0|0|ricolino|
 105|kranky|10|757528029630|0|0|ricolino|
 106|moritas ricolino|10|757528029647|0|0|ricolino|
 107|panditas clasicas|10|757528029654|0|0|ricolino|
@@ -118,7 +118,7 @@ id|producto|costo|codigo de barras|catidad|costo de compra|marca|
 117|yumi hipersacidos|15|757528033033|0|0|gummy yummy|
 118|yumitags jugodefruta|15|757528033071|0|0|gummy yummy|
 119|hot nuts fuego 80g|12|757528033590|0|0|barcel|
-120|bigmix jalapeño 70g|10|757528034856|0|0|barcel|
+120|bigmix jalapeï¿½o 70g|10|757528034856|0|0|barcel|
 121|golden nuts limon y sal40g|12|757528035518|0|0||
 122|golden nuts limon y sal|12|757528035525|0|0||
 123|golden nuts enchilados 60g|12|757528035860|0|0||
@@ -126,7 +126,7 @@ id|producto|costo|codigo de barras|catidad|costo de compra|marca|
 125|chips a la diabla 46g|12|757528036447|0|0|barcel|
 126|chips adobadas 46g|12|757528036454|0|0|barcel|
 127|chips fuego 46g|12|757528036461|0|0|barcel|
-128|chips jalapeño 46g|12|757528036478|0|0|barcel|
+128|chips jalapeï¿½o 46g|12|757528036478|0|0|barcel|
 129|chips sal de mar 46g|12|757528036492|0|0|barcel|
 130|valentones fuego 60g|10|757528036638|0|0||
 131|bigmix queso 65g|10|757528038298|0|0||
@@ -145,7 +145,7 @@ id|producto|costo|codigo de barras|catidad|costo de compra|marca|
 144|bonafont agua 600ml|8|758104001712|0|0||
 145|bonafont levite 600 coco|10|758104006519|0|0|bonafont|
 146|bonafont levite 1 lt coco|13|758104006526|0|0|bonafont|
-147|levite bonafont 1,5 piña coco|16|758104006533|0|0|bonafont|
+147|levite bonafont 1,5 piï¿½a coco|16|758104006533|0|0|bonafont|
 148|bonafont levite 600 pepino limon |10|758104006618|0|0|bonafont|
 149|bonafont levite limon-pepino 1lt|13|758104006625|0|0|bonafont|
 150|agua bona pepino/limon 1ltr|13|758104006632|0|0||
@@ -157,7 +157,7 @@ id|producto|costo|codigo de barras|catidad|costo de compra|marca|
 156|bonafont levite 600jamaica|10|758104006779|0|0|bonafont|
 157|levite bonafont 1,5 jamaica|16|758104006793|0|0|bonafont|
 158|levite balance 400ml|13|758104006816|0|0||
-159|bonafont piña/coco 1L|13|758104007097|0|0||
+159|bonafont piï¿½a/coco 1L|13|758104007097|0|0||
 160|bonafont simple 1LT|10|758104100422|0|0||
 161|agua skarch 600ml |4|793573264091|0|0|skarch|
 162|agua skarch 1,5l |7|793573264107|0|0|skarch|
@@ -169,14 +169,14 @@ id|producto|costo|codigo de barras|catidad|costo de compra|marca|
 168|stella artois lager 250ml|16|5410228240945|0|0||
 169|skyblue manzana verde |20|6648040012900|0|0|sky|
 170|foco chiyoda plus 100w|10|7404005961329|0|0|chiyoda|
-171|totis churritos chile y limòn 55g|6|7500366000513|0|0|la costeña|
+171|totis churritos chile y limï¿½n 55g|6|7500366000513|0|0|la costeï¿½a|
 172|chicharrones totis chile/limon|6|7500366000582|0|0||
-173|totis pap`s clasicas 170g|16|7500366000629|0|0|la costeña|
-174|totis pap`s adobadas 170g|16|7500366000643|0|0|la costeña|
+173|totis pap`s clasicas 170g|16|7500366000629|0|0|la costeï¿½a|
+174|totis pap`s adobadas 170g|16|7500366000643|0|0|la costeï¿½a|
 175|que totis queso/chedar120g|6|7500366000704|0|0||
-176|totis donitas limôn y sal 28g|6|7500366000711|0|0|la costeña|
-177|totis donitas chile y limon 28g|6|7500366000728|0|0|la costeña|
-178|que totis queso chedar 25g|6|7500366000742|0|0|la costeña|
+176|totis donitas limï¿½n y sal 28g|6|7500366000711|0|0|la costeï¿½a|
+177|totis donitas chile y limon 28g|6|7500366000728|0|0|la costeï¿½a|
+178|que totis queso chedar 25g|6|7500366000742|0|0|la costeï¿½a|
 179|pap`s clasicas 40g|11|7500366000766|0|0||
 180|pap`s adobadas|11|7500366000773|0|0||
 181|toptop`s hot chili52g|7|7500366000797|0|0||
@@ -195,7 +195,7 @@ id|producto|costo|codigo de barras|catidad|costo de compra|marca|
 194|ariel revita color|18|7500435139977|0|0||
 195|rufles original 53g|12|7500478007950|0|0||
 196|ruffles salsa roja 53g|12|7500478007967|0|0|sabritas|
-197|ruffles jalapeño 50g|12|7500478007974|0|0|sabritas|
+197|ruffles jalapeï¿½o 50g|12|7500478007974|0|0|sabritas|
 198|chokis 57g|10|7500478008926|0|0|gamesa|
 199|sab poppers original 33g|10|7500478011995|0|0||
 200|sab poppers limon/chile 33g|10|7500478012008|0|0||
@@ -214,10 +214,10 @@ id|producto|costo|codigo de barras|catidad|costo de compra|marca|
 213|donitas espolvoreadas 105g|12|7501000112425|0|9.11||
 214|nito 62g|10|7501000112784|0|7,59||
 215|rebanadas|5|7501000112845|0|3,78||
-216|bran frutpiña 58g|8|7501000116430|0|0||
+216|bran frutpiï¿½a 58g|8|7501000116430|0|0||
 217|pan blanco 640gG|30|7501000122332|0|24,9||
 218|principe 105g|13|7501000128167|0|10,11|marinela|
-219|barritas piña 75g|10|7501000133031|0|7,78|marinelamarinela|
+219|barritas piï¿½a 75g|10|7501000133031|0|7,78|marinelamarinela|
 220|barritas fresa 75g|10|7501000133055|0|7,78|marinela|
 221|pastisetas 75g|18|7501000133338|0|0|marinela|
 222|sponch 120g|15|7501000138944|0|11,67|marinela|
@@ -228,7 +228,7 @@ id|producto|costo|codigo de barras|catidad|costo de compra|marca|
 227|submarinos vainilla 105g|12|7501000153282|0|9|marinela|
 228|submarinos fresa 105g|12|7501000153374|0|9|marinela|
 229|rocko grande 44g|5|7501000153763|0|0|---------|
-230|pingüinos 80g|15|7501000153800|0|0|marinela|
+230|pinguinos 80g|15|7501000153800|0|0|marinela|
 231|submarinos chocolate 105g|12|7501000156214|0|9|marinela|
 232|tostadas milpa real|25|7501000157075|0|0|milparreal|
 233|takis original 56g|10|7501000164370|0|0|barcel|
@@ -238,7 +238,7 @@ id|producto|costo|codigo de barras|catidad|costo de compra|marca|
 237|barcel chipotles 52g|8|7501000264834|0|0|barcel|
 238|tostachos 65g|8|7501000264841|0|0|barcel|
 239|chips sal de mar 170g|35|7501000266203|0|0|barcel|
-240|chips jalapeño 170g|35|7501000266234|0|0|barcel|
+240|chips jalapeï¿½o 170g|35|7501000266234|0|0|barcel|
 241|palet apayaso|10|7501000278404|0|0||
 242|panque marmol 255g|30|7501000310647|0|22,78||
 243|pan integral 370gCh|28|7501000336319|0|23,24||
@@ -307,7 +307,7 @@ id|producto|costo|codigo de barras|catidad|costo de compra|marca|
 306|jumex lata-bote manzana 473ml|13|7501013101331|0|0|jumex|
 307|jumex lata-botella mango 473ml|13|7501013101348|0|0|jumex|
 308|jumex mango 1L|21|7501013122039|0|0||
-309|jumex piña 1lt|21|7501013122114|0|0|jumex|
+309|jumex piï¿½a 1lt|21|7501013122114|0|0|jumex|
 310|jumex naranja 1L|21|7501013122138|0|0||
 311|jumex uva 1L|21|7501013122145|0|0||
 312|capri sun ponche frutas 200ml|8|7501013144550|0|0||
@@ -323,24 +323,24 @@ id|producto|costo|codigo de barras|catidad|costo de compra|marca|
 322|jumex jugosa guayaba 450ml|14|7501013174069|0|0|jumex|
 323|jumex jugosa uva 450ml|14|7501013174144|0|0|jumex|
 324|jumex  jugoza manzana 450ml|14|7501013174199|0|0|jumex|
-325|vinagre blanco 1,05lt|14|7501017003068|0|0|costeña|
-326|mango/almibar costeña 800g|36|7501017003341|0|0||
-327|frutas en almibar costeña 850g|43|7501017003358|0|0||
-328|elote dorado la costeña 410gr|10|7501017004515|0|0|la costeña|
-329|rajas de jalapeño escabe 220gr|11|7501017005024|0|0|la costeña|
-330|chipotles en adobo 220gr|20|7501017005031|0|0|la costeña|
-331|pure de tomate costeña 210g|6|7501017005611|0|0||
-332|jalapeños picados escabe 220gr|11|7501017005765|0|0|la costeña|
-333|salsa de chipotle 220gr|22|7501017005963|0|0|la costeña|
-334|rajas de jalapeño escabe 105gr|8|7501017006014|0|0|la costeña|
-335|chipotles en adobo 105gr |8|7501017006021|0|0|la costeña|
-336|salsa catsup 960g|29|7501017035021|0|0|la costeña|
-337|frijoles bayos refritos 440gr|13|7501017040988|0|0|la costeña|
-338|frijoles negros refritos 440gr|13|7501017040995|0|0|la costeña|
-339|mayonesa la costeña 330g|25|7501017043262|0|0||
-340|katsup costeña 320g|13|7501017043712|0|0||
-341|mayonesa costeña 190gr|18|7501017050215|0|0|la costeña|
-342|mostaza la costeña 220 g|16|7501017053032|0|0||
+325|vinagre blanco 1,05lt|14|7501017003068|0|0|costeï¿½a|
+326|mango/almibar costeï¿½a 800g|36|7501017003341|0|0||
+327|frutas en almibar costeï¿½a 850g|43|7501017003358|0|0||
+328|elote dorado la costeï¿½a 410gr|10|7501017004515|0|0|la costeï¿½a|
+329|rajas de jalapeï¿½o escabe 220gr|11|7501017005024|0|0|la costeï¿½a|
+330|chipotles en adobo 220gr|20|7501017005031|0|0|la costeï¿½a|
+331|pure de tomate costeï¿½a 210g|6|7501017005611|0|0||
+332|jalapeï¿½os picados escabe 220gr|11|7501017005765|0|0|la costeï¿½a|
+333|salsa de chipotle 220gr|22|7501017005963|0|0|la costeï¿½a|
+334|rajas de jalapeï¿½o escabe 105gr|8|7501017006014|0|0|la costeï¿½a|
+335|chipotles en adobo 105gr |8|7501017006021|0|0|la costeï¿½a|
+336|salsa catsup 960g|29|7501017035021|0|0|la costeï¿½a|
+337|frijoles bayos refritos 440gr|13|7501017040988|0|0|la costeï¿½a|
+338|frijoles negros refritos 440gr|13|7501017040995|0|0|la costeï¿½a|
+339|mayonesa la costeï¿½a 330g|25|7501017043262|0|0||
+340|katsup costeï¿½a 320g|13|7501017043712|0|0||
+341|mayonesa costeï¿½a 190gr|18|7501017050215|0|0|la costeï¿½a|
+342|mostaza la costeï¿½a 220 g|16|7501017053032|0|0||
 343|sopa la moderna fideo 1 200gr|6|7501018310028|0|0|la moderna|
 344|sopa la moderna spaghetti 200gr|6|7501018310103|0|0|la moderna|
 345|sopa la moderna municion 200gr|6|7501018310264|0|0|la moderna|
@@ -348,7 +348,7 @@ id|producto|costo|codigo de barras|catidad|costo de compra|marca|
 347|sopa la moderna codo 1 200gr|6|7501018310516|0|0|la moderna|
 348|sopa la moderna caracol 200gr|6|7501018310561|0|0|la moderna|
 349|sopa la moderna pluma 200gr|6|7501018310608|0|0|la moderna|
-350|sopa la moderna moño 200gr|6|7501018310721|0|0|la moderna|
+350|sopa la moderna moï¿½o 200gr|6|7501018310721|0|0|la moderna|
 351|sopa la moderna almeja 200gr|6|7501018310745|0|0|la moderna|
 352|sopa la moderna hongo 200gr|6|7501018310769|0|0|la moderna|
 353|sopa la moderna sombrero 200gr|6|7501018310776|0|0|la moderna|
@@ -362,16 +362,16 @@ id|producto|costo|codigo de barras|catidad|costo de compra|marca|
 361|be light pepino limon 1,5lt|15|7501022013809|0|0|be-light|
 362|pepsi black 355ml|5|7501022013861|0|0|pepsi|
 363|flash pastilla sanitaria|12|7501025411480|0|0||
-364|ensueño color|19|7501025413019|0|0||
-365|ensueño bebe|20|7501025414153|0|0||
+364|ensueï¿½o color|19|7501025413019|0|0||
+365|ensueï¿½o bebe|20|7501025414153|0|0||
 366|pinol original|18|7501025462017|0|0||
 367|roma jabon 500g|16|7501026004612|0|0||
 368|suavizante detelas carisma|20|7501026005510|0|0||
 369|leche nito chocolate 236ml|10|7501030418412|0|7,38|bimbo|
 370|multi grano nuez 34g|8|7501030424345|0|0||
 371|takis fuego 56g|10|7501030424536|0|0|barcel|
-372|galleta pingûino|5|7501030425953|0|3,89||
-373|mini pay piña 110g|15|7501030426905|0|11,25|marinela|
+372|galleta pingï¿½ino|5|7501030425953|0|3,89||
+373|mini pay piï¿½a 110g|15|7501030426905|0|11,25|marinela|
 374|barritas doble fresa 110g|14|7501030427940|0|0|marinela|
 375|sponch chocolate 120g|15|7501030429029|0|0|marinela|
 376|suavicremas vainilla 102g|8|7501030431183|0|6,22|marinela|
@@ -387,7 +387,7 @@ id|producto|costo|codigo de barras|catidad|costo de compra|marca|
 386|polvorones tubo 345g|22|7501030457152|0|0|marinela|
 387|canelitas tubo 249g|22|7501030457169|0|17,11|marinela|
 388|principe tubo 227g|22|7501030457176|0|17,11|marinela|
-389|barritas maxitubo piña 222g|22|7501030457183|0|0|marinela|
+389|barritas maxitubo piï¿½a 222g|22|7501030457183|0|0|marinela|
 390|barritas maxitubo fresa 222g|22|7501030457190|0|15,56|marinela|
 391|galletas principe choco|13|7501030462859|0|10,11||
 392|hotkis 50g|5|7501030463665|0|0||
@@ -421,7 +421,7 @@ id|producto|costo|codigo de barras|catidad|costo de compra|marca|
 420|manzanita sol lata 355ml|10|7501031360130|0|0|pepsi|
 421|benegastro 240g|10|7501032397869|0|0|danone|
 422|danup fresa 350g|12|7501032397906|0|0|danone|
-423|danup piña coco 350g|12|7501032397968|0|0|danone|
+423|danup piï¿½a coco 350g|12|7501032397968|0|0|danone|
 424|activia ciruela pasa 225g|10|7501032398071|0|0|danone|
 425|activia ciruela pasa 225g|10|7501032398255|0|0|danone|
 426|danone toghurt durazno 220g|9|7501032398484|0|0|danone|
@@ -430,7 +430,7 @@ id|producto|costo|codigo de barras|catidad|costo de compra|marca|
 429|danup fresa 220g|9|7501032398583|0|0|danone|
 430|caribe durazno 300ml|16|7501032485016|0|15,33|caribe|
 431|caribe tinto 300ml|16|7501032485023|0|15,33|caribe|
-432|caribe mango/piña  300ml|18|7501032485030|0|15,33||
+432|caribe mango/piï¿½a  300ml|18|7501032485030|0|15,33||
 433|caribe fresa 300ml|18|7501032485047|0|15,33|caribe|
 434|caribe manzana kiwi 300ml|18|7501032485054|0|15,33|caribe|
 435|caribe maracuya 300ml|18|7501032485061|0|15,33|caribe|
@@ -454,10 +454,10 @@ id|producto|costo|codigo de barras|catidad|costo de compra|marca|
 453|mermelada frambuesa 270gr|26|7501052474335|0|0|clemente|
 454|mitades de durazno 820gr|37|7501052477107|0|0|clemente|
 455|trozitos de durazno 425gr|24|7501052477121|0|0|clemente|
-456|rebanadas de piña almibar 800gr|32|7501052477206|0|0|clemente|
-457|viña real durazno|18|7501053670507|0|0|viña|
-458|viña real kiwi|18|7501053670545|0|0|viña|
-459|viña real fresa sandia |18|7501053670569|0|0|viña|
+456|rebanadas de piï¿½a almibar 800gr|32|7501052477206|0|0|clemente|
+457|viï¿½a real durazno|18|7501053670507|0|0|viï¿½a|
+458|viï¿½a real kiwi|18|7501053670545|0|0|viï¿½a|
+459|viï¿½a real fresa sandia |18|7501053670569|0|0|viï¿½a|
 460|coca-cola menos azucar lata 355ml|13|7501055300075|0|0|cocacola|
 461|coca retornable 1,25Lts|17|7501055300952|0|15||
 462|coca-cola 1lt|19|7501055302451|0|16|cocacola|
@@ -495,10 +495,10 @@ id|producto|costo|codigo de barras|catidad|costo de compra|marca|
 494|la lechera nestle lata 100gr|11|7501059211209|0|0|nestle|
 495|la lechera nestle botella 335gr|22|7501059278868|0|0|nestle|
 496|chocolate morelia 155gr|18|7501059289239|0|0|morelia|
-497|agüitas nestle manzana 300ml|5|7501059295254|0|0|nestle|
-498|agüitas nestle uva 300ml |5|7501059295315|0|0|nestle|
+497|aguitas nestle manzana 300ml|5|7501059295254|0|0|nestle|
+498|aguitas nestle uva 300ml |5|7501059295315|0|0|nestle|
 499|pureza vital nestle 300ml|5|7501059295551|0|0|nestle|
-500|agüitas nestle fresa 300ml|5|7501059295612|0|0|nestle|
+500|aguitas nestle fresa 300ml|5|7501059295612|0|0|nestle|
 501|corona mega 1,2L|32|7501064101205|0|0||
 502|corona light lata 355ml|16|7501064107153|0|0|corona|
 503|modelo especial lata 355ml|16|7501064112546|0|0|modelo|
@@ -511,19 +511,19 @@ id|producto|costo|codigo de barras|catidad|costo de compra|marca|
 510|ariel jabon 250g|13|7501065908841|0|0||
 511|squirt 2lt|21|7501071120077|0|0|pepsi|
 512|squirt 600ml|11|7501071120183|0|0|pepsi|
-513|poett bosque de bambù|15|7501071903137|0|0||
+513|poett bosque de bambï¿½|15|7501071903137|0|0||
 514|clorox color|26|7501071903878|0|0||
-515|peñafiel  2Lts|21|7501073800908|0|0||
-516|peñafiel natural 600ml|11|7501073830509|0|0|cocacola|
-517|peñafiel twist|11|7501073831469|0|0|cocacola|
+515|peï¿½afiel  2Lts|21|7501073800908|0|0||
+516|peï¿½afiel natural 600ml|11|7501073830509|0|0|cocacola|
+517|peï¿½afiel twist|11|7501073831469|0|0|cocacola|
 518|ginger ale schweppers 600ml |12|7501073833722|0|0|cocacola|
 519|schweppes ginger 1L|15|7501073833739|0|0||
-520|peña fiel naranjada 600ml|11|7501073839854|0|0||
-521|peñafiel limonada 600ml|11|7501073839885|0|0|cocacola|
-522|peñafiel piñada 600ml|11|7501073841925|0|0|cocacola|
-523|peña fiel mangada 600ml|11|7501073842670|0|0|cocacola|
+520|peï¿½a fiel naranjada 600ml|11|7501073839854|0|0||
+521|peï¿½afiel limonada 600ml|11|7501073839885|0|0|cocacola|
+522|peï¿½afiel piï¿½ada 600ml|11|7501073841925|0|0|cocacola|
+523|peï¿½a fiel mangada 600ml|11|7501073842670|0|0|cocacola|
 524|del fuerte pure de tomate 210gr|7|7501079702817|0|0|del fuerte|
-525|vinagre blanco 1,05lt|14|7501083100029|0|0|la costeña|
+525|vinagre blanco 1,05lt|14|7501083100029|0|0|la costeï¿½a|
 526|vinagre de manzana barrilito 750ml|16|7501083100036|0|0|barrilito|
 527|epura 2lt|15|7501086800636|0|0|epura|
 528|agua e pura 1l |10|7501086801046|0|0|epura|
@@ -534,11 +534,11 @@ id|producto|costo|codigo de barras|catidad|costo de compra|marca|
 533|gelatina pronto fresa 84gr|11|7501200482120|0|0|pronto|
 534|gelatina pronto limon 84gr|11|7501200482137|0|0|pronto|
 535|gelatina pronto naranja 84gr|11|7501200482144|0|0|pronto|
-536|gelatina pronto piña 84gr|11|7501200482151|0|0|pronto|
+536|gelatina pronto piï¿½a 84gr|11|7501200482151|0|0|pronto|
 537|gelatina pronto uva 84gr|11|7501200482168|0|0|pronto|
 538|blanqueador patitos|12|7501268200025|0|0||
 539|leche entera santa clara 1l|21|7501295600126|0|0|santa clara|
-540|jarritos/piña  2Lts|22|7501441604121|0|0||
+540|jarritos/piï¿½a  2Lts|22|7501441604121|0|0||
 541|jarrito tamarindo 2lt|22|7501441604213|0|0|pepsi|
 542|jarrito rojo 2lt|22|7501441604411|0|0|pepsi|
 543|jarrito mandarina 600ml|11|7501441610115|0|0|pepsi|
@@ -613,11 +613,11 @@ id|producto|costo|codigo de barras|catidad|costo de compra|marca|
 612|trident uva/naranja|10|7622210938732|0|0||
 613|kinder delice 39g|10|8000500267035|0|0||
 614|jugoso al sarten maggi 23,4gr|15|8585002432315|0|0||
-615|frituras saldaña|8|frituras saldaña|0|0||
+615|frituras saldaï¿½a|8|frituras saldaï¿½a|0|0||
 616|totopos|17|totopos|0|0||
 617|nutrileche 1Lt|16|7501020540666|0|14||
 618|yackul|9|7501025511036|0|5,5||
-619|bimbuñuelos|14|7501030472698|0|10,63||
+619|bimbuï¿½uelos|14|7501030472698|0|10,63||
 620|mantecadas nuez6p|18|7501030475514|0|13,67||
 621|donas 6p|14|7501030474227|0|10.63||
 622|nito|10|7501000112784|0|7,69||
@@ -646,6 +646,8 @@ id|producto|costo|codigo de barras|catidad|costo de compra|marca|
 645|regio 4p|25|7501019035548|0|0||
 646|cloralex 950ml|14|75000615|0|0||
 647|kotex naturals 10p|33|7501943424609|0|0||
-648|tyny pañales|120|619585012454|0|0||
+648|tyny paï¿½ales|120|619585012454|0|0||
 649|malboro rojos|4|75001322|0|0||
-650|chester|3|75067854|0|0||
+650|chester|3|75067854|0|0||651|gatorade naranja 350ml|10|036731103512|5|0|gatorade|
+651|gatorade|10|036731103536|10|0|gatorade|
+652|9|9|hoaids|9|9|9|
