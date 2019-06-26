@@ -59,7 +59,7 @@ namespace tienda
                         else
                         {
                             ventana_emergente vtm = new ventana_emergente();
-                            string[] datos = { "costo" };
+                            string[] datos = { "costo°"+txt_costo_unitario.Text };
                             string[] infoextra = { espliteado[1] };
                             string cost=vtm.proceso_ventana_emergente(datos, 2, infoextra);
                             MessageBox.Show("se cambio precio de: " + espliteado[0]+"   a :"+cost);
@@ -262,16 +262,16 @@ namespace tienda
                     DialogResult result = MessageBox.Show("producto: " + temporal_s[0] + "precio anterior: " + temporal_s[5] + "  precio actual: " + temporal_s[7], "Hi", MessageBoxButtons.OKCancel);
                     if (result == DialogResult.OK)
                     {
-                        ids_ya_unidos = ids_ya_unidos + temporal_s[1];
-                        productos_ya_unidos = productos_ya_unidos + temporal_s[0];
+                        ids_ya_unidos = ids_ya_unidos + temporal_s[1] + "°";
+                        productos_ya_unidos = productos_ya_unidos + temporal_s[0] + "°";
                         op.actualisar_costo_compra("inf\\inventario\\invent.txt", "" + temporal_s[1], Convert.ToDecimal(temporal_s[7]));
                         op.actualisar_inventario("inf\\inventario\\invent.txt", "" + temporal_s[1], Convert.ToDecimal(temporal_s[8]));
                     }
                 }
                 else
                 {
-                    ids_ya_unidos = ids_ya_unidos + temporal_s[1];
-                    productos_ya_unidos = productos_ya_unidos + temporal_s[0];
+                    ids_ya_unidos = ids_ya_unidos + temporal_s[1] + "°";
+                    productos_ya_unidos = productos_ya_unidos + temporal_s[0] + "°";
                     op.actualisar_costo_compra("inf\\inventario\\invent.txt", "" + temporal_s[1], Convert.ToDecimal(temporal_s[7]));
                     op.actualisar_inventario("inf\\inventario\\invent.txt", "" + temporal_s[1], Convert.ToDecimal(temporal_s[8]));
                 }
@@ -309,12 +309,21 @@ namespace tienda
             if (dinero_ganado >= dinero_gastado)
             {
 
-                bas.agregar("ventas\\" + año + "\\" + mes + "\\dias\\g_" + dia_mes_año + ".txt", hora + " |" + ids_ya_unidos + " |" + cantidad + " |" + poductos_ya_unidos, null);//muestra total cada horas
+                bas.agregar("ventas\\" + año + "\\" + mes + "\\dias\\g_" + dia_mes_año + ".txt", hora + " |" + ids_ya_unidos + " |" + cantidad + " |" + poductos_ya_unidos + " |" + "0", null);//muestra total cada horas
                 op.actualisar_resumen_compras("ventas\\" + año + "\\" + mes + "\\g_" + mes + ".txt", dia, cantidad);//muestra total de cada dias
                 op.actualisar_resumen_compras("ventas\\" + año + "\\g_" + año + ".txt", mes, cantidad);//muestra total de cada mes
                 op.actualisar_resumen_compras("ventas\\g_total_años.txt", año, cantidad);//muestra total de cada año
                 op.actualisar_resumen_compras("ventas\\total_en_juego.txt", "dinero_hay: ", -1 * cantidad);//muestra total de cada año
                 op.actualisar_ganancia_real("ventas\\ganancia_real.txt", "dinero_hay: ", -1 * cantidad);//muestra ganancia real
+            }
+        }
+
+        private void Txt_costo_unitario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)(Keys.Enter))
+            {
+                e.Handled = true;
+                SendKeys.Send("{TAB}");
             }
         }
     }

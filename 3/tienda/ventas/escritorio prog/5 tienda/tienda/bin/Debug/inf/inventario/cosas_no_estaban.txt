@@ -42,3 +42,6 @@ movimiento origen: 1|651|gatorade naranja 350ml|10|036731103512|5|0|gatorade|
 movimiento origen: 1|651|gatorade|10|036731103536|10|0|gatorade|
 movimiento origen: 1|652|9|9|hoaids|9|9|9|
 movimiento origen: 2|9|
+movimiento origen: 2|5|
+movimiento origen: 2|6|
+movimiento origen: 2|5|

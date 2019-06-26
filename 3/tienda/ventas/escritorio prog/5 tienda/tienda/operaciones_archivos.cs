@@ -230,7 +230,7 @@ namespace tienda
                         }
                         else
                         {
-                            sw.WriteLine(fecha + G_parametros[0] + (precio + Convert.ToDecimal(linea[1])));
+                            sw.WriteLine(fecha + G_parametros[0] + (precio + Convert.ToDecimal(linea[1]))+G_parametros[0]+"0");
                             bol = true;
 
                         }
@@ -238,12 +238,12 @@ namespace tienda
                 }
                 if (bol == false)
                 {
-                    sw.WriteLine(fecha + G_parametros[0] + precio);
+                    sw.WriteLine(fecha + G_parametros[0] + precio + G_parametros[0] + "0");
                 }
             }
             catch (Exception)
             {
-                sw.WriteLine(fecha + G_parametros[0] + precio);
+                sw.WriteLine(fecha + G_parametros[0] + precio + G_parametros[0] + "0");
 
             }
 

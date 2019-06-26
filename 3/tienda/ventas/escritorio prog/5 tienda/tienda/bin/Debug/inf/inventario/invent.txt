@@ -235,7 +235,7 @@ id|producto|costo|codigo de barras|catidad|costo de compra|marca|
 234|takis salsa brava 56g|10|7501000166923|0|0|barcel|
 235|golden nuts pepitas|11|7501000168200|0|0||
 236|runners 58g|8|7501000222612|0|0|barcel|
-237|barcel chipotles 52g|8|7501000264834|0|0|barcel|
+237|barcel chipotles 52g|8|7501000264834|0|6|barcel|
 238|tostachos 65g|8|7501000264841|0|0|barcel|
 239|chips sal de mar 170g|35|7501000266203|0|0|barcel|
 240|chips jalape�o 170g|35|7501000266234|0|0|barcel|
@@ -463,7 +463,7 @@ id|producto|costo|codigo de barras|catidad|costo de compra|marca|
 462|coca-cola 1lt|19|7501055302451|0|16|cocacola|
 463|coca-cola 2lt|30|7501055302925|0|22,125|cocacola|
 464|fanta naranja 600ml|11|7501055303779|0|0|cocacola|
-465|coca-cola 3lt|38|7501055304745|0|34|cocacola|
+465|coca-cola 3lt|38|7501055304745|1|34|cocacola|
 466|ciel mineralizada 600ml|11|7501055308248|0|0|cocacola|
 467|coca-cola retornable 2,5lt|24|7501055310227|0|0|cocacola|
 468|fanta uva 3lt|27|7501055317462|0|0|cocacola|
@@ -475,7 +475,7 @@ id|producto|costo|codigo de barras|catidad|costo de compra|marca|
 474|sidral mundet 3lt|27|7501055340422|0|0|cocacola|
 475|fuzetea te verde 600ml|13|7501055358892|0|0|cocacola|
 476|coca-cola lata 355ml|13|7501055361540|0|10,7|cocacola|
-477|leche alpura clasica|24|7501055900039|0|0||
+477|leche alpura clasica|24|7501055900039|0|5||
 478|leche alpura vaqui choco 1l|24|7501055900060|0|0|alpura|
 479|leche alpura vaqui fresa 1l|24|7501055900077|0|0|alpura|
 480|leche alpura vaqui vainilla 1l|24|7501055900084|0|0|alpura|
@@ -487,7 +487,7 @@ id|producto|costo|codigo de barras|catidad|costo de compra|marca|
 486|leche carnation nestle 360gr|16|7501058611062|0|0|nestle|
 487|gerber junior manzana 110gr|11|7501058614322|0|0|nestle|
 488|lechera bote 387g|20|7501058617873|0|0||
-489|la lechera nestle bolsa 90gr |13|7501058620750|0|0|nestle|
+489|la lechera nestle bolsa 90gr |13|7501058620750|12|4|nestle|
 490|nesquik 80gr|13|7501058625908|0|0|nestle|
 491|trix 80gr |13|7501058626721|0|0|nestle|
 492|fitnes chocolate|8|7501058630179|0|0||

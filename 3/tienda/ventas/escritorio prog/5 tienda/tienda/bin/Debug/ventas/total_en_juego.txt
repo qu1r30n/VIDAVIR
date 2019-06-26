@@ -1,1 +1,1 @@
-dinero_hay: |-2
+dinero_hay: |59|0

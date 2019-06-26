@@ -153,6 +153,7 @@
             this.txt_costo_unitario.Name = "txt_costo_unitario";
             this.txt_costo_unitario.Size = new System.Drawing.Size(79, 20);
             this.txt_costo_unitario.TabIndex = 3;
+            this.txt_costo_unitario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_costo_unitario_KeyPress);
             // 
             // lbl_costo_unitario
             // 

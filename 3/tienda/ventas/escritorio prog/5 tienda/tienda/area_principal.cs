@@ -669,7 +669,7 @@ namespace tienda
             historial = op.revicion_total(FILE_NAME);
             historial2 = op.revicion_total(FILE_NAME2);
 
-            if (historial.Length >= historial2.Length)
+            if (historial.Length >= historial2.Length)//esta la puse para el listbox saber cuantos items  va  a contener
             {
                 cual_es_mayor = historial.Length;
             }
