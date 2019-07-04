@@ -58,7 +58,7 @@
             this.btn_agregar.Location = new System.Drawing.Point(12, 317);
             this.btn_agregar.Name = "btn_agregar";
             this.btn_agregar.Size = new System.Drawing.Size(189, 23);
-            this.btn_agregar.TabIndex = 4;
+            this.btn_agregar.TabIndex = 5;
             this.btn_agregar.Text = "agregar";
             this.btn_agregar.UseVisualStyleBackColor = true;
             this.btn_agregar.Click += new System.EventHandler(this.btn_agregar_Click);
@@ -68,7 +68,7 @@
             this.btn_procesar_venta.Location = new System.Drawing.Point(904, 204);
             this.btn_procesar_venta.Name = "btn_procesar_venta";
             this.btn_procesar_venta.Size = new System.Drawing.Size(75, 23);
-            this.btn_procesar_venta.TabIndex = 5;
+            this.btn_procesar_venta.TabIndex = 2;
             this.btn_procesar_venta.Text = "procesar venta";
             this.btn_procesar_venta.UseVisualStyleBackColor = true;
             this.btn_procesar_venta.Click += new System.EventHandler(this.btn_procesar_venta_Click);
@@ -134,7 +134,7 @@
             this.txt_cantidad.Location = new System.Drawing.Point(122, 288);
             this.txt_cantidad.Name = "txt_cantidad";
             this.txt_cantidad.Size = new System.Drawing.Size(79, 20);
-            this.txt_cantidad.TabIndex = 2;
+            this.txt_cantidad.TabIndex = 3;
             this.txt_cantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_cantidad_KeyPress);
             // 
             // lbl_cuenta
@@ -152,7 +152,7 @@
             this.txt_costo_unitario.Location = new System.Drawing.Point(207, 288);
             this.txt_costo_unitario.Name = "txt_costo_unitario";
             this.txt_costo_unitario.Size = new System.Drawing.Size(79, 20);
-            this.txt_costo_unitario.TabIndex = 3;
+            this.txt_costo_unitario.TabIndex = 4;
             this.txt_costo_unitario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_costo_unitario_KeyPress);
             // 
             // lbl_costo_unitario

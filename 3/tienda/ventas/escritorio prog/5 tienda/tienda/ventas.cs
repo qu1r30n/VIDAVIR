@@ -18,22 +18,7 @@ namespace tienda
         public ventas()
         {
             InitializeComponent();
-            tex_base bas = new tex_base();
-            bas.crear_archivo_y_directorio("inf\\inventario\\invent.txt", "id|producto|precio|codigo|cantidad|compra|marca|");
-            string [] imprimir = bas.leer("inf\\inventario\\invent.txt", "1|0|2|3|4|5|6|7", ""+G_parametros[0]);
-
-            for (int i = 1; i < imprimir.Length; i++)
-            {
-                txt_buscar_producto.AutoCompleteCustomSource.Add("" + imprimir[i]);
-            }
-
-            string[] imprimir2 = bas.leer("inf\\inventario\\invent.txt", "3|0|2|1|4|5|6|7", ""+G_parametros[0]);
-
-            for (int i = 1; i < imprimir2.Length; i++)
-            {
-                txt_buscar_producto.AutoCompleteCustomSource.Add("" + imprimir2[i]);
-            }
-
+            recargar_texbox();
         }
 
         private void btn_agregar_Click(object sender, EventArgs e)
@@ -70,7 +55,6 @@ namespace tienda
                     string[] enviar = { "id°" + (cantidad_produc.Length), "producto", "precio", "codigo°" + espliteado[0], "cantidad", "compra", "marca" };
                     string mensage=vent_emergent.proceso_ventana_emergente(enviar, 1);//el uno significa que modificara el inventario
                     MessageBox.Show(mensage);
-                    recargar_texbox();
                 }
 
                 for (int coll = 0; coll < lst_ventas.Items.Count; coll++)
@@ -192,7 +176,6 @@ namespace tienda
                         string mensage = vent_emergent.proceso_ventana_emergente(enviar, 1);//el uno significa que modificara el inventario
                         MessageBox.Show("ya se agrego el producto: "+mensage);
                         txt_buscar_producto.Text = "";
-                        recargar_texbox();
                         }
                     
                     for (int coll = 0; coll < lst_ventas.Items.Count; coll++)

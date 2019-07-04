@@ -18,21 +18,7 @@ namespace tienda
         public pedidos()
         {
             InitializeComponent();
-            tex_base bas = new tex_base();
-            bas.crear_archivo_y_directorio("inf\\inventario\\invent.txt", "id|producto|precio|codigo|cantidad|compra|marca|");
-            string[] imprimir = bas.leer("inf\\inventario\\invent.txt", "1|0|2|3|4|5|6|7", "" + G_parametros[0]);
-
-            for (int i = 1; i < imprimir.Length; i++)
-            {
-                txt_buscar_producto.AutoCompleteCustomSource.Add("" + imprimir[i]);
-            }
-
-            string[] imprimir2 = bas.leer("inf\\inventario\\invent.txt", "3|0|2|1|4|5|6|7", "" + G_parametros[0]);
-
-            for (int i = 1; i < imprimir2.Length; i++)
-            {
-                txt_buscar_producto.AutoCompleteCustomSource.Add("" + imprimir2[i]);
-            }
+            recargar_texbox();
         }
         private void btn_agregar_Click(object sender, EventArgs e)
         {            
@@ -63,7 +49,6 @@ namespace tienda
                             string[] infoextra = { espliteado[1] };
                             string cost=vtm.proceso_ventana_emergente(datos, 2, infoextra);
                             MessageBox.Show("se cambio precio de: " + espliteado[0]+"   a :"+cost);
-                            recargar_texbox();
                             txt_buscar_producto.Text = "";
                             txt_cantidad.Text = "";
                             txt_costo_unitario.Text = "";
@@ -89,7 +74,6 @@ namespace tienda
                     string mensage = vent_emergent.proceso_ventana_emergente(enviar, 1);//el uno significa que modificara el inventario
                     MessageBox.Show("se agrego: "+mensage);
                     //-------------------------------------------------------------
-                    recargar_texbox();
                     txt_buscar_producto.Text = "";
                     txt_cantidad.Text = "";
                     txt_costo_unitario.Text = "";
@@ -184,7 +168,7 @@ namespace tienda
         {
             if (e.KeyValue == (char)(Keys.Enter))
             {
-                SendKeys.Send("{TAB}");
+                txt_cantidad.Focus();
             }
         }
 
@@ -291,8 +275,7 @@ namespace tienda
         {
             if (e.KeyChar == (char)(Keys.Enter))
             {
-                e.Handled = true;
-                SendKeys.Send("{TAB}");
+                txt_costo_unitario.Focus();
             }
         }
 
@@ -322,8 +305,7 @@ namespace tienda
         {
             if (e.KeyChar == (char)(Keys.Enter))
             {
-                e.Handled = true;
-                SendKeys.Send("{TAB}");
+                btn_agregar.Focus();
             }
         }
     }
