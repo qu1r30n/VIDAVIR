@@ -487,7 +487,7 @@ id|producto|costo|codigo de barras|catidad|costo de compra|marca|
 486|leche carnation nestle 360gr|16|7501058611062|0|0|nestle|
 487|gerber junior manzana 110gr|11|7501058614322|0|0|nestle|
 488|lechera bote 387g|20|7501058617873|0|0||
-489|la lechera nestle bolsa 90gr |13|7501058620750|14|2|nestle|
+489|la lechera nestle bolsa 90gr |13|7501058620750|12|2|nestle|
 490|nesquik 80gr|13|7501058625908|0|0|nestle|
 491|trix 80gr |13|7501058626721|0|0|nestle|
 492|fitnes chocolate|8|7501058630179|0|0||
