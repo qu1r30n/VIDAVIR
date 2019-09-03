@@ -1,22 +1,24 @@
 package model
 
 
+import android.app.Activity
 import android.content.Context
+import android.os.Environment
 import android.widget.Toast
 import operadores_extra_globales.var_glob
 import java.io.File
 import androidx.appcompat.app.AppCompatActivity
+import com.example.qu1r30n.toast
+import java.io.BufferedWriter
+import java.io.FileOutputStream
+import java.io.OutputStreamWriter
+import java.util.*
 
 
 class base
 {
-    fun crear_archivo_directorio(direccion_archivo: String)
+    fun crear_archivo_directorio(activity: Activity,direccion_archivo: String)
     {
-
-        val arc=File(direccion_archivo).createNewFile()
-        /*
-        //direccion directorios
-
         var carpetas = ""
         val temp = direccion_archivo.split("/")
         for (i in temp.indices)
@@ -31,31 +33,16 @@ class base
         //direccion carpetas
         val direcccion_carpetas = File(carpetas)
         direcccion_carpetas.mkdirs()
+        val archivo=File(direccion_archivo)
 
-        val archivo = File(direccion_archivo)
 
-        // create a new file
-        val fos : FileOutputStream = FileOutputStream(direccion_archivo)
-        val tex1="hola por enesima ves".toCharArray()
-        var acum=""
-        for (temp in tex1)
-        {
-            acum=acum+temp.toInt()
+        try {
+            FileOutputStream(archivo, true)
+        } catch (e: Exception) {
+            activity.toast("error: "+e)
+            e.printStackTrace()
         }
-        fos.write(acum.toInt())
-        /*val fue_creado: Boolean = archivo.createNewFile()
-        if (fue_creado)
-        {
-            println(direccion_archivo + "  is created successfully.")
-        }
-        else
-        {
-            println(direccion_archivo + " already exists.")
-        }
-        */
-        */
     }
-
 
     fun leer(parametros: String, valor_espliteo: String = "¬"): String
     {
@@ -100,7 +87,7 @@ class base
     }
 
     fun seleccionar(parametros: String, valor_espliteo: String = "¬"): String {
-        //0) id|1) producto|2) costo|3) codigo de barras|4) catidad|5) costo de compra|6) marca|7)
+        //0) id | 1) producto | 2) costo | 3) codigo de barras | 4) catidad | 5) costo de compra | 6) marca | 7)
 
         //espliteado[0]=direccion
         //espliteado[1]=columna a comparar
@@ -302,7 +289,21 @@ class base
         val direccion = espliteado[0]
         val agregar_texto= espliteado[1]
         val archivo = File(direccion)
-        archivo.appendText(agregar_texto)
+
+
+        val file = File(direccion)
+        try {
+            FileOutputStream(file, true).use({ fileOutputStream ->
+                OutputStreamWriter(fileOutputStream, "UTF-8").use({ outputStreamWriter ->
+                    BufferedWriter(outputStreamWriter).use({ bw ->
+                        bw.write(agregar_texto+"\n")
+                        bw.flush()
+                    })
+                })
+            })
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
 
 
 

@@ -7,11 +7,11 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 
 
-class ManagePermissions(val activity: Activity, val lista: List<String>, val code:Int) {
+class ManagePermissions(val activity: Activity,val list: List<String>,val code:Int) {
 
     // Check permissions at runtime
-    fun checar_permisos() {
-        if (permiso_aceotado_denegado() != PackageManager.PERMISSION_GRANTED) {
+    fun checkPermissions() {
+        if (isPermissionsGranted() != PackageManager.PERMISSION_GRANTED) {
             showAlert()
         } else {
             activity.toast("Permissions already granted.")
@@ -20,20 +20,20 @@ class ManagePermissions(val activity: Activity, val lista: List<String>, val cod
 
 
     // Check permissions status
-    private fun permiso_aceotado_denegado(): Int {
+    private fun isPermissionsGranted(): Int {
         // PERMISSION_GRANTED : Constant Value: 0
         // PERMISSION_DENIED : Constant Value: -1
-        var contador = 0;
-        for (permiso in lista) {
-            contador += ContextCompat.checkSelfPermission(activity, permiso)
+        var counter = 0;
+        for (permission in list) {
+            counter += ContextCompat.checkSelfPermission(activity, permission)
         }
-        return contador
+        return counter
     }
 
 
     // Find the first denied permission
     private fun deniedPermission(): String {
-        for (permission in lista) {
+        for (permission in list) {
             if (ContextCompat.checkSelfPermission(activity, permission)
                 == PackageManager.PERMISSION_DENIED) return permission
         }
@@ -60,7 +60,7 @@ class ManagePermissions(val activity: Activity, val lista: List<String>, val cod
             // Show an explanation asynchronously
             activity.toast("Should show an explanation.")
         } else {
-            ActivityCompat.requestPermissions(activity, lista.toTypedArray(), code)
+            ActivityCompat.requestPermissions(activity, list.toTypedArray(), code)
         }
     }
 

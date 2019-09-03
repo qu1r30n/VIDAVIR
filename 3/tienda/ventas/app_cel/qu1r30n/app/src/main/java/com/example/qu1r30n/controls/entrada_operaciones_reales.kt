@@ -1,15 +1,43 @@
-package controls
+package com.example.qu1r30n.controls
+import android.Manifest
+import android.app.Activity
+import com.example.qu1r30n.controls.controlador_de_permisos
+import com.example.qu1r30n.toast
 import model.base
 import operadores_extra_globales.var_glob
 
-class controles
+class controles(var activity: Activity)
 {
+    val glob = var_glob()
+
+
+    fun inicio(){
+        // Initialize a list of required permissions to request runtime
+        val lista = listOf<String>(
+            Manifest.permission.WRITE_EXTERNAL_STORAGE,
+            Manifest.permission.READ_EXTERNAL_STORAGE,
+            Manifest.permission.CAMERA
+        )
+
+        glob.G_controlPermisos=controlador_de_permisos(activity,lista,glob.G_codigo_peticion_permiso)
+        glob.G_controlPermisos.checando_permisos()
+
+        //crear archivo-----------------------------------------------------------------------------
+        val pru1 = base()
+
+        pru1.crear_archivo_directorio(activity,glob.G_direccion_base)
+        //pru1.agregar(glob.G_direccion_base+"¬que paso mi qu1r30n")
+        val tex_imp=pru1.editar(glob.G_direccion_base+"¬0¬que paso mi qu1r30n¬0¬hi ho hi ho")
+        activity.toast(tex_imp)
+
+    }
+
+
     fun cargar():String
     {
         val bas = base()
-        val G_variables=var_glob()
 
-        val leido = bas.leer(G_variables.G_archivo_inventario)
+        val leido = bas.leer(glob.G_direccion_base)
         return leido
     }
 
@@ -32,9 +60,9 @@ class controles
         val cantidad=espliteado[2]
 
         val bas = base()
-        val G_variables=var_glob()
 
-        val valores_base=bas.seleccionar("${G_variables.G_archivo_inventario}¬3¬${producto}¬0|1|2|3|4|5|6|7").split("\n")
+
+        val valores_base=bas.seleccionar("${glob.G_direccion_base}¬3¬${producto}¬0|1|2|3|4|5|6|7").split("\n")
         if(valores_base.size > 0)
         {
             if(valores_base[5] > espliteado[1])
@@ -55,6 +83,7 @@ class controles
             return "0) no se encontro"
         }
     }
+
     fun agregar(parametros: String, valor_espliteo: String = "¬"):String
     {
         val espliteado=parametros.split(valor_espliteo)
@@ -63,12 +92,12 @@ class controles
         val cantidad=espliteado[2]
 
         val bas = base()
-        val G_variables=var_glob()
 
-        val valores_base=bas.seleccionar("${G_variables.G_archivo_inventario}¬3¬${producto}¬0|1|2|3|4|5|6|7").split("\n")
+
+        val valores_base=bas.seleccionar("${glob.G_direccion_base}¬3¬${producto}¬0|1|2|3|4|5|6|7").split("\n")
         if(valores_base.size > 0)
         {
-            bas.incrementar("${G_variables.G_archivo_inventario}¬3¬${producto}¬4¬${espliteado[2]}")
+            bas.incrementar("${glob.G_direccion_base}¬3¬${producto}¬4¬${espliteado[2]}")
             return "1) agregado"
         }
         else{return "0) no encontrado"}
